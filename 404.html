@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Lomítko na začátku cesty zajistí, že se obrázek a styl načtou správně, 
+         ať už chyba 404 vyskočí na jakékoliv podstránce -->
+    <link rel="apple-touch-icon" href="/assets/img/head.png" />
+    <link rel="icon" type="image/png" href="/assets/img/head.png" />
+
+    <title>404 - Stránka nenalezena</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Zde odkazujeme na náš JEDEN centrální CSS soubor -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <main class="error-page-container">
+      <header>
+        <div class="header-container">
+          <div class="logo-wrapper">
+            <h1 style="text-align: center; margin-bottom: 20px">Error 404</h1>
+            <img
+              style="right: -170px"
+              src="../assets/img/community-logo2.png"
+              alt="Community Logo"
+              class="community-logo"
+            />
+          </div>
+        </div>
+      </header>
+
+      <p class="error-text">
+        Tato cesta do města nevede. Pravděpodobně jsi v lese špatně odbočil nebo
+        si s tebou hraje místní démon.
+      </p>
+
+      <!-- Odkaz směřuje na hlavní rozcestník webu -->
+      <a href="/" class="map-link">Vrátit se do bezpečí</a>
+    </main>
+
+    <footer>
+      <p>
+        © Toto není oficiální obsah. Všechna práva ke hře patří The Pandemonium
+        Institute.
+      </p>
+    </footer>
+  </body>
+</html>
