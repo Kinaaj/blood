@@ -1,162 +1,117 @@
 <!doctype html>
 <html lang="cs">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta
-      property="og:image"
-      content="https://kinaaj.github.io/blood/assets/img/head.png"
-    />
-    <meta
-      property="og:url"
-      content="https://kinaaj.github.io/blood/assets/img/head.png"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="apple-touch-icon" href="assets/img/head.png" />
-    <link rel="icon" type="image/png" href="assets/img/head.png" />
+  <meta property="og:image" content="https://kinaaj.github.io/blood/assets/img/head.png" />
+  <meta property="og:url" content="https://kinaaj.github.io/blood/assets/img/head.png" />
 
-    <title>Blood</title>
+  <link rel="apple-touch-icon" href="assets/img/head.png" />
+  <link rel="icon" type="image/png" href="assets/img/head.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Roboto:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+  <title>Blood</title>
 
-    <!-- Relativní cesta (bez úvodního lomítka) pro bezproblémové lokální testování -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-container">
-        <div class="logo-wrapper">
-          <img
-            src="assets/img/logo-long-white4.png"
-            alt="logo long"
-            class="main-logo"
-          />
-          <img
-            src="assets/img/community-logo2.png"
-            alt="Community Logo"
-            class="community-logo"
-          />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Relativní cesta (bez úvodního lomítka) pro bezproblémové lokální testování -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo-wrapper">
+        <img src="assets/img/logo-long-white4.png" alt="logo long" class="main-logo" />
+        <img src="assets/img/community-logo2.png" alt="Community Logo" class="community-logo" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="cards-container">
+      <!-- KARTA 1: Krvavá chata -->
+      <div class="portal-card theme-purple" onclick="window.location.href = 'krvava-chata/'">
+        <!-- Návodný obrázek -->
+        <div class="card-image-wrapper">
+          <img src="assets/img/chata-preview2.jpg" alt="Krvavá chata" class="card-image"
+            style="object-position: 50% 26%" />
+        </div>
+
+        <!-- Textová část -->
+        <div class="card-content">
+          <div class="title-wrapper">
+            <h2 class="card-title">Krvavá Chata</h2>
+          </div>
+          <p class="card-desc">
+            Informace o naší každoroční víkendové akci plné intrik a temných
+            rituálů.
+          </p>
         </div>
       </div>
-    </header>
-
-    <main>
-      <div class="cards-container">
-        <!-- KARTA 1: Krvavá chata -->
-        <div
-          class="portal-card theme-purple"
-          onclick="window.location.href = 'krvava-chata/'"
-        >
-          <!-- Návodný obrázek -->
-          <div class="card-image-wrapper">
-            <img
-              src="assets/img/chata-preview2.jpg"
-              alt="Krvavá chata"
-              class="card-image"
-              style="object-position: 50% 26%"
-            />
-          </div>
-
-          <!-- Textová část -->
-          <div class="card-content">
-            <div class="title-wrapper">
-              <h2 class="card-title">Krvavá Chata</h2>
-            </div>
-            <p class="card-desc">
-              Informace o naší každoroční víkendové akci plné intrik a temných
-              rituálů.
-            </p>
-          </div>
+      <!-- KARTA 2: Skripty -->
+      <div class="portal-card theme-purple disabled" onclick="window.location.href = 'skripty/'">
+        <div class="card-image-wrapper">
+          <img src="assets/img/skripty-preview.png" alt="Skripty a Setlisty" class="card-image"
+            style="object-position: 50% top" />
         </div>
-        <!-- KARTA 2: Skripty -->
-        <div
-          class="portal-card theme-purple disabled"
-          onclick="window.location.href = 'skripty/'"
-        >
-          <div class="card-image-wrapper">
-            <img
-              src="assets/img/skripty-preview.png"
-              alt="Skripty a Setlisty"
-              class="card-image"
-              style="object-position: 50% top"
-            />
+        <div class="card-content">
+          <div class="title-wrapper">
+            <h2 class="card-title">Skripty</h2>
           </div>
-          <div class="card-content">
-            <div class="title-wrapper">
-              <h2 class="card-title">Skripty</h2>
-            </div>
-            <p class="card-desc">
-              Seznam skriptů, které jsme již hráli, či nástroj k vytvoření si
-              vlastního skriptu.
-            </p>
-          </div>
-        </div>
-
-        <!-- KARTA 3: Pravidla -->
-        <div
-          class="portal-card theme-purple"
-          onclick="window.location.href = 'pravidla/'"
-        >
-          <div class="card-image-wrapper">
-            <img
-              src="assets/img/pravidla-preview2.jpg"
-              alt="Pravidla hry"
-              class="card-image"
-              style="object-position: 50% 40%"
-            />
-          </div>
-          <div class="card-content">
-            <div class="title-wrapper">
-              <h2 class="card-title">Pravidla Hry</h2>
-            </div>
-            <p class="card-desc">Polopatě vysvětlená pravidla.</p>
-          </div>
-        </div>
-
-        <!-- KARTA 4: Zákulisí Tvorby -->
-        <div
-          class="portal-card theme-purple disabled"
-          onclick="window.location.href = 'zakulisi/'"
-        >
-          <!-- Návodný obrázek spojující 2 fotky -->
-          <div class="card-image-wrapper split-preview">
-            <img
-              src="assets/img/onshape.png"
-              alt="Zákulisí 1"
-              class="card-image img-left"
-            />
-            <img
-              src="assets/img/laser-cutter.jpg"
-              alt="Zákulisí 2"
-              class="card-image img-right"
-            />
-          </div>
-
-          <!-- Textová část -->
-          <div class="card-content">
-            <div class="title-wrapper">
-              <h2 class="card-title">Zákulisí Tvorby</h2>
-            </div>
-            <p class="card-desc">
-              Zákulisí toho, jak vznikaly vlastní žetony, lucerny, grimoár...
-              Budu rád, když se mrkneš! Nebojím se říct, že jsem do vytváření
-              "vložil část své duše".
-            </p>
-          </div>
+          <p class="card-desc">
+            Seznam skriptů, které jsme již hráli, či nástroj k vytvoření si
+            vlastního skriptu.
+          </p>
         </div>
       </div>
-    </main>
-    <footer>
-      <p>
-        © Toto není oficiální obsah. Všechna práva ke hře patří The Pandemonium
-        Institute.
-      </p>
-    </footer>
-  </body>
+
+      <!-- KARTA 3: Pravidla -->
+      <div class="portal-card theme-purple" onclick="window.location.href = 'pravidla/'">
+        <div class="card-image-wrapper">
+          <img src="assets/img/pravidla-preview2.jpg" alt="Pravidla hry" class="card-image"
+            style="object-position: 50% 40%" />
+        </div>
+        <div class="card-content">
+          <div class="title-wrapper">
+            <h2 class="card-title">Pravidla Hry</h2>
+          </div>
+          <p class="card-desc">Polopatě vysvětlená pravidla.</p>
+        </div>
+      </div>
+
+      <!-- KARTA 4: Zákulisí Tvorby -->
+      <div class="portal-card theme-purple disabled" onclick="window.location.href = 'zakulisi/'">
+        <!-- Návodný obrázek spojující 2 fotky -->
+        <div class="card-image-wrapper split-preview">
+          <img src="assets/img/onshape.png" alt="Zákulisí 1" class="card-image img-left" />
+          <img src="assets/img/laser-cutter.jpg" alt="Zákulisí 2" class="card-image img-right" />
+        </div>
+
+        <!-- Textová část -->
+        <div class="card-content">
+          <div class="title-wrapper">
+            <h2 class="card-title">Zákulisí Tvorby</h2>
+          </div>
+          <p class="card-desc">
+            Zákulisí toho, jak vznikaly vlastní žetony, lucerny, grimoár...
+            Budu rád, když se mrkneš! Nebojím se říct, že jsem do vytváření
+            "vložil část své duše".
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>
+      © Toto není oficiální obsah. Všechna práva ke hře patří The Pandemonium
+      Institute.
+    </p>
+  </footer>
+</body>
+
 </html>

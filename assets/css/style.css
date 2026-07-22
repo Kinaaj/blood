@@ -49,11 +49,9 @@ body {
   font-family: var(--font-body);
   line-height: 1.4;
   padding-bottom: 50px;
-  background-image: radial-gradient(
-    circle at top center,
-    #2c0c38 0%,
-    #0a0a0a 60%
-  );
+  background-image: radial-gradient(circle at top center,
+      #2c0c38 0%,
+      #0a0a0a 60%);
   background-attachment: fixed;
   /* Gradient se "přilepí" k oknu a nebude se opakovat */
   min-height: 100vh;
@@ -303,7 +301,8 @@ p {
 }
 
 .highlight {
-  color: var(--theme-red); /* Sjednocení na červenou proměnnou */
+  color: var(--theme-red);
+  /* Sjednocení na červenou proměnnou */
   font-weight: bold;
 }
 
@@ -593,7 +592,8 @@ footer {
 .card-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Zajistí, že se fotka nedeformuje, ale vyplní prostor */
+  object-fit: cover;
+  /* Zajistí, že se fotka nedeformuje, ale vyplní prostor */
   transition: transform 0.5s ease;
 }
 
@@ -607,7 +607,8 @@ footer {
   padding: 25px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Vyplní zbytek karty pod obrázkem */
+  flex-grow: 1;
+  /* Vyplní zbytek karty pod obrázkem */
   justify-content: space-between;
 }
 
@@ -794,7 +795,8 @@ footer {
 }
 
 .portal-card.disabled:hover .card-image {
-  transform: none !important; /* Vypne zoom obrázku při hoveru */
+  transform: none !important;
+  /* Vypne zoom obrázku při hoveru */
 }
 
 /* Úprava barvy tlačítka uvnitř neaktivní karty */
@@ -929,34 +931,35 @@ footer {
    POZICOVÁNÍ LOGA V HLAVIČCE
    ========================================= */
 
+/* =========================================
+   POZICOVÁNÍ LOGA V HLAVIČCE
+   ========================================= */
+
 .logo-wrapper {
   position: relative;
   display: inline-block;
   margin: 0 auto;
-  /* Zajišťuje, že wrapper na mobilu nepřeteče obrazovku */
   max-width: 100%;
-}
-
-.main-logo {
-  width: 100%;
-  max-width: 530px; /* Tvoje původní šířka */
-  height: auto;
-  display: block;
 }
 
 .community-logo {
   position: absolute;
-  width: 200px; /* Tvoje původní šířka */
-
-  /* TADY LADÍŠ POZICI (záporné hodnoty tahají logo ven z obalu) */
-  top: -40px;
-  right: -110px;
-
-  z-index: 10; /* Zajišťuje, že bude vždy nad hlavním logem */
-
-  /* Volitelný lehký stín, aby to "překrytí" vypadalo plasticky */
+  width: 180px;
+  top: -30px;
+  right: -90px;
+  /* Rozumnější odsazení na počítači */
+  z-index: 10;
   filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.6));
   transition: transform 0.3s;
+}
+
+
+.main-logo {
+  width: 100%;
+  max-width: 530px;
+  /* Tvoje původní šířka */
+  height: auto;
+  display: block;
 }
 
 /* Lehká animace při najetí myší na komunitní logo (volitelné) */
@@ -966,21 +969,24 @@ footer {
 
 /* --- RESPONZIVITA PRO MOBILY --- */
 @media (max-width: 700px) {
+
   /* Na mobilu musíme obě loga úměrně zmenšit, 
        aby to pravé nevyjelo mimo displej */
   .logo-wrapper {
     margin-top: 15px;
   }
 
+
   .main-logo {
     max-width: 280px;
   }
 
   .community-logo {
-    width: 140px;
-    /* Zmenšené odsazení pro menší obrazovky */
-    top: -15px;
-    right: -25px;
+    width: 100px;
+    /* Zmenšíme logo pro mobil */
+    top: -25px;
+    right: -10px;
+    /* Na mobilu ho dáme blíž k textu, aby NEVYJELO z obrazovky */
   }
 }
 
@@ -990,8 +996,10 @@ footer {
 
 .split-content {
   display: flex;
-  align-items: flex-start; /* Vertikálně zarovná text a obrázek na střed. Pokud chceš zarovnání nahoru, změň na 'flex-start' */
-  gap: 30px; /* Mezera mezi textem a obrázkem */
+  align-items: flex-start;
+  /* Vertikálně zarovná text a obrázek na střed. Pokud chceš zarovnání nahoru, změň na 'flex-start' */
+  gap: 30px;
+  /* Mezera mezi textem a obrázkem */
   margin-top: 30px;
 }
 
@@ -1039,8 +1047,10 @@ footer {
 
 .icon-heading {
   display: flex;
-  align-items: center; /* Zarovná obrázek a text vertikálně na střed */
-  gap: 15px; /* Mezera mezi obrázkem a textem */
+  align-items: center;
+  /* Zarovná obrázek a text vertikálně na střed */
+  gap: 15px;
+  /* Mezera mezi obrázkem a textem */
 
   /* Tyto vlastnosti přepisují tvé výchozí h3, 
      aby se v rozložení s obrázkem nic nerozbilo */
@@ -1056,10 +1066,13 @@ footer {
 
 /* Nastavení samotného obrázku v nadpisu */
 .heading-icon {
-  width: 50px; /* Tady si upravíš velikost ikonky podle potřeby */
+  width: 50px;
+  /* Tady si upravíš velikost ikonky podle potřeby */
   height: 50px;
-  object-fit: contain; /* Zabrání deformaci obrázku */
-  flex-shrink: 0; /* Zabrání tomu, aby se ikonka smrskla, když je text moc dlouhý */
+  object-fit: contain;
+  /* Zabrání deformaci obrázku */
+  flex-shrink: 0;
+  /* Zabrání tomu, aby se ikonka smrskla, když je text moc dlouhý */
 }
 
 /* Zmenšení ikonek na mobilech (volitelné) */
@@ -1069,6 +1082,7 @@ footer {
     height: 26px;
   }
 }
+
 .map-link.small {
   padding: 4px 12px;
   font-size: 1rem;
@@ -1077,15 +1091,17 @@ footer {
   vertical-align: middle;
 
   /* --- Nové, nenápadné barvy --- */
-  background-color: rgba(
-    155,
-    89,
-    182,
-    0.15
-  ); /* Velmi slabá, průhledná fialová */
-  color: var(--text-color) !important; /* Běžná barva textu místo zářivě bílé */
-  border: 1px solid rgba(155, 89, 182, 0.5); /* Jemný fialový rámeček */
-  text-shadow: none; /* Odstranění stínu textu pro čistší vzhled */
+  background-color: rgba(155,
+      89,
+      182,
+      0.15);
+  /* Velmi slabá, průhledná fialová */
+  color: var(--text-color) !important;
+  /* Běžná barva textu místo zářivě bílé */
+  border: 1px solid rgba(155, 89, 182, 0.5);
+  /* Jemný fialový rámeček */
+  text-shadow: none;
+  /* Odstranění stínu textu pro čistší vzhled */
   text-transform: none;
 }
 
@@ -1094,7 +1110,9 @@ footer {
   background-color: var(--accent-color);
   color: #fff !important;
   border-color: var(--accent-color);
-} /* =========================================
+}
+
+/* =========================================
    ROZTAŽENÉ BLOKY STAVŮ (POD SEBOU)
    ========================================= */
 
@@ -1126,13 +1144,11 @@ footer {
   display: flex;
   align-items: center;
   position: relative;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.05) 0%,
-    rgba(255, 255, 255, 0.05) 50%,
-    rgba(197, 0, 0, 0.2) 50%,
-    rgba(197, 0, 0, 0.2) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(197, 0, 0, 0.2) 50%,
+      rgba(197, 0, 0, 0.2) 100%);
   border-bottom: 1px solid #2a2a2a;
 }
 
@@ -1149,7 +1165,8 @@ footer {
   font-size: 1.4rem;
   font-family: var(--font-heading);
   letter-spacing: 1px;
-  line-height: 1; /* Udrží text kompaktní */
+  line-height: 1;
+  /* Udrží text kompaktní */
 }
 
 /* Zarovnání ikony a textu vlevo */
@@ -1169,16 +1186,19 @@ footer {
 
 /* Výrazně zvětšené ikony */
 .state-icon {
-  width: 60px; /* Zvětšeno z původních 24px (můžeš dát i 42px) */
+  width: 60px;
+  /* Zvětšeno z původních 24px (můžeš dát i 42px) */
   height: 60px;
   object-fit: contain;
-  flex-shrink: 0; /* Zaručí, že se ikona nikdy nezdeformuje ani nezmenší */
+  flex-shrink: 0;
+  /* Zaručí, že se ikona nikdy nezdeformuje ani nezmenší */
 }
 
 /* Úprava šikmého dělítka, aby výškově sedělo k větším ikonám */
 .state-divider {
   width: 1px;
-  height: 30px; /* Mírně zvýšeno z 25px */
+  height: 30px;
+  /* Mírně zvýšeno z 25px */
   background-color: rgba(255, 255, 255, 0.25);
   transform: rotate(15deg);
   z-index: 2;
@@ -1216,23 +1236,69 @@ footer {
 
 /* --- RESPONZIVITA PRO MOBILY --- */
 @media (max-width: 600px) {
-  .state-card-body {
-    flex-direction: column; /* Na velmi malých displejích dá popisy pod sebe */
+
+  /* Hlavička se rozpadne na 2 řádky nad sebou */
+  .state-card-header {
+    flex-direction: column;
+    background: none;
+    /* Pozadí vyřešíme přímo u jednotlivých položek */
+    border-bottom: none;
   }
 
+  /* Dělítko uprostřed schováme */
+  .state-divider {
+    display: none;
+  }
+
+  /* Jednotlivé hlavičky stavů */
+  .state-option {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1.05rem;
+  }
+
+  .state-option.state-good {
+    background: rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .state-option.state-bad {
+    background: rgba(197, 0, 0, 0.25);
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid rgba(197, 0, 0, 0.2);
+    justify-content: flex-start;
+    /* Na mobilu dáme i druhou ikonu/text doprava nebo dolevat k okraji pro lepší čitelnost */
+  }
+
+  /* Tělo bloku umožní prohození pořadí */
+  .state-card-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Změna pořadí (order) pro mobilní zobrazení:
+     1. Pozitivní nadpis (v hlavičce)
+     2. Pozitivní popis
+     3. Negativní nadpis
+     4. Negativní popis
+  */
   .state-desc.desc-good {
+    order: 1;
     border-right: none;
     border-bottom: 1px solid #2a2a2a;
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 12px 15px;
+  }
+
+  .state-desc.desc-bad {
+    order: 3;
+    background-color: rgba(197, 0, 0, 0.05);
+    padding: 12px 15px;
   }
 
   .state-icon {
-    width: 28px; /* Na mobilu lehce zmenšíme, ať je dost místa pro text */
-    height: 28px;
-  }
-
-  .state-option {
-    padding: 8px 10px;
-    font-size: 0.95rem;
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -1249,19 +1315,22 @@ footer {
 .card-image-wrapper.split-preview .card-image {
   width: 50%;
   height: 100%;
-  object-fit: cover; /* Zajistí oříznutí fotky bez deformace */
+  object-fit: cover;
+  /* Zajistí oříznutí fotky bez deformace */
 }
 
 /* --- TADY SI POLOHUJEŠ A ŘEŽEŠ POPŘÍPADĚ KAŽDOU FOTKU ZVLÁŠŤ --- */
 
 /* Levá fotka */
 .card-image-wrapper.split-preview .img-left {
-  object-position: 50% 20%; /* Uprav např. na '50% 20%' pro posun výřezu */
+  object-position: 50% 20%;
+  /* Uprav např. na '50% 20%' pro posun výřezu */
 }
 
 /* Pravá fotka */
 .card-image-wrapper.split-preview .img-right {
-  object-position: center center; /* Uprav např. na '50% 80%' pro posun výřezu */
+  object-position: center center;
+  /* Uprav např. na '50% 80%' pro posun výřezu */
 }
 
 /* =========================================
@@ -1271,7 +1340,8 @@ footer {
 .next-btn {
   position: fixed;
   top: 20px;
-  right: 20px; /* Přilepení doprava */
+  right: 20px;
+  /* Přilepení doprava */
   color: var(--text-color);
   text-decoration: none;
   font-family: var(--font-heading);
