@@ -1,0 +1,1137 @@
+/* --- TŘÍSLOUPCOVÝ EDITOR SKRIPTU --- */
+
+/* Zrušení spodního odsazení z hlavního style.css, které rozbíjelo layout */
+body {
+    padding-bottom: 0 !important;
+}
+
+main.editor-main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Zrušíme Grid - panely jsou fixní a střed má margin */
+.editor-layout {
+    display: block;
+    width: 100%;
+    position: relative;
+    max-width: 1630px;
+    /* ~85% z 1920px */
+    margin: 0 auto;
+}
+
+/* --- LEVÝ PANEL (Výběr postav) --- */
+.editor-layout>aside:first-of-type {
+    position: fixed;
+    left: 17px;
+    /* ~85% z 20px */
+    top: 90px;
+    /* ~85% z 85px */
+    width: 305px;
+    /* ~85% z 360px */
+    height: calc(100vh - 115px);
+    z-index: 10;
+    overflow-y: auto;
+}
+
+/* --- PRAVÝ PANEL (Nastavení a Tisk) --- */
+.editor-settings {
+    position: fixed !important;
+    right: 17px;
+    /* ~85% z 20px */
+    top: 25px;
+    /* ~85% z 85px */
+    width: 220px;
+    /* ~85% z 260px */
+    height: calc(100vh - 50px);
+    z-index: 10;
+    overflow-y: auto;
+}
+
+/* --- PROSTŘEDNÍ SLOUPEC: Zúžení celkového bloku --- */
+.editor-panel.transparent-panel {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+
+    /* Proporcionálně zmenšené marginy */
+    margin-left: 410px;
+    /* ~85% z 480px */
+    margin-right: 355px;
+    /* ~85% z 420px */
+
+    padding-top: 72px;
+    padding-bottom: 68px;
+    min-height: calc(100vh - 85px);
+}
+
+/* Panel / Karta v editoru */
+.editor-panel {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    border-top: 1px solid #2a2a2a;
+    border-left: 3px solid var(--accent-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    /* ~85% z 25px */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.editor-panel h2 {
+    font-size: 1.5rem;
+    /* ~85% z 1.8rem */
+    margin-bottom: 8px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 6px;
+}
+
+/* Scrollbary */
+.editor-layout>aside::-webkit-scrollbar {
+    width: 5px;
+}
+
+.editor-layout>aside::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 3px;
+}
+
+/* --- LEVÝ SLOUPEC: Vyhledávání & Filtry --- */
+.search-box input {
+    width: 100%;
+    padding: 7px 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.filter-grid label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    user-select: none;
+    color: #ccc;
+}
+
+.sidebar-char-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.sidebar-char-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar-char-list::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 3px;
+}
+
+.char-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 38px;
+    /* ~85% z 45px */
+    overflow: visible !important;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.char-item img {
+    width: 58px;
+    /* ~85% z 70px */
+    height: 58px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+.char-item:hover {
+    background: rgba(155, 89, 182, 0.15);
+    border-color: rgba(155, 89, 182, 0.5);
+    transform: translateX(4px);
+}
+
+.char-item.active {
+    background: rgba(155, 89, 182, 0.25);
+    border-color: var(--accent-color);
+    border-left: 4px solid var(--accent-color);
+    color: #fff;
+}
+
+.char-item span {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    /* ~85% z 1.1rem */
+    letter-spacing: 0.4px;
+}
+
+/* --- PROSTŘEDNÍ SLOUPEC: Nastavení Skriptu a Texty --- */
+.script-meta-inputs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.script-meta-inputs input {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    /* ~85% z 1.4rem */
+}
+
+.script-meta-inputs input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.script-meta-inputs input#meta-title {
+    flex: 2;
+}
+
+.script-meta-inputs input#meta-author {
+    flex: 1;
+}
+
+/* Dva sloupce pro postavy */
+.team-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 17px;
+    row-gap: 7px;
+    margin-bottom: 25px;
+}
+
+.team-group h3 {
+    grid-column: 1 / -1;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding-left: 4px;
+    color: #fff;
+    border-bottom: none;
+    /* Odstraníme původní spodní čáru */
+
+    /* Flexbox pro zarovnání textu a čáry vedle sebe */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Mezera mezi textem nadpisu a čárou */
+}
+
+/* Čára vedoucí od nadpisu směrem doprava */
+.team-group h3::after {
+    content: "";
+    flex: 1;
+    /* Vyplní veškerý zbývající prostor doprava */
+    height: 2px;
+    /* Tloušťka čáry */
+    background: rgba(155, 89, 182, 0.3);
+    /* Barva čáry (původní fialová s průhledností) */
+    border-radius: 2px;
+}
+
+.editor-role-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 7px 5px 7px 98px;
+    /* Odsazení zleva pro zmenšenou ikonu */
+    position: relative;
+    transition: background 0.2s;
+    border-radius: 5px;
+    min-height: 97px;
+    /* ~85% z 114px */
+}
+
+/* Zmenšená ikona zakotvená VLEVO UPROSTŘED */
+.editor-role-icon {
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 125px;
+    /* ~85% z 130px */
+    height: 125px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.6));
+}
+
+.editor-role-name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    /* ~85% z 1.3rem */
+    color: #fff;
+    margin-bottom: 2px;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.editor-role-ability {
+    /* Vráceno z 0.75rem na akorát velkých 0.95rem */
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.3;
+}
+
+.editor-role-item:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.editor-role-text {
+    display: flex;
+    flex-direction: column;
+    padding-right: 30px;
+}
+
+.setup-text {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.editor-role-remove {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    background: rgba(197, 0, 0, 0.1);
+    color: var(--theme-red);
+    border: 1px solid var(--theme-red);
+    border-radius: 50%;
+    width: 27px;
+    /* ~85% z 32px */
+    height: 27px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+.editor-role-item:hover .editor-role-remove {
+    opacity: 1;
+}
+
+.editor-role-remove:hover {
+    background: var(--theme-red);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.jinx-marker-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    flex-shrink: 0;
+
+    /* Vytáhne 40px ikonu z vertikálního roztažení řádku */
+    margin-top: -20px;
+    margin-bottom: -10px;
+    margin-right: -18px;
+}
+
+/* --- PRAVÝ SLOUPEC: Nastavení --- */
+.action-btn {
+    width: 100%;
+    padding: 10px 15px;
+    /* Přidáno trochu více paddingu po stranách */
+    border: none;
+    border-radius: 25px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* ZMĚNĚNO Z center NA flex-start */
+    gap: 12px;
+    /* Zvětšeno z 7px na 12px pro hezčí mezeru mezi ikonou a textem */
+    text-shadow: 1px 1px 2px #000;
+}
+
+.action-btn.primary {
+    background-color: var(--accent-color);
+}
+
+.action-btn.primary:hover {
+    background-color: var(--theme-purple-hover);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.action-btn.secondary {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+}
+
+.action-btn.secondary:hover {
+    background-color: #383838;
+}
+
+/* --- RESPONSIVITA PRO MENŠÍ DISPLEJE / NOTEBOOKY --- */
+@media (max-width: 1200px) {
+    .editor-layout {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 30px;
+    }
+
+    .editor-layout>aside:first-of-type,
+    .editor-settings {
+        position: static !important;
+        width: 100%;
+        height: auto;
+    }
+
+    .editor-panel.transparent-panel {
+        margin: 0;
+        padding-top: 0;
+    }
+
+    .team-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================= */
+/* === TISK: PŮVODNÍ DESIGN ŠABLONY === */
+/* ========================================= */
+#print-area {
+    display: none;
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    :root {
+        --color-townsfolk: #00570c;
+        --color-outsider: #ab7801;
+        --color-minion: #9f0000;
+        --color-demon: #000000;
+        --color-traveller: #6f0095;
+        --color-text: #000000;
+        --color-reminder: #000000;
+        --icon-size-small: 36px;
+        --icon-size-large: 39px;
+    }
+
+    /* Úplně schovat nový webový editor */
+    body>*:not(#print-area) {
+        display: none !important;
+    }
+
+    /* === 1. ZÁKLADNÍ RESET PROTI style.css === */
+    body {
+        background: white !important;
+        background-image: none !important;
+        /* Vypne radiální gradient */
+        color: #000000 !important;
+        margin: 0;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Reset obřích nadpisů, letter-spacingu a tahů z webu */
+    #print-area h1,
+    #print-area h2,
+    #print-area h3 {
+        -webkit-text-stroke: 0 !important;
+        text-shadow: none !important;
+        letter-spacing: normal !important;
+        color: #000 !important;
+        margin: 0;
+        padding: 0;
+        font-family: "EB Garamond", serif !important;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    /* === 2. CHYBĚJÍCÍ TŘÍDA Z PŮVODNÍHO CSS === */
+    .reminder-token {
+        font-size: 0.9em;
+        color: #666;
+        vertical-align: baseline;
+        margin: 0 2px;
+    }
+
+    #print-area {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    /* Původní styly layoutu - RESET TÝKAJÍCÍ SE GLOBÁLNÍHO <section> */
+    .sheet {
+        background: white !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        position: relative !important;
+        /* TOTO DRŽÍ PATIČKU NA SPRÁVNÉ STRÁNCE */
+
+        width: 100%;
+        min-height: 297mm;
+        padding: 5.3mm 14mm 2mm 14mm !important;
+        page-break-after: always;
+        box-sizing: border-box;
+    }
+
+    .sheet:last-child {
+        page-break-after: auto;
+    }
+
+    .script-header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        gap: 15px;
+        margin-bottom: 15px;
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
+    /* === RESET GLOBÁLNÍHO HEADERU (Odstraní obří mezeru nahoře) === */
+    #print-area header.script-header {
+        padding: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    /* === PŘESNÉ NASTAVENÍ NADPISŮ (Název skriptu, První noc...) === */
+    #print-area .script-header h1 {
+        font-family: "EB Garamond", serif !important;
+        font-size: 19pt !important;
+        /* Přesná původní velikost */
+        font-weight: normal !important;
+        line-height: 1 !important;
+        letter-spacing: normal !important;
+        color: #000 !important;
+        -webkit-text-stroke: 0 !important;
+        text-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .script-author-line {
+        font-family: "EB Garamond", serif;
+        font-size: 13pt;
+        font-style: italic;
+        color: #444;
+        white-space: nowrap;
+    }
+
+    .role-section {
+        margin-bottom: 10px;
+    }
+
+    .role-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+
+    .team-title {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        font-size: 3mm;
+        font-family: "EB Garamond", serif;
+        font-weight: 500;
+        text-align: left;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 5px !important;
+        padding-bottom: 0;
+    }
+
+    .team-title.notmain::before {
+        content: "";
+        flex-grow: 1;
+        height: 0.5px;
+        background-color: #000;
+        margin-right: 5px;
+    }
+
+    .team-title.notmain {
+        justify-content: center;
+        font-size: 4.5mm;
+    }
+
+    .team-title::after {
+        content: "";
+        flex-grow: 1;
+        height: 0.5px;
+        background-color: #000;
+        margin-left: 5px;
+    }
+
+    .role-item {
+        display: flex;
+        align-items: center;
+        min-height: 55px;
+        margin-bottom: 9px;
+        page-break-inside: avoid;
+    }
+
+    .role-icon {
+        width: var(--icon-size-large);
+        height: var(--icon-size-large);
+        margin-right: 15px;
+        object-fit: contain;
+        flex-shrink: 0;
+        transform: scale(2);
+        transform-origin: center center;
+    }
+
+    .role-text {
+        font-size: 8.6pt;
+        font-weight: 400;
+        line-height: 1.2;
+        padding-top: 1px;
+    }
+
+    .role-name {
+        display: block;
+        font-weight: normal;
+        font-family: "New Rocker", serif;
+        font-size: 13px;
+        margin-bottom: 0px;
+    }
+
+    .role-ability {
+        display: block;
+        color: #000000;
+    }
+
+    .role-item.townsfolk .role-name {
+        color: var(--color-townsfolk);
+    }
+
+    .role-item.outsider .role-name {
+        color: var(--color-outsider);
+    }
+
+    .role-item.minion .role-name {
+        color: var(--color-minion);
+    }
+
+    .role-item.demon .role-name {
+        color: var(--color-demon);
+    }
+
+    .role-item.traveller .role-name {
+        color: var(--color-traveller);
+    }
+
+    /* === SETUP TABULKA === */
+    .setup-table-container {
+        margin-top: 40px !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .setup-table {
+        width: 100% !important;
+        table-layout: fixed !important;
+        /* Vynutí přesné šířky sloupců */
+        border-collapse: collapse !important;
+        font-family: "New Rocker", serif !important;
+        font-weight: bold !important;
+        font-size: 20px !important;
+        text-align: center !important;
+        border: 3px double #555 !important;
+    }
+
+    /* První sloupec (názvy frakcí) zabere 20 % místa */
+    .setup-table th:first-child,
+    .setup-table td:first-child {
+        width: 20% !important;
+        text-align: right !important;
+    }
+
+    /* Ostatní sloupce s čísly se rovnoměrně rozdělí o zbytek */
+    .setup-table th:not(:first-child),
+    .setup-table td:not(:first-child) {
+        width: calc(80% / 11) !important;
+        text-align: center !important;
+    }
+
+    .setup-table th,
+    .setup-table td {
+        padding: 8px !important;
+        border: 1px solid #ddd !important;
+    }
+
+    .setup-table thead {
+        background: #eee;
+        font-size: 1.1em;
+    }
+
+    .setup-table .row-townsfolk td {
+        color: var(--color-townsfolk);
+    }
+
+    .setup-table .row-outsider td {
+        color: var(--color-outsider);
+    }
+
+    .setup-table .row-minion td {
+        color: var(--color-minion);
+    }
+
+    .setup-table .row-demon td {
+        color: var(--color-demon);
+    }
+
+    .setup-table td:first-child {
+        text-align: right;
+    }
+
+    .setup-text {
+        font-weight: bold;
+        color: var(--color-text) !important;
+        /* Vynutí černou barvu textu namísto fialové */
+    }
+
+    .night-list {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .night-item {
+        display: flex;
+        align-items: center;
+        padding-bottom: 1px;
+        page-break-inside: avoid;
+    }
+
+    .night-item .role-icon {
+        width: var(--icon-size-small);
+        height: var(--icon-size-small);
+        margin-right: 15px;
+        transform: scale(1.6);
+    }
+
+    .night-item .role-icon.special-icon {
+        transform: scale(1);
+    }
+
+    .night-text {
+        font-size: 8pt;
+        font-weight: 400;
+        line-height: 1.2;
+        padding-top: 1px;
+    }
+
+    .night-text .role-name {
+        font-size: 11.5px;
+        font-weight: 500;
+        display: block;
+    }
+
+    .night-text.townsfolk .role-name {
+        color: var(--color-townsfolk);
+    }
+
+    .night-text.outsider .role-name {
+        color: var(--color-outsider);
+    }
+
+    .night-text.minion .role-name {
+        color: var(--color-minion);
+    }
+
+    .night-text.demon .role-name {
+        color: var(--color-demon);
+    }
+
+    .night-text.traveller .role-name {
+        color: var(--color-traveller);
+    }
+
+    .night-text .role-reminder {
+        display: block;
+        color: var(--color-reminder);
+        padding-top: 0.5px;
+    }
+
+    .sheet-footer {
+        position: absolute;
+        bottom: 6mm;
+        left: 14mm;
+        right: 14mm;
+        text-align: right;
+    }
+
+    .footer-disclaimer {
+        font-family: "EB Garamond", serif;
+        font-size: 10pt;
+        font-weight: 500;
+        color: var(--color-text);
+        text-align: right;
+    }
+
+    .footer-script-name {
+        font-family: "Roboto", sans-serif;
+        font-size: 8pt;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--color-text);
+    }
+
+    .djinn-jinx-container {
+        margin-left: 55px;
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+    }
+
+    .jinx-icons-wrapper {
+        display: flex;
+        width: 65px;
+        gap: 4px;
+        flex-shrink: 0;
+    }
+
+    .jinx-icon {
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+        transform: scale(1.5);
+    }
+
+    .jinx-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 6px;
+    }
+
+    .jinx-text {
+        font-size: 9pt;
+        line-height: 1.3;
+        padding-top: 2px;
+    }
+
+    /* === OPRAVA POZICE JINX IKONEK V TISKU === */
+    #print-area .jinx-marker-icon {
+        width: 18px !important;
+        height: 18px !important;
+        object-fit: contain !important;
+        vertical-align: middle !important;
+
+        /* Odsazení vlevo zachováme, vpravo vynulujeme */
+        margin-left: 6px !important;
+        margin-right: -4px !important;
+
+        /* KLÍČOVÉ: Záporné okraje nahoře a dole zabrání roztahování řádku */
+        margin-top: -5px !important;
+        margin-bottom: 2px !important;
+
+        transform: scale(1.55) !important;
+        opacity: 0.9 !important;
+    }
+
+    /* === OPRAVA TEXTŮ A POZICOVÁNÍ V PATIČCE === */
+    #print-area .sheet-footer {
+        position: absolute !important;
+        bottom: 6mm !important;
+        left: 14mm !important;
+        right: 14mm !important;
+        text-align: right !important;
+        z-index: 10 !important;
+    }
+
+    #print-area .footer-script-name,
+    #print-area .footer-disclaimer {
+        -webkit-text-stroke: 0 !important;
+        text-shadow: none !important;
+        color: #000 !important;
+        margin: 0 !important;
+        line-height: 1 !important;
+    }
+
+    #print-area .footer-script-name {
+        font-family: "Roboto", sans-serif !important;
+        font-size: 8pt !important;
+        font-weight: normal !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+
+    #print-area .footer-disclaimer {
+        font-family: "EB Garamond", serif !important;
+        font-size: 10pt !important;
+        font-weight: 500 !important;
+    }
+
+    /* === ZRUŠENÍ WEBOVÉHO ZVĚTŠENÍ PÍSMA === */
+    html {
+        font-size: 12pt !important;
+        /* Vyresetuje těch tvých webových 18px */
+    }
+
+    /* === PŘESNÝ RESET TEXTU SCHOPNOSTÍ A JMEN === */
+    #print-area .role-text,
+    #print-area .role-ability {
+        font-family: "Roboto", sans-serif !important;
+        font-size: 8.5pt !important;
+        /* <--- ZDE ZMĚŇ VELIKOST (např. 8pt nebo 7.5pt) */
+        line-height: 1.2 !important;
+        letter-spacing: normal !important;
+        word-spacing: normal !important;
+        text-align: left !important;
+        color: #000 !important;
+        -webkit-text-stroke: 0 !important;
+        text-shadow: none !important;
+    }
+
+
+    #print-area .night-text {
+        font-family: "Roboto", sans-serif !important;
+        font-size: 8pt !important;
+        /* <--- ZDE ZMĚŇ VELIKOST (např. 8pt nebo 7.5pt) */
+        line-height: 1.2 !important;
+        letter-spacing: normal !important;
+        word-spacing: normal !important;
+        text-align: left !important;
+        color: #000 !important;
+        -webkit-text-stroke: 0 !important;
+        text-shadow: none !important;
+    }
+
+    #print-area .night-text .role-name {
+        font-size: 11.5px !important;
+        font-weight: 500 !important;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+
+    #print-area .role-name {
+        font-family: "New Rocker", serif !important;
+        font-size: 13px !important;
+        letter-spacing: normal !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+        margin-bottom: 1.2px !important;
+        padding: 0 !important;
+    }
+
+    /* === VYNUCENÍ MAXIMÁLNÍ ŠÍŘKY TEXTU PRO VŠECHNY ROLE === */
+    #print-area .role-item {
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+        /* Vynutí, aby položka vyplnila celou polovinu stránky */
+    }
+
+    #print-area .role-text {
+        flex: 1 !important;
+        /* KLÍČOVÉ: Donutí textový blok roztáhnout se až na úplný okraj */
+        min-width: 0 !important;
+        /* Zabrání přetečení textu z flexboxu */
+        padding-right: 2.5px !important;
+        /* Malá rezerva od pravého okraje */
+    }
+
+    /* === TVRDÝ RESET TLOUŠŤKY A MEZER PRO DÉMONY I OSTATNÍ === */
+    #print-area .role-ability,
+    #print-area .role-item.demon .role-ability {
+        font-weight: 400 !important;
+        /* Nesmí to být ani o chlup tučnější */
+        letter-spacing: 0px !important;
+        word-spacing: 0px !important;
+        font-stretch: normal !important;
+        -webkit-font-smoothing: antialiased !important;
+        /* Zabije "rozpíjení" černého textu */
+    }
+}
+
+/* --- DJINN UVNITŘ SEKCÉ LEGEND --- */
+#auto-djinn-container,
+.djinn-section {
+    grid-column: 1 / -1 !important;
+    /* Vynutí roztažení přes CELÝ ŘÁDEK */
+    width: 100%;
+    margin-top: 15px;
+    padding-top: 0;
+    border-top: none !important;
+    /* Absolutně žádná čára nad Djinnem */
+    box-sizing: border-box;
+}
+
+/* Hlavní hlavička Djinna */
+.djinn-header-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    padding-left: 108px;
+    /* Stejné odsazení jako u ostatních postav pro 110px ikonu */
+    min-height: 80px;
+    margin-bottom: 12px;
+}
+
+.djinn-header-item .djinn-main-icon {
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+/* Odsazený seznam Jinxů pod Djinnem */
+.djinn-jinx-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 108px;
+    /* Zarovná Jinxy přesně pod text Djinna */
+}
+
+.djinn-jinx-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 45px;
+    /* Zajistí dostatek místa pro větší ikony */
+}
+
+.djinn-jinx-icons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    overflow: visible !important;
+    /* Povolí přetékání větší ikony */
+}
+
+.jinx-mini-icon {
+    width: 50px;
+    /* Zvětšeno z 28px na požadovanou velikost */
+    height: 50px;
+    object-fit: contain;
+
+    /* Záporný margin vytáhne velkou ikonu ven z vertikálního toku, takže neroztáhne řádek */
+    margin-top: -26px;
+    margin-bottom: -26px;
+    margin-left: -15px;
+
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+/* Text pravidla Jinxu */
+.djinn-jinx-text {
+    font-size: 0.85rem;
+    color: #ccc;
+    line-height: 1.3;
+}
+
+/* Oddělovací čára za hlavní skupinou postav (za Démony) */
+.team-group.extra-divider {
+    margin-top: 100px;
+    padding-top: 100px;
+    border-top: 3px dotted var(--accent-color);
+}
+
+/* --- FIXNÍ NAVIGACE VLEVO VEDLE PRAVÉHO PANELU --- */
+.editor-settings {
+    /* Ponecháváme tvé zmenšené vlastnosti pro pravý panel */
+    position: fixed !important;
+    right: 17px;
+    top: 72px;
+    width: 220px;
+    height: calc(100vh - 95px);
+    z-index: 10;
+    overflow-y: auto;
+}
+
+/* --- FIXNÍ NAVIGACE VLEVO VEDLE PRAVÉHO PANELU --- */
+.section-nav {
+    position: fixed;
+    /* 17px (odkaz doprava) + 220px (šířka panelu) + 12px (odstup šipek) = 249px */
+    right: 249px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Vycentrování přesně na střed výšky obrazovky */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 999;
+    /* Zajistí, že budou nad vším ostatním */
+}
+
+.section-nav button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid var(--accent-color);
+    color: #fff;
+    font-size: 0.95rem;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-nav button:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.section-nav button:active {
+    transform: scale(0.92);
+}

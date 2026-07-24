@@ -1,51 +1,74 @@
 <!doctype html>
 <html lang="cs">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Blood | Skripty</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Fonty & CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Roboto:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../assets/css/style.css" />
-  </head>
-  <body>
-    <!-- Tlačítko zpět -->
-    <a href="../index.html" class="back-btn">← Zpět na rozcestník</a>
+  <meta property="og:image" content="https://kinaaj.github.io/blood/assets/img/head.png" />
+  <meta property="og:url" content="https://kinaaj.github.io/blood/assets/img/head.png" />
 
-    <!-- Hlavička s logem -->
-    <header>
-      <div class="header-container">
-        <div class="logo-wrapper">
-          <h1 style="text-align: center; margin-bottom: 20px">Skripty</h1>
-          <img
-            src="../assets/img/community-logo2.png"
-            alt="Logo"
-            class="community-logo"
-          />
-        </div>
+  <link rel="apple-touch-icon" href="../assets/img/head.png" />
+  <link rel="icon" type="image/png" href="../assets/img/head.png" />
+
+  <title>Blood | Skripty</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Relativní cesta (bez úvodního lomítka) pro bezproblémové lokální testování -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <a href="../" class="back-btn"><i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Zpět na
+    rozcestník</a>
+  <a href="./tvoric/" class="next-btn"><i class="fa-solid fa-pen-nib" style="margin-right: 8px;"></i> Vytvořit
+    Skript</a>
+
+  <header>
+    <div class="header-container">
+      <div class="logo-wrapper">
+        <h1 style="text-align: center; margin-bottom: 20px">
+          Skripty
+        </h1>
+        <img src="../assets/img/community-logo2.png" alt="Community Logo" class="community-logo" />
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <!-- Standardní sekce -->
-      <section>
-        <h2>Skripty</h2>
-        <p>Text sekce...</p>
-      </section>
-    </main>
+  <main>
+    <div class="cards-container" style="justify-content: center; display: flex;">
 
-    <footer>
-      <p>
-        © Toto není oficiální obsah. Všechna práva ke hře patří The Pandemonium
-        Institute.
-      </p>
-    </footer>
-  </body>
+      <!-- Šedá karta pro vývoj s tlačítkem na tvořič -->
+      <div class="portal-card"
+        style="background: rgba(255, 255, 255, 0.05); border: 1px dashed rgba(255, 255, 255, 0.2); opacity: 0.85; max-width: 500px; text-align: center; padding: 30px; border-radius: 12px; backdrop-filter: blur(4px);">
+        <div style="font-size: 3rem; color: #888; margin-bottom: 15px;">
+          <i class="fa-solid fa-compass-drafting"></i>
+        </div>
+        <h2 style="font-family: 'New Rocker', serif; font-size: 1.8rem; margin-bottom: 10px; color: #ccc;">Ve vývoji...
+        </h2>
+        <p style="color: #aaa; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">
+          Databázi a archiv hotových hraných skriptů pro vás právě připravujeme. Mezitím si však můžete vytvořit vlastní
+          skript v našem editoru!
+        </p>
+        <a href="./tvoric/" class="action-btn primary"
+          style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; background: #6b21a8; color: #fff; border-radius: 20px; text-decoration: none; font-family: 'New Rocker', serif; gap: 8px; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+          <i class="fa-solid fa-pen-nib"></i> Vytvořit Skript
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      © Toto není oficiální obsah. Všechna práva ke hře patří The Pandemonium
+      Institute.
+    </p>
+  </footer>
+</body>
+
 </html>
