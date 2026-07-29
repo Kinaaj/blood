@@ -235,6 +235,10 @@ main {
   padding: 0 15px;
 }
 
+main.portal-main {
+  max-width: 1440px;
+}
+
 section {
   background-color: var(--card-bg);
   padding: 30px;
@@ -532,15 +536,21 @@ footer {
   gap: 30px;
   margin-top: 10px;
   margin-bottom: 60px;
-  max-width: 900px;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 640px) and (max-width: 950px) {
   .cards-container {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 951px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -562,9 +572,10 @@ footer {
   display: flex;
   flex-direction: column;
   transition:
-    transform 0.3s,
-    box-shadow 0.3s,
-    border-color 0.3s;
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
   color: var(--text-color);
   cursor: pointer;
 
@@ -575,8 +586,17 @@ footer {
   min-height: 450px;
 }
 
-.portal-card:hover {
+.portal-card:not(.disabled):hover {
   transform: translateY(-5px);
+  background: rgba(155, 89, 182, 0.14);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.7),
+    inset 0 0 45px rgba(139, 56, 172, 0.35);
+}
+
+.portal-card:not(.disabled):not(.split-portal-card):hover .card-title {
+  color: #c084fc;
+  text-shadow: 0 0 14px rgba(192, 132, 252, 0.7);
 }
 
 /* Obal obrázku - drží výšku a schovává přesahy při zoom animaci */
@@ -813,6 +833,212 @@ footer {
 
 .portal-card.disabled .card-date {
   color: #666;
+}
+
+/* ==========================================================================
+   ROZPŮLENÁ KARTA PLAYLISTŮ (SPLIT PORTAL CARD S BLESKEM - VELIKOST 1 KARTY)
+   ========================================================================== */
+
+.portal-card.split-portal-card {
+  position: relative;
+  display: flex !important;
+  flex-direction: row !important;
+  cursor: default !important;
+  overflow: hidden;
+  padding: 0 !important;
+  min-height: 450px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border-top: 1px solid #2a2a2a;
+  border-left: 4px solid var(--theme-purple);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(155, 89, 182, 0.1);
+}
+
+.portal-card.split-portal-card:hover {
+  transform: none !important;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.6),
+    inset 0 0 25px rgba(155, 89, 182, 0.12) !important;
+}
+
+/* Blesk uprostřed jedné karty */
+.split-lightning-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px rgba(192, 132, 252, 0.95)) drop-shadow(0 0 12px rgba(168, 85, 247, 0.85));
+  transition: filter 0.3s ease;
+}
+
+/* Poloviny karty v rámci jediné standardní karty */
+.split-card-half {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none !important;
+  color: var(--text-color);
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: background 0.3s ease, filter 0.3s ease;
+}
+
+.split-card-half.split-left {
+  width: 50% !important;
+  flex: 0 0 50% !important;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 7px) 26%, calc(100% + 7px) 42%, calc(100% - 6px) 62%, calc(100% + 5px) 80%, calc(100% - 2px) 100%, 0 100%);
+}
+
+.split-card-half.split-right {
+  width: 50% !important;
+  flex: 0 0 50% !important;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, calc(0% - 2px) 100%, calc(0% + 5px) 80%, calc(0% - 6px) 62%, calc(0% + 7px) 42%, calc(0% - 7px) 26%);
+}
+
+/* Úprava velikostí obsahu tak, aby perfektně pasoval do 1 karty */
+.split-portal-card .card-image-wrapper {
+  height: 180px;
+}
+
+.split-portal-card .card-content {
+  padding: 16px 12px;
+  text-align: left !important;
+}
+
+.split-portal-card .title-wrapper {
+  justify-content: flex-start !important;
+}
+
+.split-portal-card .card-title {
+  font-size: 1.25rem;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.split-card-half.split-right .card-title {
+  margin-left: 14px;
+}
+
+.split-portal-card .card-desc {
+  font-size: 0.98rem;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  color: var(--text-color) !important;
+  opacity: 0.9;
+  text-shadow: none !important;
+  text-align: left !important;
+  margin-left: -6px;
+}
+
+.split-portal-card .card-btn {
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  border-radius: 20px;
+}
+
+/* Nezávislý hover efekt pro levou polovinu */
+.split-card-half.split-left:hover {
+  background: rgba(155, 89, 182, 0.16);
+  z-index: 5;
+}
+
+.split-card-half.split-left:hover .card-image {
+  transform: scale(1.08);
+}
+
+.split-card-half.split-left:hover .card-title {
+  color: #c084fc !important;
+  text-shadow: 0 0 16px rgba(192, 132, 252, 0.85) !important;
+}
+
+/* Nezávislý hover efekt pro pravou polovinu */
+.split-card-half.split-right:hover {
+  background: rgba(155, 89, 182, 0.16);
+  z-index: 5;
+}
+
+.split-card-half.split-right:hover .card-image {
+  transform: scale(1.08);
+}
+
+.split-card-half.split-right:hover .card-title {
+  color: #c084fc !important;
+  text-shadow: 0 0 16px rgba(192, 132, 252, 0.85) !important;
+}
+
+.split-card-half.split-right:hover .card-btn {
+  background: linear-gradient(135deg, #a855f7, #6b21a8);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+  border-color: #e9d5ff;
+}
+
+/* Zvýraznění blesku při hoveru na jakoukoli část */
+.portal-card.split-portal-card:has(.split-card-half:hover) .split-lightning-line {
+  filter: drop-shadow(0 0 12px rgba(233, 213, 255, 1)) drop-shadow(0 0 24px rgba(168, 85, 247, 0.95));
+}
+
+/* Fallback placeholder pro chybějící obrázek */
+.card-image-placeholder {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(155, 89, 182, 0.22), rgba(12, 12, 16, 0.95));
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #c084fc;
+}
+
+.card-image.missing-img {
+  display: none !important;
+}
+
+.card-image.missing-img + .card-image-placeholder {
+  display: flex !important;
+}
+
+.placeholder-yt-icon {
+  font-size: 2.6rem;
+  color: #ff0000;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+}
+
+.placeholder-sub-icon {
+  font-size: 1.7rem;
+  color: #e9d5ff;
+  filter: drop-shadow(0 2px 8px rgba(155, 89, 182, 0.8));
+}
+
+/* Responsivita pro mobilní telefony */
+@media (max-width: 768px) {
+  .portal-card.split-portal-card {
+    flex-direction: column !important;
+    min-height: auto;
+  }
+
+  .split-card-half.split-left,
+  .split-card-half.split-right {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    clip-path: none !important;
+    margin-left: 0 !important;
+    border-bottom: 1px solid rgba(155, 89, 182, 0.2);
+  }
+
+  .split-lightning-line {
+    display: none;
+  }
 }
 
 /* --- RAZÍTKA --- */

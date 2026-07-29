@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Roboto:wght@300;400;700&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- Relativní cesta (bez úvodního lomítka) pro bezproblémové lokální testování -->
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -32,7 +33,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="portal-main">
     <div class="cards-container">
       <!-- KARTA 1: Krvavá chata -->
       <div class="portal-card theme-purple" onclick="window.location.href = 'krvava-chata/'">
@@ -103,6 +104,57 @@
             "vložil část své duše".
           </p>
         </div>
+      </div>
+
+      <!-- KARTA 5: YouTube Playlisty (Rozpůlená karta s bleskem) -->
+      <div class="portal-card theme-purple split-portal-card">
+        <!-- SVG Blesková čára uprostřed -->
+        <svg class="split-lightning-line" viewBox="0 0 100 500" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M 50 0 L 36 130 L 64 210 L 38 310 L 60 400 L 46 500" stroke="#e9d5ff" stroke-width="3.5"
+            fill="none" />
+        </svg>
+
+        <!-- LEVÁ POLOVINA: Fronta Písniček -->
+        <a href="https://www.youtube.com/playlist?list=PLPSQMFwZylXE&jct=QCe-ufDtJXH-t8xM3mJS2g" target="_blank"
+          class="split-card-half split-left" title="Fronta Písniček (YouTube Queue)">
+          <div class="card-image-wrapper">
+            <img src="assets/img/playlist-queue-preview.jpg" alt="Fronta Písniček" class="card-image"
+              onerror="this.classList.add('missing-img')" />
+            <div class="card-image-placeholder">
+              <i class="fa-brands fa-youtube placeholder-yt-icon"></i>
+              <i class="fa-solid fa-list-check placeholder-sub-icon"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="title-wrapper">
+              <h2 class="card-title">Fronta Písniček</h2>
+            </div>
+            <p class="card-desc">
+              Čekačka na hudbu. Přidej písničku do fronty pro schválení do hlavního playlistu.
+            </p>
+          </div>
+        </a>
+
+        <!-- PRAVÁ POLOVINA: Hlavní Playlist -->
+        <a href="https://youtube.com/playlist?list=PLLTOvMMvPiA8&si=6y7yahhFPEP160Su" target="_blank"
+          class="split-card-half split-right" title="Hlavní YouTube Playlist">
+          <div class="card-image-wrapper">
+            <img src="assets/img/playlist-main-preview.jpg" alt="Hlavní Playlist" class="card-image"
+              onerror="this.classList.add('missing-img')" />
+            <div class="card-image-placeholder">
+              <i class="fa-brands fa-youtube placeholder-yt-icon"></i>
+              <i class="fa-solid fa-compact-disc placeholder-sub-icon"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="title-wrapper">
+              <h2 class="card-title">Hlavní Playlist</h2>
+            </div>
+            <p class="card-desc">
+              Oficiální YouTube playlist pro Blood chatu a naše společná hraní.
+            </p>
+          </div>
+        </a>
       </div>
     </div>
   </main>
