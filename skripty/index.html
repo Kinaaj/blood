@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <!-- Relativní cesta (bez úvodního lomítka) pro bezproblémové lokální testování -->
   <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="./skripty.css" />
 </head>
 
 <body>
@@ -41,26 +42,122 @@
   </header>
 
   <main>
-    <div class="cards-container" style="justify-content: center; display: flex;">
+    <div class="scripts-wrapper">
+      <!-- Filtrační lišta nad skripty -->
+      <div class="scripts-filter-bar">
+        <div class="filter-top-row">
+          <!-- Vyhledávání podle názvu skriptu -->
+          <div class="filter-group search-input-group">
+            <i class="fa-solid fa-scroll search-icon"></i>
+            <input type="text" id="filter-name-input" placeholder="Hledat podle názvu..." autocomplete="off" />
+            <button id="clear-name-btn" class="clear-search-btn" style="display:none;" title="Vymazat název">&times;</button>
+          </div>
 
-      <!-- Šedá karta pro vývoj s tlačítkem na tvořič -->
-      <div class="portal-card"
-        style="background: rgba(255, 255, 255, 0.05); border: 1px dashed rgba(255, 255, 255, 0.2); opacity: 0.85; max-width: 500px; text-align: center; padding: 30px; border-radius: 12px; backdrop-filter: blur(4px);">
-        <div style="font-size: 3rem; color: #888; margin-bottom: 15px;">
-          <i class="fa-solid fa-compass-drafting"></i>
+          <!-- Vyhledávání podle autora -->
+          <div class="filter-group search-input-group">
+            <i class="fa-solid fa-feather-pointed search-icon"></i>
+            <input type="text" id="filter-author-input" placeholder="Hledat podle autora..." autocomplete="off" />
+            <button id="clear-author-btn" class="clear-search-btn" style="display:none;" title="Vymazat autora">&times;</button>
+          </div>
+
+          <!-- Tlačítko pro otevírání okna s postavami -->
+          <button id="toggle-role-modal-btn" class="filter-btn primary-filter">
+            <i class="fa-solid fa-users"></i> Vybrat postavy 
+            <span id="selected-roles-badge" class="filter-badge" style="display:none;">0</span>
+          </button>
+
+          <!-- Reset filtrů -->
+          <button id="reset-filters-btn" class="filter-btn reset-filter" title="Vynulovat všechny filtry">
+            <i class="fa-solid fa-rotate-left"></i> Reset
+          </button>
         </div>
-        <h2 style="font-family: 'New Rocker', serif; font-size: 1.8rem; margin-bottom: 10px; color: #ccc;">Ve vývoji...
-        </h2>
-        <p style="color: #aaa; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">
-          Databázi a archiv hotových hraných skriptů pro vás právě připravujeme. Mezitím si však můžete vytvořit vlastní
-          skript v našem editoru!
-        </p>
-        <a href="./tvoric/" class="action-btn primary"
-          style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; background: #6b21a8; color: #fff; border-radius: 20px; text-decoration: none; font-family: 'New Rocker', serif; gap: 8px; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-          <i class="fa-solid fa-pen-nib"></i> Vytvořit Skript
-        </a>
+
+        <!-- Obtížnosti ve 2 řádcích pod sebou s oboustrannými posuvníky -->
+        <div class="filter-difficulty-section">
+          <!-- Posuvník 1: Vypravěč -->
+          <div class="difficulty-slider-item">
+            <div class="slider-header">
+              <span><i class="fa-solid fa-book-open-reader" style="color: #9b59b6;"></i> Obtížnost pro vypravěče:</span>
+              <strong id="st-diff-val" class="slider-val-badge">1 - 5</strong>
+            </div>
+            <div class="dual-range-wrapper">
+              <div class="dual-range-track"></div>
+              <div class="dual-range-highlight" id="st-slider-highlight"></div>
+              <input type="range" id="st-min-range" min="1" max="5" value="1" step="1" />
+              <input type="range" id="st-max-range" min="1" max="5" value="5" step="1" />
+            </div>
+          </div>
+
+          <!-- Posuvník 2: Hráč -->
+          <div class="difficulty-slider-item">
+            <div class="slider-header">
+              <span><i class="fa-solid fa-gamepad" style="color: #9b59b6;"></i> Obtížnost pro hráče:</span>
+              <strong id="pl-diff-val" class="slider-val-badge">1 - 5</strong>
+            </div>
+            <div class="dual-range-wrapper">
+              <div class="dual-range-track"></div>
+              <div class="dual-range-highlight" id="pl-slider-highlight"></div>
+              <input type="range" id="pl-min-range" min="1" max="5" value="1" step="1" />
+              <input type="range" id="pl-max-range" min="1" max="5" value="5" step="1" />
+            </div>
+          </div>
+        </div>
       </div>
 
+      <!-- Aktivní vybrané postavy (tagy) -->
+      <div id="active-role-chips" class="active-chips-container" style="display:none;"></div>
+
+      <div id="scripts-grid-container" class="scripts-grid">
+        <div class="loading-spinner" style="grid-column: 1 / -1; text-align: center; color: #aaa; padding: 40px;">
+          <i class="fa-solid fa-spinner fa-spin" style="font-size: 2.5rem; margin-bottom: 15px; color: #9b59b6;"></i>
+          <p>Načítám dostupné skripty...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Centrované okno pro výběr postav s přepínačem schopností -->
+    <div id="role-filter-modal" class="role-modal-overlay">
+      <div class="role-modal-container">
+        <div class="role-modal-header">
+          <h3><i class="fa-solid fa-users" style="color: #9b59b6;"></i> Vybrat postavy ve skriptu</h3>
+          <button id="close-role-modal-btn" class="modal-close-btn" title="Zavřít">&times;</button>
+        </div>
+
+        <div class="role-modal-controls">
+          <div class="modal-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="modal-role-search" placeholder="Hledat postavu..." autocomplete="off" />
+          </div>
+
+          <div class="role-modal-categories">
+            <button class="cat-filter-chip active" data-type="all"><i class="fa-solid fa-layer-group"></i> Vše</button>
+            <button class="cat-filter-chip" data-type="townsfolk">Měšťané</button>
+            <button class="cat-filter-chip" data-type="outsider">Outsideři</button>
+            <button class="cat-filter-chip" data-type="minion">Přisluhovači</button>
+            <button class="cat-filter-chip" data-type="demon">Démoni</button>
+            <button class="cat-filter-chip" data-type="traveller">Cestovatelé</button>
+            <button class="cat-filter-chip" data-type="fabled">Bájné</button>
+          </div>
+
+          <!-- Přepínač zobrazení schopností -->
+          <label class="abilities-toggle-bar" for="toggle-show-abilities">
+            <span class="toggle-switch">
+              <input type="checkbox" id="toggle-show-abilities" />
+              <span class="toggle-slider"></span>
+            </span>
+            <span class="toggle-label-text"><i class="fa-solid fa-book-open"></i> Zobrazovat schopnosti postav</span>
+          </label>
+        </div>
+
+        <div id="modal-roles-list" class="modal-roles-scroll compact-view">
+          <!-- Dynamicky vygenerované ikony/karty postav -->
+        </div>
+
+        <div class="role-modal-footer">
+          <button id="clear-selected-roles-btn" class="drawer-secondary-btn"><i class="fa-solid fa-rotate-left"></i> Vymazat výběr</button>
+          <button id="apply-role-modal-btn" class="drawer-primary-btn"><i class="fa-solid fa-check"></i> Zavřít</button>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -70,6 +167,9 @@
       Institute.
     </p>
   </footer>
+
+  <script src="./data.js"></script>
+  <script src="./scripts-list.js"></script>
 </body>
 
 </html>
