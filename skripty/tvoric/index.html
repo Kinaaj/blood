@@ -45,14 +45,24 @@
                     <input type="text" id="search-char" placeholder="Hledat postavu..." autocomplete="off" />
                 </div>
 
-                <div class="filter-grid">
-                    <label><input type="checkbox" value="townsfolk" checked /> Měšťané</label>
-                    <label><input type="checkbox" value="outsider" checked /> Outsideři</label>
-                    <label><input type="checkbox" value="minion" checked /> Přisluhovači</label>
-                    <label><input type="checkbox" value="demon" checked /> Démoni</label>
-                    <label><input type="checkbox" value="traveller" checked /> Cestovatelé</label>
-                    <label><input type="checkbox" value="fabled" checked /> Legendy</label>
+                <div class="role-modal-categories creator-categories" id="tvoric-category-filters">
+                    <button type="button" class="cat-filter-chip active" data-type="all"><i class="fa-solid fa-layer-group"></i> Vše</button>
+                    <button type="button" class="cat-filter-chip" data-type="townsfolk">Měšťané</button>
+                    <button type="button" class="cat-filter-chip" data-type="outsider">Outsideři</button>
+                    <button type="button" class="cat-filter-chip" data-type="minion">Přisluhovači</button>
+                    <button type="button" class="cat-filter-chip" data-type="demon">Démoni</button>
+                    <button type="button" class="cat-filter-chip" data-type="traveller">Cestovatelé</button>
+                    <button type="button" class="cat-filter-chip" data-type="fabled">Legendy</button>
                 </div>
+
+                <!-- Přepínač zobrazení schopností postav -->
+                <label class="abilities-toggle-bar sidebar-toggle" for="toggle-show-abilities-tvoric">
+                    <span class="toggle-switch">
+                        <input type="checkbox" id="toggle-show-abilities-tvoric" />
+                        <span class="toggle-slider"></span>
+                    </span>
+                    <span class="toggle-label-text"><i class="fa-solid fa-book-open"></i> Zobrazovat schopnosti</span>
+                </label>
 
                 <div id="character-list-container" class="sidebar-char-list">
                     <!-- Dynamicky vykreslené postavy -->

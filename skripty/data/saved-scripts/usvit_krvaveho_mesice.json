@@ -1,0 +1,41 @@
+[
+  {
+    "id": "_meta",
+    "name": "Úsvit Krvavého Měsíce",
+    "author": "The Pandemonium Institute",
+    "description": "Druhý ze tří základních skriptů. Informace se získávají ze smrtí, kterých je ale většinou více než jen jedna za jednu noc.",
+    "difficulty_storyteller": 3,
+    "difficulty_player": 3,
+    "preview_characters": [
+      "zombuul",
+      "tinker",
+      "gossip",
+      "assassin"
+    ]
+  },
+  "grandmother",
+  "sailor",
+  "chambermaid",
+  "exorcist",
+  "innkeeper",
+  "gambler",
+  "gossip",
+  "courtier",
+  "professor",
+  "minstrel",
+  "tealady",
+  "pacifist",
+  "fool",
+  "tinker",
+  "moonchild",
+  "goon",
+  "lunatic",
+  "godfather",
+  "devilsadvocate",
+  "assassin",
+  "mastermind",
+  "zombuul",
+  "pukka",
+  "shabaloth",
+  "po"
+]

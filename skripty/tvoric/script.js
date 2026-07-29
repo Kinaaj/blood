@@ -21,9 +21,33 @@ const btnClear = document.getElementById('btn-clear');
 const btnDownloadJson = document.getElementById('btn-download-json');
 const btnUploadJson = document.getElementById('btn-upload-json');
 const inputUploadJson = document.getElementById('input-upload-json');
+let showAbilitiesInTvoric = false;
+let creatorCategoryFilter = 'all';
+
 // --- INICIALIZACE ---
 document.addEventListener('DOMContentLoaded', () => {
     loadScriptFromUrl();
+
+    const toggleAbilitiesBtn = document.getElementById('toggle-show-abilities-tvoric');
+    if (toggleAbilitiesBtn) {
+        toggleAbilitiesBtn.addEventListener('change', (e) => {
+            showAbilitiesInTvoric = e.target.checked;
+            const editorLayout = document.querySelector('.editor-layout');
+            const leftSidebar = document.querySelector('.editor-layout > aside:first-of-type');
+            const middlePanel = document.querySelector('.editor-panel.transparent-panel');
+
+            if (showAbilitiesInTvoric) {
+                if (editorLayout) editorLayout.classList.add('expanded-sidebar');
+                if (leftSidebar) leftSidebar.classList.add('expanded-sidebar');
+                if (middlePanel) middlePanel.classList.add('expanded-sidebar');
+            } else {
+                if (editorLayout) editorLayout.classList.remove('expanded-sidebar');
+                if (leftSidebar) leftSidebar.classList.remove('expanded-sidebar');
+                if (middlePanel) middlePanel.classList.remove('expanded-sidebar');
+            }
+            renderSidebar();
+        });
+    }
 
     // Listenery pro meta informace
     if (metaTitleInput) {
@@ -78,9 +102,20 @@ document.addEventListener('DOMContentLoaded', () => {
         btnDownloadJson.addEventListener('click', downloadScriptJson);
     }
 
-    // Filtry & Vyhledávání
-    if (searchInput) searchInput.addEventListener('input', renderSidebar);
-    if (filterCheckboxes) filterCheckboxes.forEach(cb => cb.addEventListener('change', renderSidebar));
+    // Vyhledávání a kategorie v Tvořiči
+    if (searchInput) {
+        searchInput.addEventListener('input', renderSidebar);
+    }
+
+    const creatorCatChips = document.querySelectorAll('#tvoric-category-filters .cat-filter-chip');
+    creatorCatChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            creatorCatChips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            creatorCategoryFilter = chip.dataset.type || 'all';
+            renderSidebar();
+        });
+    });
 
     renderAll();
 });
@@ -92,40 +127,84 @@ function renderAll() {
     updateUrlWithScript();
 }
 
+function normalizeText(str) {
+    if (!str) return '';
+    return String(str)
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim();
+}
+
 // 1. LEVÝ SLOUPEC: Seznam postav k výběru
 function renderSidebar() {
     if (!charListContainer) return;
-    const searchText = searchInput ? searchInput.value.toLowerCase() : '';
-    const activeTypes = Array.from(filterCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
+    const searchText = searchInput ? normalizeText(searchInput.value) : '';
 
     charListContainer.innerHTML = '';
 
     const typeOrder = ['townsfolk', 'outsider', 'minion', 'demon', 'traveller', 'fabled'];
 
     typeOrder.forEach(type => {
-        if (!activeTypes.includes(type)) return;
+        if (creatorCategoryFilter !== 'all' && creatorCategoryFilter !== type) return;
 
-        // ODSTRANĚNÍ DJINNA: Odfiltrujeme Djinna, aby se nezobrazoval v nabídce
-        const rolesOfType = rolesData.filter(r =>
-            r.type === type &&
-            r.keyword !== 'djinn' &&
-            getTranslation(r, 'name').toLowerCase().includes(searchText)
-        );
+        const rolesOfType = rolesData.filter(r => {
+            const rType = (r.type || '').toLowerCase();
+            const rEd = String(r.edition || '').toLowerCase();
+            const kw = (r.keyword || '').toLowerCase();
+            if (rType === 'special' || rEd === 'special' || rEd === '0' || kw === 'djinn' || kw === 'dusk' || kw === 'dawn' || kw === 'demoninfo' || kw === 'minioninfo') {
+                return false;
+            }
+            return rType === type && normalizeText(getTranslation(r, 'name')).includes(searchText);
+        });
 
         if (rolesOfType.length === 0) return;
 
-        rolesOfType.sort((a, b) => getTranslation(a, 'name').localeCompare(getTranslation(b, 'name')));
+        rolesOfType.sort((a, b) => getTranslation(a, 'name').localeCompare(getTranslation(b, 'name'), 'cs'));
 
         rolesOfType.forEach(role => {
             const isActive = activeScriptKeywords.includes(role.keyword);
             const div = document.createElement('div');
-            div.className = `char-item ${isActive ? 'active' : ''}`;
             div.onclick = () => toggleRole(role.keyword);
 
-            div.innerHTML = `
-                <img src="${getIconPath(role)}" onerror="this.src='${iconsPath}default.png'">
-                <span>${getTranslation(role, 'name')}</span>
-            `;
+            const roleName = getTranslation(role, 'name');
+            const abilityText = getTranslation(role, 'ability');
+            const setupReminder = getTranslation(role, 'setup_reminder') || role.setup_reminder_cz || role.setup_reminder_eng || '';
+
+            let fullTooltip = roleName;
+            if (abilityText) {
+                fullTooltip += `: ${abilityText}`;
+                if (setupReminder) {
+                    fullTooltip += ` ${setupReminder}`;
+                }
+            }
+            div.title = fullTooltip;
+
+            if (showAbilitiesInTvoric && abilityText) {
+                let fullAbility = abilityText;
+                if (setupReminder) {
+                    fullAbility += ` ${setupReminder}`;
+                }
+                const romanEdition = (role.edition && typeof getRomanNumeral === 'function') ? getRomanNumeral(role.edition) : '';
+                const editionBadgeHtml = romanEdition ? `<span class="role-edition-badge">${romanEdition}</span>` : '';
+
+                div.className = `char-item has-ability-view ${isActive ? 'active' : ''}`;
+                div.innerHTML = `
+                    ${editionBadgeHtml}
+                    <img src="${getIconPath(role)}" onerror="this.src='${iconsPath}default.png'">
+                    <div class="char-item-content">
+                        <span class="char-item-name">${roleName}</span>
+                        <div class="char-item-ability">${formatText(fullAbility)}</div>
+                    </div>
+                `;
+            } else {
+                div.className = `char-item ${isActive ? 'active' : ''}`;
+                div.innerHTML = `
+                    <img src="${getIconPath(role)}" onerror="this.src='${iconsPath}default.png'">
+                    <span>${roleName}</span>
+                `;
+            }
+
             charListContainer.appendChild(div);
         });
     });
@@ -209,9 +288,13 @@ function renderMiddleEditor() {
                 setupHtml = `<span class="setup-text"> ${getTranslation(role, 'setup_reminder')}</span>`;
             }
 
+            const romanEdition = typeof getRomanNumeral === 'function' ? getRomanNumeral(role.edition) : '';
+            const editionBadgeHtml = romanEdition ? `<span class="role-edition-badge">${romanEdition}</span>` : '';
+
             const card = document.createElement('div');
             card.className = 'editor-role-item';
             card.innerHTML = `
+                ${editionBadgeHtml}
                 <img src="${getIconPath(role)}" class="editor-role-icon" onerror="this.src='${iconsPath}default.png'">
                 <div class="editor-role-text">
                   <span class="editor-role-name">${getTranslation(role, 'name')} ${jinxIconsHtml}</span>
@@ -341,7 +424,30 @@ function updateUrlWithScript() {
 
 function loadScriptFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
+    const fileParam = urlParams.get('file');
     const scriptParam = urlParams.get('script');
+
+    if (fileParam) {
+        fetch(`./../data/saved-scripts/${fileParam}`)
+            .then(res => res.json())
+            .then(parsed => {
+                if (Array.isArray(parsed)) {
+                    if (parsed.length > 0 && typeof parsed[0] === 'object' && parsed[0].id === '_meta') {
+                        scriptMeta.name = parsed[0].name || "";
+                        scriptMeta.author = parsed[0].author || "";
+                        if (metaTitleInput) metaTitleInput.value = scriptMeta.name;
+                        if (metaAuthorInput) metaAuthorInput.value = scriptMeta.author;
+                        activeScriptKeywords = parsed.slice(1);
+                    } else {
+                        activeScriptKeywords = parsed;
+                    }
+                    renderAll();
+                }
+            })
+            .catch(err => console.error("Chyba při načítání souboru skriptu z URL:", err));
+        return;
+    }
+
     if (!scriptParam) return;
 
     try {

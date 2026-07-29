@@ -1,0 +1,38 @@
+[
+  {
+    "id": "_meta",
+    "name": "Potíže Přicházejí",
+    "author": "The Pandemonium Institute",
+    "description": "První ze tří základních skriptů. Ideální skript pro začátečníky a seznámení se s hrou.",
+    "difficulty_storyteller": 1,
+    "difficulty_player": 1,
+    "preview_characters": [
+      "imp",
+      "washerwoman",
+      "empath",
+      "poisoner"
+    ]
+  },
+  "washerwoman",
+  "librarian",
+  "investigator",
+  "chef",
+  "empath",
+  "fortuneteller",
+  "undertaker",
+  "monk",
+  "ravenkeeper",
+  "virgin",
+  "slayer",
+  "soldier",
+  "mayor",
+  "butler",
+  "drunk",
+  "recluse",
+  "saint",
+  "poisoner",
+  "spy",
+  "scarletwoman",
+  "baron",
+  "imp"
+]

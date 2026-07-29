@@ -1,0 +1,41 @@
+[
+  {
+    "id": "_meta",
+    "name": "Sekty & Fialky",
+    "author": "The Pandemonium Institute",
+    "description": "Třetí ze tří základních skriptů, plný šílenství, měnění rolí a zjišťování, zda ve hře není Vortox.",
+    "difficulty_storyteller": 4,
+    "difficulty_player": 4,
+    "preview_characters": [
+      "vortox",
+      "mathematician",
+      "clockmaker",
+      "witch"
+    ]
+  },
+  "clockmaker",
+  "dreamer",
+  "snakecharmer",
+  "mathematician",
+  "flowergirl",
+  "towncrier",
+  "oracle",
+  "savant",
+  "seamstress",
+  "philosopher",
+  "artist",
+  "juggler",
+  "sage",
+  "mutant",
+  "sweetheart",
+  "barber",
+  "klutz",
+  "eviltwin",
+  "witch",
+  "cerenovus",
+  "pithag",
+  "fanggu",
+  "vigormortis",
+  "nodashii",
+  "vortox"
+]
