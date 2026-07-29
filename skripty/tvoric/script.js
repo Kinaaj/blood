@@ -124,7 +124,56 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderAll() {
     renderSidebar();
     renderMiddleEditor();
+    renderScriptValidationBar();
     updateUrlWithScript();
+}
+
+const recommendedCategoryTargets = {
+    townsfolk: { name: 'Měšťanů', target: 13, icon: 'fa-shield-halved' },
+    outsider: { name: 'Outsiderů', target: 4, icon: 'fa-mask' },
+    minion: { name: 'Přisluhovačů', target: 4, icon: 'fa-skull' },
+    demon: { name: 'Démonů', target: 4, icon: 'fa-ghost' }
+};
+
+function renderScriptValidationBar() {
+    const bar = document.getElementById('script-validation-bar');
+    if (!bar) return;
+
+    const warnings = [];
+    Object.keys(recommendedCategoryTargets).forEach(type => {
+        const count = rolesData.filter(r => r.type === type && activeScriptKeywords.includes(r.keyword)).length;
+        const config = recommendedCategoryTargets[type];
+        if (count < config.target) {
+            warnings.push({
+                type: type,
+                name: config.name,
+                count: count,
+                target: config.target,
+                isOver: false,
+                message: `Doporučený počet ${config.name} ve skriptu je ${config.target} (aktuálně: ${count}/${config.target}).`
+            });
+        } else if (count > config.target) {
+            warnings.push({
+                type: type,
+                name: config.name,
+                count: count,
+                target: config.target,
+                isOver: true,
+                message: `Skript obsahuje příliš mnoho ${config.name}! Maximální počet je ${config.target} (aktuálně: ${count}/${config.target}).`
+            });
+        }
+    });
+
+    if (warnings.length === 0) {
+        bar.style.display = 'none';
+        bar.innerHTML = '';
+        return;
+    }
+
+    bar.style.display = 'flex';
+    bar.innerHTML = warnings.map(w => `
+        <i class="fa-solid fa-triangle-exclamation validation-warning-icon-only ${w.isOver ? 'over-limit' : ''}" title="${w.message}"></i>
+    `).join('');
 }
 
 function normalizeText(str) {
@@ -266,9 +315,21 @@ function renderMiddleEditor() {
             hasExtraSectionsStarted = true;
         }
 
+        let headerWarningHtml = '';
+        if (recommendedCategoryTargets[type]) {
+            const config = recommendedCategoryTargets[type];
+            if (count < config.target) {
+                const msg = `Doporučený počet ${config.name} ve skriptu je ${config.target} (aktuálně: ${count}/${config.target}).`;
+                headerWarningHtml = `<i class="fa-solid fa-triangle-exclamation header-warning-icon" title="${msg}"></i>`;
+            } else if (count > config.target) {
+                const msg = `Skript obsahuje příliš mnoho ${config.name}! Maximální počet je ${config.target} (aktuálně: ${count}/${config.target}).`;
+                headerWarningHtml = `<i class="fa-solid fa-triangle-exclamation header-warning-icon over-limit" title="${msg}"></i>`;
+            }
+        }
+
         groupDiv.className = `team-group${extraClass}`;
         groupDiv.dataset.teamType = type; // Důležité pro snadné dohledání sekce Legend
-        groupDiv.innerHTML = `<h3>${getTeamTitle(type)} (${count})</h3>`;
+        groupDiv.innerHTML = `<h3>${getTeamTitle(type)} (${count}) ${headerWarningHtml}</h3>`;
 
         rolesInTeam.forEach(role => {
             let jinxIconsHtml = '';
