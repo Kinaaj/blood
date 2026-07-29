@@ -578,6 +578,10 @@ function createScriptCard(filename, scriptData) {
   const editorUrl = `./tvoric/?file=${encodeURIComponent(filename)}`;
 
   cardElement.innerHTML = `
+    <div class="card-detail-badge" title="Kliknutím zobrazíš detail skriptu">
+      <i class="fa-solid fa-expand icon-normal"></i>
+      <i class="fa-solid fa-eye icon-hover"></i>
+    </div>
     <div class="script-card-top">
       <div class="script-card-header">
         <h3 class="script-title">${escapeHtml(meta.name)}</h3>

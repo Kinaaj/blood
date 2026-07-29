@@ -58,6 +58,55 @@
   box-shadow: 0 10px 24px rgba(155, 89, 182, 0.3);
 }
 
+/* ABSOLUTNÍ IKONA V PRAVÉM HORNÍM ROHU KARTY (REAKCE NA HOVER) */
+.card-detail-badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(20, 20, 28, 0.75);
+  border: 1px solid rgba(192, 132, 252, 0.35);
+  border-radius: 50%;
+  color: #c084fc;
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.script-card:hover .card-detail-badge {
+  background: rgba(168, 85, 247, 0.45);
+  border-color: #e9d5ff;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(192, 132, 252, 0.85);
+  transform: scale(1.15);
+}
+
+.card-detail-badge .icon-normal {
+  display: inline-block;
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+}
+
+.card-detail-badge .icon-hover {
+  display: none;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.script-card:hover .card-detail-badge .icon-normal {
+  display: none;
+}
+
+.script-card:hover .card-detail-badge .icon-hover {
+  display: inline-block;
+}
+
 .script-card-top {
   display: flex;
   flex-direction: column;
