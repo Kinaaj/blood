@@ -207,11 +207,9 @@ button:focus-visible {
   }
 
   .map-link:hover {
-    background-color: var(--accent-color);
-    box-shadow: 0 0 30px var(--accent-glow);
-    transform: scale(1.05);
-    /* Přidán filter pro efekt zesvětlení při najetí */
-    filter: brightness(1.2);
+    background-color: #9333ea;
+    border-color: #e9d5ff;
+    box-shadow: 0 4px 16px rgba(168, 85, 247, 0.4);
   }
 
   /* Zde aplikována úprava názvu třídy karty */
@@ -321,18 +319,19 @@ main a:not(.map-link):not(.portal-card):active {
 
 .map-link {
   display: inline-block;
-  background-color: var(--accent-color);
+  background-color: #7e22ce;
   color: white !important;
-  padding: 12px 30px;
+  padding: 10px 24px;
   text-decoration: none;
   border-radius: 30px;
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-top: 15px;
-  transition: all 0.2s;
-  border: none;
-  text-shadow: 1px 1px 2px #000;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #c084fc;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
   user-select: none;
+  box-shadow: 0 4px 12px rgba(126, 34, 206, 0.35);
 }
 
 /* Aktivní stav pro mapová tlačítka na mobilu */
@@ -483,26 +482,25 @@ footer {
   position: fixed;
   top: 20px;
   left: 20px;
-  color: var(--text-color);
+  color: #ffffff;
   text-decoration: none;
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  background-color: rgba(22, 22, 22, 0.9);
-  padding: 8px 18px;
+  font-family: var(--font-heading, "New Rocker", serif);
+  font-size: 1.15rem;
+  background: linear-gradient(135deg, #9b59b6, #7e22ce);
+  padding: 8px 20px;
   border-radius: 30px;
-  border: 1px solid #333;
-  transition: all 0.2s;
+  border: 1px solid #c084fc;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(126, 34, 206, 0.4);
 }
 
 .back-btn:hover {
-  background-color: var(--accent-color);
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--accent-glow);
-  border-color: transparent;
+  background: linear-gradient(135deg, #a855f7, #6b21a8);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.55);
+  border-color: #e9d5ff;
 }
 
 /* Úprava pro mobily */
@@ -673,14 +671,19 @@ footer {
   padding: 10px 25px;
   border-radius: 30px;
   font-family: var(--font-heading);
-  font-size: 1.4rem;
-  text-shadow: 1px 1px 2px #000 !important;
-  transition: all 0.2s;
+  font-size: 1.3rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+  background: linear-gradient(135deg, #9b59b6, #7e22ce);
+  border: 1px solid #c084fc;
+  box-shadow: 0 4px 15px rgba(126, 34, 206, 0.4);
+  transition: all 0.25s ease;
   cursor: pointer;
 }
 
 .card-btn:hover {
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #a855f7, #6b21a8);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.55);
+  border-color: #e9d5ff;
 }
 
 /* --- TÉMA KARTY ZELENÁ --- */
@@ -1341,27 +1344,25 @@ footer {
   position: fixed;
   top: 20px;
   right: 20px;
-  /* Přilepení doprava */
-  color: var(--text-color);
+  color: #ffffff;
   text-decoration: none;
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  background-color: rgba(22, 22, 22, 0.9);
-  padding: 8px 18px;
+  font-family: var(--font-heading, "New Rocker", serif);
+  font-size: 1.15rem;
+  background: linear-gradient(135deg, #9b59b6, #7e22ce);
+  padding: 8px 20px;
   border-radius: 30px;
-  border: 1px solid #333;
-  transition: all 0.2s;
+  border: 1px solid #c084fc;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(126, 34, 206, 0.4);
 }
 
 .next-btn:hover {
-  background-color: var(--accent-color);
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--accent-glow);
-  border-color: transparent;
+  background: linear-gradient(135deg, #a855f7, #6b21a8);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.55);
+  border-color: #e9d5ff;
 }
 
 /* Úprava pro mobily */
