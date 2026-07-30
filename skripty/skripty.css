@@ -1962,4 +1962,51 @@
   .modal-role-card.selected:hover {
     background: rgba(155, 89, 182, 0.28) !important;
   }
+
+  /* VÝHRADNĚ NA MOBILU SE NENECHÁVÁ PROHAZOVAT IKONA OKA - POUZE TRVALÁ IKONA ZVĚTŠENÍ BEZ HOVERU */
+  .card-detail-badge .icon-hover,
+  .script-card:hover .card-detail-badge .icon-hover {
+    display: none !important;
+  }
+
+  .card-detail-badge .icon-normal,
+  .script-card:hover .card-detail-badge .icon-normal {
+    display: inline-block !important;
+  }
+
+  .script-card:hover .card-detail-badge {
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+    background: rgba(20, 20, 28, 0.75) !important;
+  }
+
+  /* VÝHRADNĚ NA MOBILU VYPNEME HOVER EFEKTY PRO TLAČÍTKA EDITOVAT A JSON */
+  .action-btn,
+  .action-btn:hover,
+  .action-btn:active,
+  .action-btn:focus {
+    transform: none !important;
+    transition: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .action-btn.primary,
+  .action-btn.primary:hover,
+  .action-btn.primary:active,
+  .action-btn.primary:focus {
+    background: linear-gradient(135deg, #9b59b6, #7e22ce) !important;
+    border-color: #c084fc !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(126, 34, 206, 0.4) !important;
+  }
+
+  .action-btn.secondary,
+  .action-btn.secondary:hover,
+  .action-btn.secondary:active,
+  .action-btn.secondary:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #ddd !important;
+    box-shadow: none !important;
+  }
 }

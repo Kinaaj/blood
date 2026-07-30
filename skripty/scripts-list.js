@@ -383,7 +383,7 @@ function renderModalRolesList() {
     const isSelected = selectedRoleKeywords.has(kw);
     const iconSrc = getRoleIconPath(role);
     const name = role.name_cz || role.name_eng || role.keyword;
-    
+
     let ability = role.ability_cz || role.ability_eng || '';
     const setupReminder = role.setup_reminder_cz || role.setup_reminder_eng || '';
     if (setupReminder) {
@@ -488,7 +488,7 @@ function applyFiltersAndRender() {
 
   const nameInput = document.getElementById('filter-name-input');
   const authorInput = document.getElementById('filter-author-input');
-  
+
   const nameQuery = nameInput ? normalizeText(nameInput.value) : '';
   const authorQuery = authorInput ? normalizeText(authorInput.value) : '';
 
@@ -668,7 +668,7 @@ function createScriptCard(filename, scriptData) {
     if (!scrollContainer || !prevBtn || !nextBtn) return;
     const sLeft = scrollContainer.scrollLeft;
     const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-    
+
     if (sLeft > 2) {
       scrollContainer.classList.add('has-prev');
       prevBtn.style.opacity = '1';

@@ -1725,31 +1725,58 @@ footer {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   }
 
-  /* VYPNUTÍ STICKY HOVER A POSUNŮ TLAČÍTEK NA MOBILU */
+  /* VYPNUTÍ VŠECH HOVER EFEKTŮ, POHYBŮ A BAREVNÝCH PROBLIKÁNÍ NA MOBILU PRO KARTY A HLAVNÍ TLAČÍTKA */
   *,
   button,
   .btn,
   .back-btn,
-  .next-btn {
+  .next-btn,
+  .portal-card {
     -webkit-tap-highlight-color: transparent !important;
   }
 
-  button:hover,
-  .btn:hover,
+  .back-btn,
   .back-btn:hover,
+  .back-btn:active,
+  .back-btn:focus,
+  .next-btn,
   .next-btn:hover,
+  .next-btn:active,
+  .next-btn:focus {
+    transform: none !important;
+    background: rgba(126, 34, 206, 0.88) !important;
+    border-color: #c084fc !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .portal-card,
   .portal-card:hover,
+  .portal-card:active,
+  .portal-card:focus,
+  .portal-card.theme-purple,
   .portal-card.theme-purple:hover,
+  .portal-card.theme-purple:active,
+  .portal-card.theme-purple:focus,
   .portal-card.theme-green:hover,
   .portal-card.theme-red:hover,
   .portal-card.split-portal-card:hover,
   .split-card-half:hover {
     transform: none !important;
-    box-shadow: none !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+    background: var(--card-bg, #1a1a24) !important;
+    border-left-color: var(--theme-purple) !important;
   }
 
   .portal-card:hover .card-image,
+  .portal-card:active .card-image,
   .portal-card.disabled:hover .card-image {
     transform: none !important;
+  }
+
+  .portal-card:hover .card-title,
+  .portal-card:active .card-title,
+  .portal-card:focus .card-title {
+    color: #ffffff !important;
   }
 }

@@ -1853,8 +1853,12 @@ main.editor-main {
         border-color: rgba(255, 255, 255, 0.25);
     }
 
-    /* KŘÍŽEK PRO ODEBRÁNÍ ROLE JE NA MOBILU VŽDY VIDITELNÝ */
-    .editor-role-remove {
+    /* KŘÍŽEK PRO ODEBRÁNÍ ROLE JE NA MOBILU VŽDY POLOPRŮHLEDNÝ ČERVENÝ BEZ MĚNĚNÍ BARVY A BEZ SCALE POSUNU */
+    .editor-role-remove,
+    .editor-role-remove:hover,
+    .editor-role-remove:active,
+    .editor-role-remove:focus,
+    .editor-role-item:hover .editor-role-remove {
         opacity: 1 !important;
         visibility: visible !important;
         display: flex !important;
@@ -1862,6 +1866,13 @@ main.editor-main {
         width: 32px !important;
         height: 32px !important;
         font-size: 1rem !important;
+        background: rgba(197, 0, 0, 0.1) !important;
+        color: var(--theme-red, #ef4444) !important;
+        border: 1px solid var(--theme-red, #ef4444) !important;
+        transform: none !important;
+        transition: none !important;
+        box-shadow: none !important;
+        -webkit-tap-highlight-color: transparent !important;
     }
 
     /* KOMPAKTNÍ HORIZONTÁLNÍ FILTRY KATEGORIÍ (JEDEN NÍZKÝ ŘÁDEK) */
