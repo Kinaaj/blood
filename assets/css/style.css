@@ -1382,11 +1382,21 @@ footer {
     gap: 20px;
   }
 
-  /* Volitelný trik: Pokud chceš, aby byl na mobilu obrázek NAD textem,
-     odkomentuj tento řádek: */
-  /*
-  .split-image { order: -1; }
-  */
+  /* Obrázek zaujme plnou šířku a je zobrazen pod textem */
+  .split-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .split-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 380px;
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 /* =========================================
