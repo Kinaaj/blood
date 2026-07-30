@@ -191,9 +191,31 @@ function renderScriptValidationBar() {
 
     bar.style.display = 'flex';
     bar.innerHTML = warnings.map(w => `
-        <i class="fa-solid fa-triangle-exclamation validation-warning-icon-only ${w.isOver ? 'over-limit' : ''}" title="${w.message}"></i>
+        <div class="validation-warning-item" onclick="toggleValidationBubble(event, this)">
+            <i class="fa-solid fa-triangle-exclamation validation-warning-icon-only ${w.isOver ? 'over-limit' : ''}" title="${escapeHtml(w.message)}"></i>
+            <div class="validation-bubble">${escapeHtml(w.message)}</div>
+        </div>
     `).join('');
 }
+
+function toggleValidationBubble(event, el) {
+    if (event) event.stopPropagation();
+    const bubble = el ? el.querySelector('.validation-bubble') : null;
+    if (!bubble) return;
+
+    const isActive = bubble.classList.contains('active');
+    document.querySelectorAll('.validation-bubble.active').forEach(b => b.classList.remove('active'));
+
+    if (!isActive) {
+        bubble.classList.add('active');
+    }
+}
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.validation-warning-item')) {
+        document.querySelectorAll('.validation-bubble.active').forEach(b => b.classList.remove('active'));
+    }
+});
 
 function normalizeText(str) {
     if (!str) return '';
