@@ -50,26 +50,35 @@
           <div class="filter-group search-input-group">
             <i class="fa-solid fa-scroll search-icon"></i>
             <input type="text" id="filter-name-input" placeholder="Hledat podle názvu..." autocomplete="off" />
-            <button id="clear-name-btn" class="clear-search-btn" style="display:none;" title="Vymazat název">&times;</button>
+            <button id="clear-name-btn" class="clear-search-btn" style="display:none;"
+              title="Vymazat název">&times;</button>
           </div>
 
           <!-- Vyhledávání podle autora -->
           <div class="filter-group search-input-group">
             <i class="fa-solid fa-feather-pointed search-icon"></i>
             <input type="text" id="filter-author-input" placeholder="Hledat podle autora..." autocomplete="off" />
-            <button id="clear-author-btn" class="clear-search-btn" style="display:none;" title="Vymazat autora">&times;</button>
+            <button id="clear-author-btn" class="clear-search-btn" style="display:none;"
+              title="Vymazat autora">&times;</button>
           </div>
 
-          <!-- Tlačítko pro otevírání okna s postavami -->
-          <button id="toggle-role-modal-btn" class="filter-btn primary-filter">
-            <i class="fa-solid fa-users"></i> Vybrat postavy 
-            <span id="selected-roles-badge" class="filter-badge" style="display:none;">0</span>
-          </button>
+          <div class="filter-action-row">
+            <!-- Tlačítko pro otevírání okna s postavami -->
+            <button id="toggle-role-modal-btn" class="filter-btn primary-filter">
+              <i class="fa-solid fa-users"></i> Vybrat postavy
+              <span id="selected-roles-badge" class="filter-badge" style="display:none;">0</span>
+            </button>
 
-          <!-- Reset filtrů -->
-          <button id="reset-filters-btn" class="filter-btn reset-filter" title="Vynulovat všechny filtry">
-            <i class="fa-solid fa-rotate-left"></i> Reset
-          </button>
+            <!-- Tlačítko pro přepínání zobrazení skriptů -->
+            <button id="toggle-compact-scripts-btn" class="filter-btn toggle-compact-filter" title="Přepnout na kompaktní zobrazení">
+              <i class="fa-solid fa-list-ul"></i> Kompaktní
+            </button>
+
+            <!-- Reset filtrů -->
+            <button id="reset-filters-btn" class="filter-btn reset-filter" title="Vynulovat všechny filtry">
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </button>
+          </div>
         </div>
 
         <!-- Obtížnosti ve 2 řádcích pod sebou s oboustrannými posuvníky -->
@@ -154,7 +163,8 @@
         </div>
 
         <div class="role-modal-footer">
-          <button id="clear-selected-roles-btn" class="drawer-secondary-btn"><i class="fa-solid fa-rotate-left"></i> Vymazat výběr</button>
+          <button id="clear-selected-roles-btn" class="drawer-secondary-btn"><i class="fa-solid fa-rotate-left"></i>
+            Vymazat výběr</button>
           <button id="apply-role-modal-btn" class="drawer-primary-btn"><i class="fa-solid fa-check"></i> Zavřít</button>
         </div>
       </div>
@@ -168,7 +178,7 @@
     </p>
   </footer>
 
-  <script src="./data.js"></script>
+  <script src="./data/roles_data.js"></script>
   <script src="./scripts-list.js"></script>
 </body>
 

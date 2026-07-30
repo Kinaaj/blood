@@ -1644,7 +1644,7 @@ var rolesData = [
         "keyword": "fanggu",
         "type": "demon",
         "edition": "3",
-        "ability_cz": "Každou noc* si vyber hráče: ten zemře. První Outsider, kterého takto zabiješ, se stane zlým Fang Gu a zemřeš místo něj. [+1 Outsider]",
+        "ability_cz": "Každou noc* si vyber hráče: ten zemře. První Outsider, kterého takto zabiješ, se stane zlým Fang Gu a zemřeš místo něj.",
         "ability_eng": "Each night*, choose a player: they die. The 1st Outsider this kills becomes an evil Fang Gu & you die instead.",
         "setup": true,
         "setup_reminder_eng": "[+1 Outsider]",
@@ -1686,7 +1686,7 @@ var rolesData = [
         "keyword": "vigormortis",
         "type": "demon",
         "edition": "3",
-        "ability_cz": "Každou noc* si vyber hráče: ten zemře. Přisluhovači, které zabiješ, si ponechají svou schopnost a otráví 1 souseda Měšťana. [-1 Outsider]",
+        "ability_cz": "Každou noc* si vyber hráče: ten zemře. Přisluhovači, které zabiješ, si ponechají svou schopnost a otráví 1 souseda Měšťana.",
         "ability_eng": "Each night*, choose a player: they die. Minions you kill keep their ability & poison 1 Townsfolk neighbor.",
         "setup": true,
         "setup_reminder_eng": "[-1 Outsider]",
@@ -4936,25 +4936,3 @@ var jinxData = [
         "description_cz": ""
     }
 ];
-
-function getRomanNumeral(edition) {
-    if (!edition) return '';
-    const num = parseInt(edition, 10);
-    if (isNaN(num) || num <= 0) return '';
-    const romanMap = [
-        { val: 10, sym: 'X' },
-        { val: 9, sym: 'IX' },
-        { val: 5, sym: 'V' },
-        { val: 4, sym: 'IV' },
-        { val: 1, sym: 'I' }
-    ];
-    let n = num;
-    let res = '';
-    for (const item of romanMap) {
-        while (n >= item.val) {
-            res += item.sym;
-            n -= item.val;
-        }
-    }
-    return res;
-}

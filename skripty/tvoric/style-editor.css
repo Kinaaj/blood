@@ -455,17 +455,26 @@ main.editor-main {
     user-select: none;
 }
 
+/* ODZNAČEK EDICE U POLOŽEK V PROSTŘEDNÍM EDITORU SKRIPTU (VĚTŠÍ A NÍŽE) */
+.editor-role-item .role-edition-badge {
+    top: 10px !important;
+    left: 10px !important;
+    font-size: 0.95rem !important;
+    -webkit-text-stroke: 1px #ffffff !important;
+    z-index: 12 !important;
+}
+
 /* PLAVOUCÍ LIŠTA VAROVÁNÍ (VE VZDUCHU VPRÁVO NAHOŘE) */
 .script-validation-bar {
     position: fixed;
-    top: 18px;
-    right: 25px;
+    top: 8px;
+    right: 20px;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 6px 14px;
+    padding: 5px 12px;
     background: rgba(18, 18, 24, 0.85);
     border: 1px solid rgba(192, 132, 252, 0.35);
     border-radius: 20px;
@@ -551,6 +560,9 @@ main.editor-main {
     display: flex;
     gap: 12px;
     margin-bottom: 20px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .script-meta-inputs input {
@@ -561,7 +573,10 @@ main.editor-main {
     border-radius: 6px;
     font-family: var(--font-heading);
     font-size: 1.15rem;
-    /* ~85% z 1.4rem */
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .script-meta-inputs input:focus {
@@ -570,11 +585,26 @@ main.editor-main {
 }
 
 .script-meta-inputs input#meta-title {
-    flex: 2;
+    flex: 2 1 0%;
+    min-width: 0 !important;
 }
 
 .script-meta-inputs input#meta-author {
-    flex: 1;
+    flex: 1 1 0%;
+    min-width: 0 !important;
+}
+
+@media (max-width: 650px) {
+    .script-meta-inputs {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .script-meta-inputs input#meta-title,
+    .script-meta-inputs input#meta-author {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
 }
 
 /* Dva sloupce pro postavy */
@@ -1515,4 +1545,220 @@ main.editor-main {
 .editor-role-ability,
 .editor-role-ability * {
     font-family: 'Roboto', var(--font-body), sans-serif !important;
+}
+
+/* ==========================================================================
+   MOBILNÍ RESPONSIVITA PRO TVOŘIČ SKRIPTŮ (max-width: 900px)
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .editor-layout {
+    padding: 0 10px !important;
+  }
+
+  .script-validation-bar {
+    top: 8px !important;
+    right: 12px !important;
+    z-index: 1002 !important;
+    padding: 4px 10px !important;
+  }
+
+  /* Přepsání desktopových rozšířených sloupců pro mobil */
+  .editor-layout > aside:first-of-type.expanded-sidebar,
+  .editor-panel.transparent-panel.expanded-sidebar {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Prostřední sloupec zabírá plnou šířku bez bočních mezer */
+  .editor-panel.transparent-panel {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-top: 50px !important;
+    padding-bottom: 60px !important;
+    min-height: auto !important;
+  }
+
+  /* HLAVIČKA ZÁSUVKY NA MOBILU */
+  .mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+    flex-shrink: 0;
+  }
+
+  .mobile-drawer-header h3 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0;
+    font-family: 'New Rocker', serif;
+  }
+
+  .drawer-close-btn {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 16px;
+    font-size: 0.84rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  /* POSTRANNÍ PANELY JAKO MODÁLNÍ VÝSUVNÉ ZÁSUVKY ZAKOTVENÉ SHORA */
+  .editor-layout > aside:first-of-type,
+  .editor-settings {
+    position: fixed !important;
+    top: 100% !important;
+    bottom: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: calc(100vh - 25px) !important;
+    max-height: calc(100vh - 25px) !important;
+    z-index: 2000 !important;
+    border-radius: 20px 20px 0 0 !important;
+    background: rgba(22, 22, 28, 0.98) !important;
+    border: 1px solid rgba(155, 89, 182, 0.4) !important;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.9) !important;
+    padding: 14px 14px 18px 14px !important;
+    transition: top 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* OTEVŘENÁ ZÁSUVKA ZAKOTVENÁ OD TOP: 25px */
+  .editor-layout > aside.mobile-drawer-open,
+  .editor-settings.mobile-drawer-open {
+    top: 25px !important;
+  }
+
+  /* POUZE VZNIKLÝ SEZNAM POSTAV ROLUJE VERTIKÁLNĚ */
+  .sidebar-char-list {
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    max-height: none !important;
+    height: auto !important;
+    padding-right: 4px;
+  }
+
+  /* TEMNÉ POZADÍ PŘI OTEVŘENÉ ZÁSUVCE */
+  .mobile-drawer-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .mobile-drawer-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* HORNÍ LIŠTA TLAČÍTEK NA MOBILU */
+  .tvoric-top-toolbar {
+    display: flex !important;
+    gap: 10px !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+  }
+
+  .tvoric-top-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .tvoric-top-btn.primary {
+    background: linear-gradient(135deg, #9b59b6, #7e22ce);
+    color: #fff;
+    border-color: #c084fc;
+    box-shadow: 0 4px 14px rgba(126, 34, 206, 0.4);
+  }
+
+  .tvoric-top-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #eee;
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  /* KŘÍŽEK PRO ODEBRÁNÍ ROLE JE NA MOBILU VŽDY VIDITELNÝ */
+  .editor-role-remove {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    pointer-events: auto !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1rem !important;
+  }
+
+  /* KOMPAKTNÍ HORIZONTÁLNÍ FILTRY KATEGORIÍ (JEDEN NÍZKÝ ŘÁDEK) */
+  .creator-categories {
+    display: flex !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    flex-wrap: nowrap !important;
+    padding: 2px 0 6px 0 !important;
+    gap: 6px !important;
+    margin-bottom: 4px !important;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    flex-shrink: 0 !important;
+  }
+
+  .creator-categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .creator-categories .cat-filter-chip {
+    flex-shrink: 0 !important;
+    width: auto !important;
+    padding: 4px 10px !important;
+    font-size: 0.78rem !important;
+    border-radius: 14px !important;
+  }
+
+  .search-box,
+  .abilities-toggle-bar {
+    flex-shrink: 0 !important;
+  }
+
+  .section-nav {
+    display: none !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-drawer-header,
+  .tvoric-top-toolbar,
+  .mobile-drawer-backdrop {
+    display: none !important;
+  }
 }

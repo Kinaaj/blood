@@ -41,6 +41,11 @@
             <!-- Změna: Přidána třída "sticky-panel" -->
             <aside class="editor-panel sticky-panel">
 
+                <div class="mobile-drawer-header">
+                    <h3><i class="fa-solid fa-users"></i> Výběr postav</h3>
+                    <button id="close-chars-drawer-btn" class="drawer-close-btn" type="button">&times; Hotovo</button>
+                </div>
+
                 <div class="search-box">
                     <input type="text" id="search-char" placeholder="Hledat postavu..." autocomplete="off" />
                 </div>
@@ -71,7 +76,16 @@
 
             <!-- PROSTŘEDNÍ SLOUPEC: Živý Editor -->
             <section class="editor-panel transparent-panel">
-                <!-- Zbytek zůstává stejný... -->
+                <!-- HORNÍ AKČNÍ LIŠTA PRO MOBILY A MENTÁLNÍ NAVIGACI -->
+                <div class="tvoric-top-toolbar">
+                    <button id="mobile-toggle-chars-btn" class="tvoric-top-btn primary" type="button">
+                        <i class="fa-solid fa-user-plus"></i> Výběr & Filtr postav
+                    </button>
+                    <button id="mobile-toggle-tools-btn" class="tvoric-top-btn secondary" type="button">
+                        <i class="fa-solid fa-sliders"></i> Nástroje & Tisk
+                    </button>
+                </div>
+
                 <div class="script-meta-inputs">
                     <input type="text" id="meta-title" placeholder="Název Skriptu" value="" />
                     <input type="text" id="meta-author" placeholder="Autor" value="" />
@@ -87,6 +101,11 @@
 
             <!-- PRAVÝ SLOUPEC: Možnosti & Tisk -->
             <aside class="editor-panel editor-settings sticky-panel">
+                <div class="mobile-drawer-header">
+                    <h3><i class="fa-solid fa-sliders"></i> Nástroje & Tisk</h3>
+                    <button id="close-tools-drawer-btn" class="drawer-close-btn" type="button">&times; Zavřít</button>
+                </div>
+
                 <h2>Nástroje</h2>
                 <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
                     <button id="btn-clear" class="action-btn secondary"><i class="fa-solid fa-trash"></i> Smazat
@@ -123,10 +142,12 @@
 
         </div>
     </main>
+
+    <div id="mobile-drawer-backdrop" class="mobile-drawer-backdrop"></div>
     <!-- SKRYTÁ TISKOVÁ PLOCHA PRO A4 TISK (plní se dynamicky při kliknutí na tisk) -->
     <main id="print-area"></main>
-    <!-- Správně nasměrovaná data.js z data/ složky o úroveň výš -->
-    <script src="./../data.js"></script>
+    <!-- Správně nasměrovaná roles_data.js z data/ složky o úroveň výš -->
+    <script src="./../data/roles_data.js"></script>
     <script src="script.js"></script>
 </body>
 

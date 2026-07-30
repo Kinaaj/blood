@@ -22,6 +22,24 @@ function normalizeText(str) {
     .trim();
 }
 
+function getRomanNumeral(num) {
+  if (!num && num !== 0) return '';
+  const val = parseInt(num, 10);
+  if (isNaN(val)) return String(num);
+  const romanMap = [
+    [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']
+  ];
+  let result = '';
+  let n = val;
+  for (const [v, r] of romanMap) {
+    while (n >= v) {
+      result += r;
+      n -= v;
+    }
+  }
+  return result || String(num);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loadAllScripts();
 });
@@ -115,6 +133,29 @@ function initFilterEventListeners() {
 
   bindInput(nameInput, clearNameBtn);
   bindInput(authorInput, clearAuthorBtn);
+
+  const toggleCompactBtn = document.getElementById('toggle-compact-scripts-btn');
+  let isCompactView = false;
+
+  if (toggleCompactBtn) {
+    toggleCompactBtn.addEventListener('click', () => {
+      isCompactView = !isCompactView;
+      const container = document.getElementById('scripts-grid-container');
+      if (container) {
+        if (isCompactView) {
+          container.classList.add('compact-scripts-view');
+          toggleCompactBtn.classList.add('active');
+          toggleCompactBtn.innerHTML = `<i class="fa-solid fa-grip"></i> Karty`;
+          toggleCompactBtn.title = "Přepnout na detailní zobrazení karet";
+        } else {
+          container.classList.remove('compact-scripts-view');
+          toggleCompactBtn.classList.remove('active');
+          toggleCompactBtn.innerHTML = `<i class="fa-solid fa-list-ul"></i> Kompaktní`;
+          toggleCompactBtn.title = "Přepnout na kompaktní zobrazení";
+        }
+      }
+    });
+  }
 
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
@@ -544,12 +585,7 @@ function createScriptCard(filename, scriptData) {
 
   let displayKeywords = [];
   if (meta.preview_characters && Array.isArray(meta.preview_characters) && meta.preview_characters.length > 0) {
-    displayKeywords = [...meta.preview_characters];
-    characterKeywords.forEach(kw => {
-      if (!displayKeywords.includes(kw)) {
-        displayKeywords.push(kw);
-      }
-    });
+    displayKeywords = meta.preview_characters;
   } else {
     displayKeywords = characterKeywords;
   }
@@ -605,11 +641,11 @@ function createScriptCard(filename, scriptData) {
       </div>
       <div class="script-difficulties">
         <div class="difficulty-row">
-          <span class="difficulty-label"><i class="fa-solid fa-book-open-reader"></i> Obtížnost pro vypravěče:</span>
+          <span class="difficulty-label"><i class="fa-solid fa-book-open-reader"></i> <span class="diff-prefix">Obtížnost pro </span><span class="diff-name-full">vypravěče:</span><span class="diff-name-compact">Vypravěč:</span></span>
           ${storytellerDiffHtml}
         </div>
         <div class="difficulty-row">
-          <span class="difficulty-label"><i class="fa-solid fa-gamepad"></i> Obtížnost pro hráče:</span>
+          <span class="difficulty-label"><i class="fa-solid fa-gamepad"></i> <span class="diff-prefix">Obtížnost pro </span><span class="diff-name-full">hráče:</span><span class="diff-name-compact">Hráči:</span></span>
           ${playerDiffHtml}
         </div>
       </div>

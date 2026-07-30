@@ -3,6 +3,24 @@
 let currentLang = 'cz';
 const iconsPath = './../data/icons/';
 
+function getRomanNumeral(num) {
+    if (!num && num !== 0) return '';
+    const val = parseInt(num, 10);
+    if (isNaN(val)) return String(num);
+    const romanMap = [
+        [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']
+    ];
+    let result = '';
+    let n = val;
+    for (const [v, r] of romanMap) {
+        while (n >= v) {
+            result += r;
+            n -= v;
+        }
+    }
+    return result || String(num);
+}
+
 // Stav aplikace
 let activeScriptKeywords = []; // Výchozí postavy
 let scriptMeta = { name: "", author: "" };
@@ -27,6 +45,7 @@ let creatorCategoryFilter = 'all';
 // --- INICIALIZACE ---
 document.addEventListener('DOMContentLoaded', () => {
     loadScriptFromUrl();
+    initMobileDrawers();
 
     const toggleAbilitiesBtn = document.getElementById('toggle-show-abilities-tvoric');
     if (toggleAbilitiesBtn) {
@@ -229,13 +248,14 @@ function renderSidebar() {
             }
             div.title = fullTooltip;
 
+            const romanEdition = role.edition ? getRomanNumeral(role.edition) : '';
+            const editionBadgeHtml = romanEdition ? `<span class="role-edition-badge">${romanEdition}</span>` : '';
+
             if (showAbilitiesInTvoric && abilityText) {
                 let fullAbility = abilityText;
                 if (setupReminder) {
                     fullAbility += ` ${setupReminder}`;
                 }
-                const romanEdition = (role.edition && typeof getRomanNumeral === 'function') ? getRomanNumeral(role.edition) : '';
-                const editionBadgeHtml = romanEdition ? `<span class="role-edition-badge">${romanEdition}</span>` : '';
 
                 div.className = `char-item has-ability-view ${isActive ? 'active' : ''}`;
                 div.innerHTML = `
@@ -249,6 +269,7 @@ function renderSidebar() {
             } else {
                 div.className = `char-item ${isActive ? 'active' : ''}`;
                 div.innerHTML = `
+                    ${editionBadgeHtml}
                     <img src="${getIconPath(role)}" onerror="this.src='${iconsPath}default.png'">
                     <span>${roleName}</span>
                 `;
@@ -912,4 +933,50 @@ function uploadScriptJson(event) {
     };
 
     reader.readAsText(file);
+}
+
+// --- OBSLUHA MOBILNÍCH ZÁSUVEK (DRAWERS) ---
+function initMobileDrawers() {
+    const charsBtn = document.getElementById('mobile-toggle-chars-btn');
+    const toolsBtn = document.getElementById('mobile-toggle-tools-btn');
+    const closeCharsBtn = document.getElementById('close-chars-drawer-btn');
+    const closeToolsBtn = document.getElementById('close-tools-drawer-btn');
+    const backdrop = document.getElementById('mobile-drawer-backdrop');
+
+    const charsDrawer = document.querySelector('.editor-layout > aside:first-of-type');
+    const toolsDrawer = document.querySelector('aside.editor-settings');
+
+    function openDrawer(drawer) {
+        closeAllDrawers();
+        if (drawer) {
+            drawer.classList.add('mobile-drawer-open');
+        }
+        if (backdrop) {
+            backdrop.classList.add('active');
+        }
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeAllDrawers() {
+        if (charsDrawer) charsDrawer.classList.remove('mobile-drawer-open');
+        if (toolsDrawer) toolsDrawer.classList.remove('mobile-drawer-open');
+        if (backdrop) backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (charsBtn) {
+        charsBtn.addEventListener('click', () => openDrawer(charsDrawer));
+    }
+    if (toolsBtn) {
+        toolsBtn.addEventListener('click', () => openDrawer(toolsDrawer));
+    }
+    if (closeCharsBtn) {
+        closeCharsBtn.addEventListener('click', closeAllDrawers);
+    }
+    if (closeToolsBtn) {
+        closeToolsBtn.addEventListener('click', closeAllDrawers);
+    }
+    if (backdrop) {
+        backdrop.addEventListener('click', closeAllDrawers);
+    }
 }

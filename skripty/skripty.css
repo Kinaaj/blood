@@ -50,6 +50,10 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   height: 100%;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
 }
 
 .script-card:hover {
@@ -157,7 +161,7 @@
   margin-top: auto;
 }
 
-/* Náhled a listování postavami na kartě */
+/* Náhled a listování postavami na kartě (vycentrované) */
 .script-preview-section {
   position: relative;
   background: rgba(0, 0, 0, 0.4);
@@ -167,19 +171,28 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
 }
 
 .preview-chars-scroll-container {
   display: flex;
   gap: 8px;
   align-items: center;
-  overflow-x: auto;
+  justify-content: center;
+  overflow-x: auto !important;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: 4px 24px 4px 6px;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 4px 24px;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
   transition: padding-left 0.2s ease;
 }
 
@@ -755,6 +768,26 @@
   line-height: 1;
 }
 
+.filter-btn.toggle-compact-filter {
+  background: rgba(155, 89, 182, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+}
+
+.filter-btn.toggle-compact-filter:hover {
+  background: rgba(155, 89, 182, 0.3);
+  color: #fff;
+  border-color: #c084fc;
+  box-shadow: 0 0 12px rgba(192, 132, 252, 0.4);
+}
+
+.filter-btn.toggle-compact-filter.active {
+  background: linear-gradient(135deg, #9b59b6, #7e22ce);
+  color: #ffffff;
+  border-color: #e9d5ff;
+  box-shadow: 0 0 14px rgba(192, 132, 252, 0.6);
+}
+
 .filter-btn.reset-filter {
   background: rgba(255, 255, 255, 0.08);
   color: #ccc;
@@ -765,6 +798,124 @@
   background: rgba(239, 68, 68, 0.2);
   color: #f87171;
   border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* ==========================================================================
+   KOMPAKTNÍ REŽIM ZOBRAZENÍ SKRIPTŮ (SEZNAM / HUSTÝ LIST)
+   ========================================================================== */
+
+.scripts-grid.compact-scripts-view {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.scripts-grid.compact-scripts-view .script-card {
+  padding: 12px 16px !important;
+  height: auto !important;
+  min-height: 56px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.scripts-grid.compact-scripts-view .script-card-top {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+}
+
+.scripts-grid.compact-scripts-view .script-card-header {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  flex: 1;
+}
+
+.scripts-grid.compact-scripts-view .script-title {
+  font-size: 1.38rem !important;
+  margin-bottom: 3px !important;
+  line-height: 1.15 !important;
+}
+
+.scripts-grid.compact-scripts-view .script-author {
+  font-size: 0.82rem !important;
+  margin-bottom: 10px !important;
+}
+
+.diff-name-compact {
+  display: none;
+}
+
+.scripts-grid.compact-scripts-view .diff-prefix,
+.scripts-grid.compact-scripts-view .diff-name-full,
+.scripts-grid.compact-scripts-view .diff-name-compact {
+  display: none !important;
+}
+
+.scripts-grid.compact-scripts-view .script-description,
+.scripts-grid.compact-scripts-view .script-preview-section {
+  display: none !important;
+}
+
+/* NÁVODNÁ IKONA DETAILU (POUZE UPOZORNĚNÍ PRO KLIKNUTÍ) */
+.scripts-grid.compact-scripts-view .card-detail-badge {
+  display: inline-flex !important;
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  width: 26px !important;
+  height: 26px !important;
+  font-size: 0.78rem !important;
+  background: rgba(20, 20, 28, 0.9) !important;
+  border-color: rgba(192, 132, 252, 0.5) !important;
+}
+
+.scripts-grid.compact-scripts-view .script-card-bottom {
+  margin-top: 0 !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+.scripts-grid.compact-scripts-view .script-difficulties {
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+}
+
+.scripts-grid.compact-scripts-view .difficulty-row {
+  gap: 10px !important;
+  align-items: center !important;
+}
+
+.scripts-grid.compact-scripts-view .difficulty-label {
+  font-size: 1.05rem !important;
+  min-width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.scripts-grid.compact-scripts-view .difficulty-label i {
+  color: #c084fc !important;
+  font-size: 1.1rem !important;
+  filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.85));
+  display: inline-block !important;
+}
+
+.scripts-grid.compact-scripts-view .difficulty-bars {
+  margin-left: 8px !important;
+  gap: 4px !important;
+  flex-shrink: 0 !important;
+}
+
+.scripts-grid.compact-scripts-view .script-card-actions {
+  gap: 8px !important;
+  margin-left: 8px !important;
 }
 
 /* SEKCE OBTÍŽNOSTÍ (2 ŘÁDKY POD SEBOU) */
@@ -787,9 +938,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.84rem;
-  color: #ccc;
-  font-weight: 500;
+  font-size: 0.92rem;
+  color: #eeeeee;
+  font-weight: 600;
+}
+
+.slider-header i {
+  color: #c084fc !important;
+  font-size: 1.05rem !important;
+  margin-right: 4px;
+  filter: drop-shadow(0 0 6px rgba(192, 132, 252, 0.7));
 }
 
 .slider-val-badge {
@@ -1545,13 +1703,220 @@
   -webkit-text-stroke: 0.8px #ffffff;
   text-shadow:
     -1px -1px 0 #ffffff,
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff;
+    1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
   font-weight: 700;
   font-size: 0.78rem;
   line-height: 1;
   letter-spacing: 0.5px;
   pointer-events: none;
   user-select: none;
+}
+
+/* ==========================================================================
+   MOBILNÍ RESPONSIVITA PRO SKRIPTY (max-width: 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .scripts-wrapper {
+    padding: 0 8px;
+  }
+
+  /* --- FILTRAČNÍ LIŠTA NA MOBILU --- */
+  .scripts-filter-bar {
+    padding: 10px 12px;
+    gap: 10px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+
+  .filter-top-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .search-input-group {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .search-input-group input {
+    font-size: 0.88rem;
+    padding: 8px 30px 8px 32px;
+  }
+
+  .filter-action-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .filter-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 0.84rem;
+    white-space: nowrap;
+  }
+
+  /* --- OBTÍŽNOSTI NA MOBILU --- */
+  .filter-difficulty-section {
+    gap: 10px;
+    padding-top: 8px;
+  }
+
+  .slider-header {
+    font-size: 0.78rem;
+  }
+
+  .slider-val-badge {
+    font-size: 0.78rem;
+    padding: 1px 6px;
+  }
+
+  .dual-range-wrapper {
+    height: 28px;
+  }
+
+  .dual-range-wrapper input[type="range"]::-webkit-slider-thumb {
+    width: 22px;
+    height: 22px;
+  }
+
+  .dual-range-wrapper input[type="range"]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* --- CENTROVANÝ MODAL PRO VÝBĚR POSTAV NA MOBILU --- */
+  .role-modal-overlay {
+    padding: 10px;
+  }
+
+  .role-modal-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 92vh !important;
+    border-radius: 14px;
+  }
+
+  .role-modal-header {
+    padding: 10px 14px;
+  }
+
+  .role-modal-header h3 {
+    font-size: 1.05rem;
+  }
+
+  .role-modal-controls {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .modal-search-box input {
+    font-size: 0.88rem;
+  }
+
+  /* Horizontální scroll pro kategorie rolí na mobilu */
+  .role-modal-categories {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    padding-bottom: 4px;
+    gap: 6px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .role-modal-categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cat-filter-chip {
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    flex-shrink: 0;
+  }
+
+  .abilities-toggle-bar {
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px 10px;
+  }
+
+  .toggle-label-text {
+    font-size: 0.78rem;
+  }
+
+  /* GRID POSTAV V MODALU PRO MOBIL (2 SLOUPCE COMPACT) */
+  .modal-roles-scroll {
+    padding: 10px 12px;
+  }
+
+  .modal-roles-scroll.compact-view {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .modal-roles-scroll.compact-view .modal-role-card {
+    min-height: 44px;
+    padding: 5px 8px;
+    gap: 6px;
+  }
+
+  .modal-roles-scroll.compact-view .role-card-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .modal-roles-scroll.compact-view .role-card-title {
+    font-size: 0.78rem;
+  }
+
+  .role-modal-footer {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .drawer-primary-btn,
+  .drawer-secondary-btn {
+    padding: 8px 14px;
+    font-size: 0.84rem;
+  }
+
+  /* --- KARTY SKRIPTŮ NA MOBILU --- */
+  .scripts-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .script-card {
+    padding: 12px 14px;
+  }
+
+  .script-title {
+    font-size: 1.3rem;
+  }
+
+  .script-description {
+    font-size: 0.82rem;
+    margin-bottom: 10px;
+  }
+
+  .script-difficulties {
+    padding: 6px 8px;
+    gap: 4px;
+  }
+
+  .difficulty-row {
+    font-size: 0.78rem;
+  }
+
+  .script-card-actions .action-btn {
+    padding: 8px 10px;
+    font-size: 0.88rem;
+  }
 }
