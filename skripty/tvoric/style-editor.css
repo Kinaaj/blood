@@ -316,6 +316,12 @@ main.editor-main {
     letter-spacing: 0.4px;
 }
 
+/* SKRYTÍ FAJVEK NA DESKTOPU */
+.char-item .check-icon,
+.sidebar-char-list .check-icon {
+    display: none !important;
+}
+
 /* PŘEPÍNAČ SCHOPNOSTÍ POSTAV V SIDEBARU TVOŘIČE */
 .abilities-toggle-bar {
     display: flex;
@@ -444,9 +450,9 @@ main.editor-main {
     -webkit-text-stroke: 0.8px #ffffff;
     text-shadow:
         -1px -1px 0 #ffffff,
-         1px -1px 0 #ffffff,
-        -1px  1px 0 #ffffff,
-         1px  1px 0 #ffffff;
+        1px -1px 0 #ffffff,
+        -1px 1px 0 #ffffff,
+        1px 1px 0 #ffffff;
     font-weight: 700;
     font-size: 0.78rem;
     line-height: 1;
@@ -1552,260 +1558,383 @@ main.editor-main {
    ========================================================================== */
 
 @media (max-width: 900px) {
-  .editor-layout {
-    padding: 0 10px !important;
-  }
+    .editor-layout {
+        padding: 0 10px !important;
+    }
 
-  .script-validation-bar {
-    top: 8px !important;
-    right: 12px !important;
-    z-index: 1002 !important;
-    padding: 4px 10px !important;
-  }
+    .script-validation-bar {
+        top: 8px !important;
+        right: 12px !important;
+        z-index: 1002 !important;
+        padding: 4px 10px !important;
+    }
 
-  /* Přepsání desktopových rozšířených sloupců pro mobil */
-  .editor-layout > aside:first-of-type.expanded-sidebar,
-  .editor-panel.transparent-panel.expanded-sidebar {
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+    /* Přepsání desktopových rozšířených sloupců pro mobil */
+    .editor-layout>aside:first-of-type.expanded-sidebar,
+    .editor-panel.transparent-panel.expanded-sidebar {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
 
-  /* Prostřední sloupec zabírá plnou šířku bez bočních mezer */
-  .editor-panel.transparent-panel {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-top: 50px !important;
-    padding-bottom: 60px !important;
-    min-height: auto !important;
-  }
+    /* Prostřední sloupec zabírá plnou šířku bez bočních mezer */
+    .editor-panel.transparent-panel {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-top: 50px !important;
+        padding-bottom: 60px !important;
+        min-height: auto !important;
+    }
 
-  /* HLAVIČKA ZÁSUVKY NA MOBILU */
-  .mobile-drawer-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 8px;
-    margin-bottom: 6px;
-    border-bottom: 1px solid rgba(155, 89, 182, 0.3);
-    flex-shrink: 0;
-  }
+    /* HLAVIČKA ZÁSUVKY NA MOBILU */
+    .mobile-drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 8px;
+        margin-bottom: 6px;
+        border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+        flex-shrink: 0;
+    }
 
-  .mobile-drawer-header h3 {
-    font-size: 1.1rem;
-    color: #fff;
-    margin: 0;
-    font-family: 'New Rocker', serif;
-  }
+    .mobile-drawer-header h3 {
+        font-size: 1.1rem;
+        color: #fff;
+        margin: 0;
+        font-family: 'New Rocker', serif;
+    }
 
-  .drawer-close-btn {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #fff;
-    padding: 5px 12px;
-    border-radius: 16px;
-    font-size: 0.84rem;
-    cursor: pointer;
-    font-weight: bold;
-  }
+    .drawer-close-btn {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #fff;
+        padding: 5px 12px;
+        border-radius: 16px;
+        font-size: 0.84rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
 
-  /* POSTRANNÍ PANELY JAKO MODÁLNÍ VÝSUVNÉ ZÁSUVKY ZAKOTVENÉ SHORA */
-  .editor-layout > aside:first-of-type,
-  .editor-settings {
-    position: fixed !important;
-    top: 100% !important;
-    bottom: auto !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: calc(100vh - 25px) !important;
-    max-height: calc(100vh - 25px) !important;
-    z-index: 2000 !important;
-    border-radius: 20px 20px 0 0 !important;
-    background: rgba(22, 22, 28, 0.98) !important;
-    border: 1px solid rgba(155, 89, 182, 0.4) !important;
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.9) !important;
-    padding: 14px 14px 18px 14px !important;
-    transition: top 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-  }
+    /* POSTRANNÍ PANELY JAKO MODÁLNÍ VÝSUVNÉ ZÁSUVKY ZAKOTVENÉ SHORA */
+    .editor-layout>aside:first-of-type,
+    .editor-settings {
+        position: fixed !important;
+        top: 100% !important;
+        bottom: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: calc(100vh - 25px) !important;
+        max-height: calc(100vh - 25px) !important;
+        z-index: 2000 !important;
+        border-radius: 20px 20px 0 0 !important;
+        background: rgba(22, 22, 28, 0.98) !important;
+        border: 1px solid rgba(155, 89, 182, 0.4) !important;
+        box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.9) !important;
+        padding: 14px 14px 18px 14px !important;
+        transition: top 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
 
-  /* OTEVŘENÁ ZÁSUVKA ZAKOTVENÁ OD TOP: 25px */
-  .editor-layout > aside.mobile-drawer-open,
-  .editor-settings.mobile-drawer-open {
-    top: 25px !important;
-  }
+    /* OTEVŘENÁ ZÁSUVKA ZAKOTVENÁ OD TOP: 25px */
+    .editor-layout>aside.mobile-drawer-open,
+    .editor-settings.mobile-drawer-open {
+        top: 25px !important;
+    }
 
-  /* VERNÁ KOPIE 2-SLOUBCOVÉ KOMPAKTNÍ MŘÍŽKY ROLÍ Z FILTER MODALU */
-  .sidebar-char-list {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 6px !important;
-    flex: 1 1 auto !important;
-    overflow-y: auto !important;
-    padding-right: 4px;
-  }
+    /* VERNÁ KOPIE 2-SLOUBCOVÉ KOMPAKTNÍ MŘÍŽKY ROLÍ Z FILTER MODALU */
+    .sidebar-char-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+        flex: 1 1 auto !important;
+        overflow-y: auto !important;
+        padding-right: 4px;
+    }
 
-  .sidebar-char-list .char-item {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    padding: 6px 8px !important;
-    background: rgba(0, 0, 0, 0.45) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 8px !important;
-    min-height: 44px !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-    cursor: pointer !important;
-    transition: all 0.15s ease !important;
-  }
+    /* KARTY POSTAV V SEZNAMU PRO MOBIL - 2 SLOUPEČKY S KARTAMI A ZELENOU FAJVKOU PŘESNĚ JAKO U FILTRU */
+    .sidebar-char-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+        flex: 1 1 auto !important;
+        overflow-y: auto !important;
+        padding-right: 4px;
+    }
 
-  .sidebar-char-list .char-item.active {
-    background: rgba(155, 89, 182, 0.25) !important;
-    border-color: #c084fc !important;
-    box-shadow: 0 0 10px rgba(192, 132, 252, 0.35) !important;
-  }
+    .sidebar-char-list .char-item {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 2px !important;
+        padding: 6px 6px !important;
+        background: rgba(0, 0, 0, 0.45) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 8px !important;
+        min-height: 44px !important;
+        box-sizing: border-box !important;
+        cursor: pointer !important;
+        transition: all 0.15s ease !important;
+    }
 
-  .sidebar-char-list .char-item img {
-    width: 28px !important;
-    height: 28px !important;
-    object-fit: contain !important;
-    flex-shrink: 0 !important;
-  }
+    .sidebar-char-list .char-item.active {
+        background: rgba(155, 89, 182, 0.28) !important;
+        border-color: #c084fc !important;
+        box-shadow: 0 0 10px rgba(192, 132, 252, 0.35) !important;
+    }
 
-  .sidebar-char-list .char-item-name,
-  .sidebar-char-list .char-item > span {
-    font-size: 0.78rem !important;
-    font-weight: 700 !important;
-    color: #ffffff !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
+    .sidebar-char-list .char-item img {
+        width: 36px !important;
+        height: 36px !important;
+        transform: scale(1.35) !important;
+        transform-origin: center center !important;
+        object-fit: contain !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+    }
 
-  /* ZJEMNĚNÍ BÍLÉHO LEMOVÁNÍ EDICÍ NA MOBILECH (0.4px OKRAJ) */
-  .role-edition-badge,
-  .editor-role-item .role-edition-badge {
-    -webkit-text-stroke: 0.4px #ffffff !important;
-    text-shadow: 0 0 2px #ffffff !important;
-    font-size: 0.82rem !important;
-  }
+    .sidebar-char-list .char-item-name,
+    .sidebar-char-list .char-item>span:not(.role-edition-badge) {
+        font-family: 'New Rocker', system-ui, serif !important;
+        font-size: 0.92rem !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        line-height: 1.15 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
 
-  /* TEMNÉ POZADÍ PŘI OTEVŘENÉ ZÁSUVCE */
-  .mobile-drawer-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
-    z-index: 1999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
-  }
+    .sidebar-char-list .check-icon {
+        display: none !important;
+        color: #22c55e !important;
+        font-size: 0.9rem !important;
+        margin-left: auto !important;
+        flex-shrink: 0 !important;
+    }
 
-  .mobile-drawer-backdrop.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
+    .sidebar-char-list .char-item.active .check-icon {
+        display: block !important;
+    }
 
-  /* HORNÍ LIŠTA TLAČÍTEK NA MOBILU */
-  .tvoric-top-toolbar {
-    display: flex !important;
-    gap: 10px !important;
-    margin-bottom: 16px !important;
-    width: 100% !important;
-  }
+    /* POHLED SE ZOBRAZENÝMI SCHOPNOSTMI NA MOBILU - BEZ UŘÍZNUTÍ A PŘEKRÝVÁNÍ */
+    .sidebar-char-list .char-item.has-ability-view {
+        grid-column: 1 / -1 !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 10px 12px !important;
+        gap: 10px !important;
+        overflow: visible !important;
+    }
 
-  .tvoric-top-btn {
-    flex: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px 12px;
-    border-radius: 20px;
-    font-size: 0.88rem;
-    font-weight: 700;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all 0.2s ease;
-  }
+    .sidebar-char-list .char-item.has-ability-view img {
+        width: 36px !important;
+        height: 36px !important;
+        transform: scale(2) !important;
+        transform-origin: center center !important;
+        margin-top: 2px !important;
+        flex-shrink: 0 !important;
+        object-fit: contain !important;
+    }
 
-  .tvoric-top-btn.primary {
-    background: linear-gradient(135deg, #9b59b6, #7e22ce);
-    color: #fff;
-    border-color: #c084fc;
-    box-shadow: 0 4px 14px rgba(126, 34, 206, 0.4);
-  }
+    .sidebar-char-list .char-item.has-ability-view .char-item-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        flex: 1 !important;
+        min-width: 0 !important;
+        overflow: visible !important;
+    }
 
-  .tvoric-top-btn.secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: #eee;
-    border-color: rgba(255, 255, 255, 0.25);
-  }
+    .sidebar-char-list .char-item.has-ability-view .char-item-name {
+        font-family: 'New Rocker', system-ui, serif !important;
+        font-size: 0.92rem !important;
+        line-height: 1.25 !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+    }
 
-  /* KŘÍŽEK PRO ODEBRÁNÍ ROLE JE NA MOBILU VŽDY VIDITELNÝ */
-  .editor-role-remove {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: flex !important;
-    pointer-events: auto !important;
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 1rem !important;
-  }
+    .sidebar-char-list .char-item.has-ability-view .char-item-ability {
+        font-size: 0.78rem !important;
+        color: #d1d5db !important;
+        line-height: 1.35 !important;
+        font-family: 'Roboto', var(--font-body), sans-serif !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+    }
 
-  /* KOMPAKTNÍ HORIZONTÁLNÍ FILTRY KATEGORIÍ (JEDEN NÍZKÝ ŘÁDEK) */
-  .creator-categories {
-    display: flex !important;
-    overflow-x: auto !important;
-    white-space: nowrap !important;
-    flex-wrap: nowrap !important;
-    padding: 2px 0 6px 0 !important;
-    gap: 6px !important;
-    margin-bottom: 4px !important;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    flex-shrink: 0 !important;
-  }
+    /* DESIGN ČÍSLA EDICE - ČERNÉ PÍSMO S TENKÝM BÍLÝM OKRAJEM (PŘESNĚ JAKO VE FILTRU) */
+    span.role-edition-badge,
+    .role-edition-badge,
+    .sidebar-char-list .role-edition-badge,
+    .editor-role-item .role-edition-badge {
+        position: absolute !important;
+        top: 2px !important;
+        left: 4px !important;
+        z-index: 10 !important;
+        font-family: 'New Rocker', system-ui, serif !important;
+        color: #000000 !important;
+        -webkit-text-stroke: 0.5px #ffffff !important;
+        text-shadow: 0 0 2px #ffffff !important;
+        font-weight: 700 !important;
+        font-size: 0.82rem !important;
+        line-height: 1 !important;
+        letter-spacing: 0.5px !important;
+        pointer-events: none !important;
+        user-select: none !important;
+    }
 
-  .creator-categories::-webkit-scrollbar {
-    display: none;
-  }
+    /* TEMNÉ POZADÍ PŘI OTEVŘENÉ ZÁSUVCE */
+    .mobile-drawer-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(4px);
+        z-index: 1999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+    }
 
-  .creator-categories .cat-filter-chip {
-    flex-shrink: 0 !important;
-    width: auto !important;
-    padding: 4px 10px !important;
-    font-size: 0.78rem !important;
-    border-radius: 14px !important;
-  }
+    .mobile-drawer-backdrop.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
 
-  .search-box,
-  .abilities-toggle-bar {
-    flex-shrink: 0 !important;
-  }
+    /* HORNÍ LIŠTA TLAČÍTEK NA MOBILU */
+    .tvoric-top-toolbar {
+        display: flex !important;
+        gap: 10px !important;
+        margin-bottom: 16px !important;
+        width: 100% !important;
+    }
 
-  .section-nav {
-    display: none !important;
-  }
+    .tvoric-top-btn {
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border-radius: 20px;
+        font-size: 0.88rem;
+        font-weight: 700;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: all 0.2s ease;
+    }
+
+    .tvoric-top-btn.primary {
+        background: linear-gradient(135deg, #9b59b6, #7e22ce);
+        color: #fff;
+        border-color: #c084fc;
+        box-shadow: 0 4px 14px rgba(126, 34, 206, 0.4);
+    }
+
+    .tvoric-top-btn.secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: #eee;
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* KŘÍŽEK PRO ODEBRÁNÍ ROLE JE NA MOBILU VŽDY VIDITELNÝ */
+    .editor-role-remove {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: flex !important;
+        pointer-events: auto !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 1rem !important;
+    }
+
+    /* KOMPAKTNÍ HORIZONTÁLNÍ FILTRY KATEGORIÍ (JEDEN NÍZKÝ ŘÁDEK) */
+    .creator-categories {
+        display: flex !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        flex-wrap: nowrap !important;
+        padding: 2px 0 6px 0 !important;
+        gap: 6px !important;
+        margin-bottom: 4px !important;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        flex-shrink: 0 !important;
+    }
+
+    .creator-categories::-webkit-scrollbar {
+        display: none;
+    }
+
+    .creator-categories .cat-filter-chip {
+        flex-shrink: 0 !important;
+        width: auto !important;
+        padding: 4px 10px !important;
+        font-size: 0.78rem !important;
+        border-radius: 14px !important;
+    }
+
+    .search-box,
+    .abilities-toggle-bar {
+        flex-shrink: 0 !important;
+    }
+
+    .section-nav {
+        display: none !important;
+    }
+
+    /* VYPNUTÍ STICKY HOVER EFEKTŮ A POSUNŮ NA MOBILNÍCH DOTYKOVÝCH DISPLEJÍCH */
+    *,
+    button,
+    .btn,
+    .char-item,
+    .editor-role-item,
+    .cat-filter-chip,
+    .tvoric-top-btn {
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
+    button:hover,
+    .btn:hover,
+    .char-item:hover,
+    .editor-role-item:hover,
+    .cat-filter-chip:hover,
+    .tvoric-top-btn:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .char-item:hover {
+        transform: none !important;
+        background: rgba(0, 0, 0, 0.45) !important;
+    }
+
+    .char-item.active:hover {
+        background: rgba(155, 89, 182, 0.28) !important;
+    }
 }
 
 @media (min-width: 901px) {
-  .mobile-drawer-header,
-  .tvoric-top-toolbar,
-  .mobile-drawer-backdrop {
-    display: none !important;
-  }
+
+    .mobile-drawer-header,
+    .tvoric-top-toolbar,
+    .mobile-drawer-backdrop {
+        display: none !important;
+    }
 }

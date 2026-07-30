@@ -248,7 +248,7 @@ function renderSidebar() {
             }
             div.title = fullTooltip;
 
-            const romanEdition = role.edition ? getRomanNumeral(role.edition) : '';
+            const romanEdition = (showAbilitiesInTvoric && role.edition && typeof getRomanNumeral === 'function') ? getRomanNumeral(role.edition) : '';
             const editionBadgeHtml = romanEdition ? `<span class="role-edition-badge">${romanEdition}</span>` : '';
 
             if (showAbilitiesInTvoric && abilityText) {
@@ -265,6 +265,7 @@ function renderSidebar() {
                         <span class="char-item-name">${roleName}</span>
                         <div class="char-item-ability">${formatText(fullAbility)}</div>
                     </div>
+                    <i class="fa-solid fa-check check-icon"></i>
                 `;
             } else {
                 div.className = `char-item ${isActive ? 'active' : ''}`;
@@ -272,6 +273,7 @@ function renderSidebar() {
                     ${editionBadgeHtml}
                     <img src="${getIconPath(role)}" onerror="this.src='${iconsPath}default.png'">
                     <span>${roleName}</span>
+                    <i class="fa-solid fa-check check-icon"></i>
                 `;
             }
 

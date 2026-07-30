@@ -1724,4 +1724,32 @@ footer {
     background: rgba(126, 34, 206, 0.88);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   }
+
+  /* VYPNUTÍ STICKY HOVER A POSUNŮ TLAČÍTEK NA MOBILU */
+  *,
+  button,
+  .btn,
+  .back-btn,
+  .next-btn {
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  button:hover,
+  .btn:hover,
+  .back-btn:hover,
+  .next-btn:hover,
+  .portal-card:hover,
+  .portal-card.theme-purple:hover,
+  .portal-card.theme-green:hover,
+  .portal-card.theme-red:hover,
+  .portal-card.split-portal-card:hover,
+  .split-card-half:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .portal-card:hover .card-image,
+  .portal-card.disabled:hover .card-image {
+    transform: none !important;
+  }
 }

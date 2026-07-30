@@ -1531,6 +1531,10 @@
   .modal-roles-scroll.compact-view .modal-role-card {
     max-width: 100%;
   }
+
+  .modal-roles-scroll.compact-view .role-card-title {
+    font-size: 0.9rem !important;
+  }
 }
 
 /* Plné zobrazení (se schopnostmi) */
@@ -1924,5 +1928,38 @@
   .script-card-actions .action-btn {
     padding: 8px 10px;
     font-size: 0.88rem;
+  }
+
+  /* VYPNUTÍ HOVER EFEKTŮ A POHYBŮ TLAČÍTEK NA MOBILU */
+  *,
+  button,
+  .script-card,
+  .cat-filter-chip,
+  .filter-btn,
+  .compact-script-card,
+  .modal-role-card {
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .script-card:hover,
+  .compact-script-card:hover,
+  .modal-role-card:hover,
+  .cat-filter-chip:hover,
+  .filter-btn:hover,
+  button:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .script-card:hover {
+    background: var(--card-bg) !important;
+  }
+
+  .modal-role-card:hover {
+    background: rgba(0, 0, 0, 0.45) !important;
+  }
+
+  .modal-role-card.selected:hover {
+    background: rgba(155, 89, 182, 0.28) !important;
   }
 }
