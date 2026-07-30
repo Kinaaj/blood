@@ -1719,6 +1719,12 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
+  .role-edition-badge {
+    -webkit-text-stroke: 0.4px #ffffff !important;
+    text-shadow: 0 0 2px #ffffff !important;
+    font-size: 0.82rem !important;
+  }
+
   .scripts-wrapper {
     padding: 0 8px;
   }

@@ -1643,13 +1643,60 @@ main.editor-main {
     top: 25px !important;
   }
 
-  /* POUZE VZNIKLÝ SEZNAM POSTAV ROLUJE VERTIKÁLNĚ */
+  /* VERNÁ KOPIE 2-SLOUBCOVÉ KOMPAKTNÍ MŘÍŽKY ROLÍ Z FILTER MODALU */
   .sidebar-char-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
     flex: 1 1 auto !important;
     overflow-y: auto !important;
-    max-height: none !important;
-    height: auto !important;
     padding-right: 4px;
+  }
+
+  .sidebar-char-list .char-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 6px 8px !important;
+    background: rgba(0, 0, 0, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 8px !important;
+    min-height: 44px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease !important;
+  }
+
+  .sidebar-char-list .char-item.active {
+    background: rgba(155, 89, 182, 0.25) !important;
+    border-color: #c084fc !important;
+    box-shadow: 0 0 10px rgba(192, 132, 252, 0.35) !important;
+  }
+
+  .sidebar-char-list .char-item img {
+    width: 28px !important;
+    height: 28px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+  }
+
+  .sidebar-char-list .char-item-name,
+  .sidebar-char-list .char-item > span {
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* ZJEMNĚNÍ BÍLÉHO LEMOVÁNÍ EDICÍ NA MOBILECH (0.4px OKRAJ) */
+  .role-edition-badge,
+  .editor-role-item .role-edition-badge {
+    -webkit-text-stroke: 0.4px #ffffff !important;
+    text-shadow: 0 0 2px #ffffff !important;
+    font-size: 0.82rem !important;
   }
 
   /* TEMNÉ POZADÍ PŘI OTEVŘENÉ ZÁSUVCE */
