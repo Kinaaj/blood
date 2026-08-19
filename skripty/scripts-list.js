@@ -360,7 +360,8 @@ function renderModalRolesList() {
     minion: 3,
     demon: 4,
     traveller: 5,
-    fabled: 6
+    fabled: 6,
+    loric: 7
   };
 
   filteredRoles.sort((a, b) => {
@@ -726,7 +727,8 @@ function openScriptModal(filename, meta, characterKeywords) {
     minion: { title: 'Přisluhovači', icon: 'fa-skull', items: [] },
     demon: { title: 'Démoni', icon: 'fa-ghost', items: [] },
     traveller: { title: 'Cestovatelé', icon: 'fa-compass', items: [] },
-    fabled: { title: 'Bájné postavy', icon: 'fa-wand-magic-sparkles', items: [] }
+    fabled: { title: 'Bájné postavy', icon: 'fa-wand-magic-sparkles', items: [] },
+    loric: { title: 'Loričtí', icon: 'fa-scroll', items: [] }
   };
 
   characterKeywords.forEach(kw => {
@@ -773,7 +775,8 @@ function openScriptModal(filename, meta, characterKeywords) {
     renderCategoryGroup('minion', categories.minion) +
     renderCategoryGroup('demon', categories.demon) +
     renderCategoryGroup('traveller', categories.traveller) +
-    renderCategoryGroup('fabled', categories.fabled);
+    renderCategoryGroup('fabled', categories.fabled) +
+    renderCategoryGroup('loric', categories.loric);
 
   modalOverlay.innerHTML = `
     <div class="script-modal-container">

@@ -243,7 +243,7 @@ function renderSidebar() {
 
     charListContainer.innerHTML = '';
 
-    const typeOrder = ['townsfolk', 'outsider', 'minion', 'demon', 'traveller', 'fabled'];
+    const typeOrder = ['townsfolk', 'outsider', 'minion', 'demon', 'traveller', 'fabled', 'loric'];
 
     typeOrder.forEach(type => {
         if (creatorCategoryFilter !== 'all' && creatorCategoryFilter !== type) return;
@@ -337,7 +337,7 @@ function renderMiddleEditor() {
     if (!editorRolesPreview) return;
     editorRolesPreview.innerHTML = '';
 
-    const typeOrder = ['townsfolk', 'outsider', 'minion', 'demon', 'traveller', 'fabled'];
+    const typeOrder = ['townsfolk', 'outsider', 'minion', 'demon', 'traveller', 'fabled', 'loric'];
     let hasExtraSectionsStarted = false;
 
     typeOrder.forEach(type => {
@@ -363,9 +363,9 @@ function renderMiddleEditor() {
         }
         const groupDiv = document.createElement('div');
 
-        // Přidání dělicí čáry před první extra sekci (Cestovatelé nebo Legendy)
+        // Přidání dělicí čáry před první extra sekci (Cestovatelé, Legendy nebo Loričtí)
         let extraClass = '';
-        if (['traveller', 'fabled'].includes(type) && !hasExtraSectionsStarted) {
+        if (['traveller', 'fabled', 'loric'].includes(type) && !hasExtraSectionsStarted) {
             extraClass = ' extra-divider';
             hasExtraSectionsStarted = true;
         }
@@ -466,7 +466,8 @@ function getTeamTitle(type) {
         minion: currentLang === 'cz' ? 'Přisluhovači' : 'Minions',
         demon: currentLang === 'cz' ? 'Démoni' : 'Demons',
         traveller: currentLang === 'cz' ? 'Cestovatelé' : 'Travellers',
-        fabled: currentLang === 'cz' ? 'Legendy' : 'Fabled'
+        fabled: currentLang === 'cz' ? 'Legendy' : 'Fabled',
+        loric: currentLang === 'cz' ? 'Loričtí' : 'Loric'
     };
     return titles[type] || type;
 }// Pomocná funkce pro vložení Djinna přímo do Legend
@@ -849,15 +850,23 @@ function printScript() {
 
     // 8. Respektování checkboxů v UI
     const chkSetup = document.getElementById('chk-setup-table');
-    if (chkSetup && !chkSetup.checked) document.getElementById('print-setup-table').style.display = 'none';
+    if (chkSetup && !chkSetup.checked) {
+        const setupTableEl = document.getElementById('print-setup-table');
+        if (setupTableEl) setupTableEl.style.setProperty('display', 'none', 'important');
+    }
 
     const chkTravellers = document.getElementById('chk-show-travellers');
-    if (chkTravellers && !chkTravellers.checked) document.getElementById('print-page-travellers').style.display = 'none';
+    if (chkTravellers && !chkTravellers.checked) {
+        const travEl = document.getElementById('print-page-travellers');
+        if (travEl) travEl.style.setProperty('display', 'none', 'important');
+    }
 
     const chkNight = document.getElementById('chk-show-night');
     if (chkNight && !chkNight.checked) {
-        document.getElementById('print-page-first-night').style.display = 'none';
-        document.getElementById('print-page-other-night').style.display = 'none';
+        const fnEl = document.getElementById('print-page-first-night');
+        const onEl = document.getElementById('print-page-other-night');
+        if (fnEl) fnEl.style.setProperty('display', 'none', 'important');
+        if (onEl) onEl.style.setProperty('display', 'none', 'important');
     }
 
     // KONEČNĚ: Vyvolání tisku (s malým zpožděním kvůli načtení DOMu)
