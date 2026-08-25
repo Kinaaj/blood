@@ -907,7 +907,7 @@ main.editor-main {
         --color-minion: #9f0000;
         --color-demon: #000000;
         --color-traveller: #6f0095;
-        --color-fabled: #ffffff;
+        --color-fabled: #000000;
         --color-text: #000000;
         --color-reminder: #000000;
         --icon-size-small: 36px;
@@ -1125,10 +1125,7 @@ main.editor-main {
     }
 
     .role-item.fabled .role-name {
-        color: var(--color-fabled, #ffffff);
-        -webkit-text-stroke: 0.4px #000000;
-        paint-order: stroke fill;
-        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+        color: var(--color-fabled, #000000);
     }
 
     .role-item.loric .role-name {
@@ -1286,10 +1283,7 @@ main.editor-main {
     }
 
     .night-text.fabled .role-name {
-        color: var(--color-fabled, #ffffff);
-        -webkit-text-stroke: 0.4px #000000;
-        paint-order: stroke fill;
-        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+        color: var(--color-fabled, #000000);
     }
 
     .night-text.loric .role-name {

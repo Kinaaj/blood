@@ -10,7 +10,7 @@
    xml:space="preserve"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    sodipodi:docname="loric.svg"
-   inkscape:export-filename="icons/loric/zenomancer_icon.png"
+   inkscape:export-filename="icons/loric/stormcatcher_icon.png"
    inkscape:export-xdpi="141.55469"
    inkscape:export-ydpi="141.55469"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -27,9 +27,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.87681241"
-     inkscape:cx="239.50391"
-     inkscape:cy="174.49571"
+     inkscape:zoom="1.24"
+     inkscape:cx="151.6129"
+     inkscape:cy="237.09677"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -734,7 +734,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Layer 3"
-     style="display:inline"><image
+     style="display:none"><image
        width="121.63303"
        height="121.63303"
        preserveAspectRatio="none"
@@ -756,7 +756,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Layer 4"
-     style="display:none"><image
+     style="display:inline"><image
        width="111.18514"
        height="111.18514"
        preserveAspectRatio="none"
@@ -765,7 +765,7 @@
        x="-2.6759064"
        y="-2.6759064"
        style="filter:url(#filter3639)"
-       transform="matrix(0.90499987,0,0,0.90499987,5.0270901,5.0270901)" /><image
+       transform="matrix(0.79774757,0,0,0.79774757,10.702524,10.702524)" /><image
        width="111.18514"
        height="111.18514"
        preserveAspectRatio="none"
@@ -774,7 +774,7 @@
        x="-2.6759064"
        y="-2.6759064"
        clip-path="url(#clipPath66)"
-       transform="matrix(0.90499987,0,0,0.90499987,5.0270901,5.0270901)" /></g><g
+       transform="matrix(0.79774757,0,0,0.79774757,10.702524,10.702524)" /></g><g
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="Layer 5"
@@ -787,10 +787,10 @@
        x="-6.9304743"
        y="-6.9304743"
        style="display:inline;filter:url(#filter3639)"
-       transform="matrix(0.9221208,0,0,0.9221208,2.7809722,5.5193088)"
+       transform="matrix(0.7505203,0,0,0.7505203,13.201634,13.201634)"
        inkscape:export-filename="icons/loric/gardener_icon.png"
-       inkscape:export-xdpi="141.55469"
-       inkscape:export-ydpi="141.55469" /><image
+       inkscape:export-xdpi="98.762131"
+       inkscape:export-ydpi="98.762131" /><image
        width="119.69428"
        height="119.69428"
        preserveAspectRatio="none"
@@ -799,4 +799,4 @@
        x="-6.9304743"
        y="-6.9304743"
        clip-path="url(#clipPath98)"
-       transform="matrix(0.9221208,0,0,0.9221208,2.7809722,5.5193088)" /></g></svg>
+       transform="matrix(0.7505203,0,0,0.7505203,13.201634,13.201634)" /></g></svg>
