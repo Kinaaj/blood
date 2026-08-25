@@ -683,14 +683,18 @@ function printScript() {
         </section>
 
         <section class="sheet" id="print-page-travellers">
-            <h1 class="team-title notmain" id="print-fabled_and_loric_heading"></h1>
-            <div class="role-list" id="print-list-fabled"></div>
-            <div class="role-list" id="print-list-loric"></div>
-
-            <h1 class="team-title notmain" id="print-traveller_heading"></h1>
-            <div class="role-list" id="print-list-traveller"></div>
-
-            <div id="print-jinx-section" class="jinx-box"><div id="print-list-jinx"></div></div>
+            <div class="role-section" id="print-section-fabled">
+                <h2 class="team-title" id="print-fabled_heading"></h2>
+                <div id="print-list-fabled" class="role-grid"></div>
+            </div>
+            <div class="role-section" id="print-section-loric">
+                <h2 class="team-title" id="print-loric_heading"></h2>
+                <div id="print-list-loric" class="role-grid"></div>
+            </div>
+            <div class="role-section" id="print-section-traveller">
+                <h2 class="team-title" id="print-traveller_heading"></h2>
+                <div id="print-list-traveller" class="role-grid"></div>
+            </div>
 
             <div class="setup-table-container" id="print-setup-table">
                 <table class="setup-table">
@@ -745,12 +749,13 @@ function printScript() {
         "firstnight_cz": "První Noc", "firstnight_eng": "First Night",
         "othernight_cz": "Ostatní Noci", "othernight_eng": "Other Nights",
         "players_cz": "Hráčů", "players_eng": "Players",
-        "fabled_and_loric_eng": "Fabled & Loric", "fabled_and_loric_cz": "Legendy a Loričtí"
+        "fabled_cz": "Legendy", "fabled_eng": "Fabled",
+        "loric_cz": "Loričtí", "loric_eng": "Loric"
     };
     const getHeading = (key) => localHeadings[key + '_' + currentLang] || localHeadings[key + '_cz'];
 
     document.getElementById('print-disclaimer_text').textContent = getHeading('disclaimer');
-    ['townsfolk', 'outsider', 'minion', 'demon', 'fabled_and_loric', 'traveller', 'firstnight', 'othernight', 'players'].forEach(key => {
+    ['townsfolk', 'outsider', 'minion', 'demon', 'fabled', 'loric', 'traveller', 'firstnight', 'othernight', 'players'].forEach(key => {
         const el = document.getElementById(`print-${key}_heading`);
         if (el) el.textContent = getHeading(key);
     });
@@ -783,6 +788,7 @@ function printScript() {
     const activeRoles = rolesData.filter(r => activeScriptKeywords.includes(r.keyword));
     activeRoles.sort((a, b) => (a.setlist_position !== undefined ? a.setlist_position : 999) - (b.setlist_position !== undefined ? b.setlist_position : 999));
 
+    // 6. Dosazení rolí do DOMu
     let djinnIsActive = false;
     activeRoles.forEach(role => {
         const type = role.type ? role.type.toLowerCase() : 'unknown';
@@ -790,7 +796,7 @@ function printScript() {
         if (container) container.innerHTML += createOriginalRoleCard(role);
     });
 
-    // 6. Djinn a Jinx list (přesná kopie původní logiky)
+    // Djinn a Jinx list
     const listFabled = document.getElementById('print-list-fabled');
     if (typeof jinxData !== 'undefined') {
         const activeJinxes = jinxData.filter(jinx => activeScriptKeywords.includes(jinx.who) && activeScriptKeywords.includes(jinx.target));
@@ -798,7 +804,8 @@ function printScript() {
             const djinnRole = rolesData.find(r => r.keyword === 'djinn');
             if (djinnRole) {
                 djinnIsActive = true;
-                listFabled.innerHTML += createOriginalRoleCard(djinnRole);
+                // Djinn card spans the full row (both columns)
+                listFabled.innerHTML += `<div class="djinn-full-row">${createOriginalRoleCard(djinnRole)}</div>`;
                 let jinxRowsHtml = '';
                 activeJinxes.forEach(jinx => {
                     const desc = getTranslation(jinx, 'description') || jinx.reason || "";
@@ -817,11 +824,13 @@ function printScript() {
         }
     }
 
-    // Skrytí nadpisů Legend a Cestovatelů
-    const hasTraveller = activeRoles.some(r => r.type === 'traveller');
-    document.getElementById('print-traveller_heading').style.display = hasTraveller ? '' : 'none';
-    const hasFabledOrLoric = activeRoles.some(r => r.type === 'fabled' || r.type === 'loric');
-    document.getElementById('print-fabled_and_loric_heading').style.display = (hasFabledOrLoric || djinnIsActive) ? '' : 'none';
+    // Skrytí sekcí druhé stránky, pokud jsou prázdné
+    const hasFabled = document.getElementById('print-list-fabled').children.length > 0;
+    document.getElementById('print-section-fabled').style.display = hasFabled ? '' : 'none';
+    const hasLoric = document.getElementById('print-list-loric').children.length > 0;
+    document.getElementById('print-section-loric').style.display = hasLoric ? '' : 'none';
+    const hasTravel = document.getElementById('print-list-traveller').children.length > 0;
+    document.getElementById('print-section-traveller').style.display = hasTravel ? '' : 'none';
 
     // 7. Noční listy (přesná kopie)
     function fillNightSheet(isFirstNight) {

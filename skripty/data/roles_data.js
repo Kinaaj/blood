@@ -27,7 +27,7 @@ var rolesData = [
         "keyword": "investigator",
         "type": "townsfolk",
         "edition": "1",
-        "ability_cz": "První noc se dozvíš, že jeden ze dvou hráčů je konkrétní Přisluhovač Démona.",
+        "ability_cz": "První noc se dozvíš, že jeden ze dvou hráčů je konkrétní Přisluhovač.",
         "ability_eng": "You start knowing that 1 of 2 players is a particular Minion.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -111,7 +111,7 @@ var rolesData = [
         "keyword": "fortuneteller",
         "type": "townsfolk",
         "edition": "1",
-        "ability_cz": "Každou noc si vyber 2 hráče: dozvíš se, jestli je jeden z nich Démon. Jeden z hodných  hráčů se ti bude jevit jako Démon.",
+        "ability_cz": "Každou noc si vyber 2 hráče: dozvíš se, jestli je jeden z nich Démon. Jeden z hodných hráčů se ti bude jevit jako Démon.",
         "ability_eng": "Each night, choose 2 players: you learn if either is a Demon. There is a good player that registers as a Demon to you.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -153,7 +153,7 @@ var rolesData = [
         "keyword": "monk",
         "type": "townsfolk",
         "edition": "1",
-        "ability_cz": "Každou noc* si vyber hráče (ne sebe), který tuto noc nemůže zemřit rukou Démona.",
+        "ability_cz": "Každou noc* si vyber hráče (ne sebe): tuto noc nemůže zemřit rukou Démona.",
         "ability_eng": "Each night*, choose a player (not yourself): they are safe from the Demon tonight.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -174,7 +174,7 @@ var rolesData = [
         "keyword": "slayer",
         "type": "townsfolk",
         "edition": "1",
-        "ability_cz": "Jednou za hru můžeš kdykoliv kromě noci veřejně vybrat hráče, pokud je Démon, umře.  ",
+        "ability_cz": "Jednou za hru můžeš kdykoliv kromě noci veřejně vybrat hráče: pokud je Démon, umře.  ",
         "ability_eng": "Once per game, during the day, publicly choose a player: if they are the Demon, they die.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -216,7 +216,7 @@ var rolesData = [
         "keyword": "ravenkeeper",
         "type": "townsfolk",
         "edition": "1",
-        "ability_cz": "V noc, kterou zemřeš, se probudíš a dozvíš se roli hráče, kterého si vybereš.",
+        "ability_cz": "V noc, kterou zemřeš, se probudíš a vybereš si hráče: dozvíš se jeho roli.",
         "ability_eng": "If you die at night, you are woken to choose a player: you learn their character.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -237,7 +237,7 @@ var rolesData = [
         "keyword": "mayor",
         "type": "townsfolk",
         "edition": "1",
-        "ability_cz": "Žijí pouze 3 hráči & neproběhne poprava, pak tvůj tým vyhraje. Pokud v noci zemřeš, může místo tebe zemřít někdo jiný.",
+        "ability_cz": "Žijí-li pouze 3 hráči & neproběhne poprava, pak tvůj tým vyhraje. Pokud v noci zemřeš, může místo tebe zemřít někdo jiný.",
         "ability_eng": "If only 3 players live & no execution occurs, your team wins. If you die at night, another player might die instead.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -258,7 +258,7 @@ var rolesData = [
         "keyword": "virgin",
         "type": "townsfolk",
         "edition": "1",
-        "ability_cz": "Pokud jsi poprvé nominován a ten kdo tě nominoval je Měšťan, pak je on sám okamžitě popraven.",
+        "ability_cz": "Když jsi poprvé nominován a ten kdo tě nominoval je Měšťan, tak je on sám okamžitě popraven.",
         "ability_eng": "The 1st time you are nominated, if the nominator is a Townsfolk, they are executed immediately.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -279,7 +279,7 @@ var rolesData = [
         "keyword": "butler",
         "type": "outsider",
         "edition": "1",
-        "ability_cz": "Každou noc si vyber hráče (ne sebe) a zítra můžeš hlasovat, pouze pokud hlasuje (bude hlasovat) i on.",
+        "ability_cz": "Každou noc si vyber hráče (ne sebe): zítra můžeš hlasovat, pouze pokud hlasuje (bude hlasovat) i on.",
         "ability_eng": "Each night, choose a player (not yourself): tomorrow, you may only vote if they are voting too.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -300,7 +300,7 @@ var rolesData = [
         "keyword": "drunk",
         "type": "outsider",
         "edition": "1",
-        "ability_cz": "Nevíš, že jsi opilec. Myslíš si, že jsi nějaká z rolí Měšťanů, ale nejsi.",
+        "ability_cz": "Nevíš, že jsi Opilec. Myslíš si, že jsi nějaká z rolí Měšťanů, ale nejsi.",
         "ability_eng": "You do not know you are the Drunk. You think you are a Townsfolk character, but you are not.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -363,7 +363,7 @@ var rolesData = [
         "keyword": "poisoner",
         "type": "minion",
         "edition": "1",
-        "ability_cz": "Každou noc si vyber hráče, tento hráč je od tohoto momentu do soumraku otráven.",
+        "ability_cz": "Každou noc si vyber hráče: tento hráč je od tohoto momentu až do soumraku otráven.",
         "ability_eng": "Each night, choose a player: they are poisoned tonight and tomorrow day.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -405,7 +405,7 @@ var rolesData = [
         "keyword": "scarletwoman",
         "type": "minion",
         "edition": "1",
-        "ability_cz": "Pokud je naživu 5 nebo více hráčů a Démon zemře, staneš se Démonem ty. (Cestovatelé se nepočítají.)",
+        "ability_cz": "Pokud je naživu 5, nebo více hráčů a Démon zemře, staneš se Démonem ty. (Cestovatelé se nepočítají.)",
         "ability_eng": "If there are 5 or more players alive & the Demon dies, you become the Demon. (Travellers don't count.)",
         "setup": false,
         "setup_reminder_eng": "",
@@ -416,7 +416,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 27,
         "other_night_reminder_eng": "If the Scarlet Woman became the Demon today, show them the **YOU ARE** token, then the Demon token.",
-        "other_night_reminder_cz": "Pokud se Šarlatová žena dnes stala Démonem, ukaž jí **JSI*, poté žeton Démona.",
+        "other_night_reminder_cz": "Pokud se Šarlatová žena dnes stala Démonem, ukaž jí **TY JSI*, poté žeton Démona.",
         "jinx": true
     },
     {
@@ -447,7 +447,7 @@ var rolesData = [
         "keyword": "imp",
         "type": "demon",
         "edition": "1",
-        "ability_cz": "Každou noc* si vyber hráče, ten zemře. Pokud zabiješ sám sebe, pak se jeden z Přisluhovačů stane Čert.",
+        "ability_cz": "Každou noc* si vyber hráče: ten zemře. Pokud zabiješ sám sebe, pak se jeden z Přisluhovačů stane Čertem.",
         "ability_eng": "Each night*, choose a player: they die. If you kill yourself this way, a Minion becomes the Imp.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -458,7 +458,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 34,
         "other_night_reminder_eng": "The Imp chooses a player. {reminder_token} If the Imp chose themselves: Replace 1 alive Minion token with a spare Imp token. Put the old Imp to sleep. Wake the new Imp. Show the **YOU ARE** token, then show the Imp token.",
-        "other_night_reminder_cz": "Čert vybere hráče. {reminder_token} Pokud Čert vybral sám sebe: Nahraď 1 žeton Přisluhovače, který je naživu, náhradním žetonem Čerta. Uspi starého Čerta. Probuď nového Čerta. Ukaž **JSI**, poté ukaž žeton Čerta.",
+        "other_night_reminder_cz": "Čert vybere hráče. {reminder_token} Pokud Čert vybral sám sebe: Nahraď 1 žeton Přisluhovače, který je naživu, náhradním žetonem Čerta. Uspi starého Čerta. Probuď nového Čerta. Ukaž **TY JSI**, poté ukaž žeton Čerta.",
         "jinx": false
     },
     {
@@ -552,7 +552,7 @@ var rolesData = [
         "keyword": "beggar",
         "type": "traveller",
         "edition": "1",
-        "ability_cz": "K hlasování musíš použít hlasovací žeton. Pokud ti mrtvý Hráč dá svůj, dozvíš se jeho stranu. Jsi střízlivý a zdravý.",
+        "ability_cz": "K hlasování musíš použít hlasovací žeton. Pokud ti mrtvý hráč dá svůj, dozvíš se jeho stranu. Jsi střízlivý a zdravý.",
         "ability_eng": "You must use a vote token to vote. If a dead player gives you theirs, you learn their alignment. You are sober & healthy.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -573,7 +573,7 @@ var rolesData = [
         "keyword": "grandmother",
         "type": "townsfolk",
         "edition": "2",
-        "ability_cz": "První noc se dozvíš o jednom hodném hráči a jeho roli. Tento hráč je tvé vnouče a pokud ho zabije Démon, zemřeš také.",
+        "ability_cz": "První noc se dozvíš o jednom hráči, že je hodný a i jakou má roli. Tento hráč je tvé vnouče a pokud ho zabije Démon, zemřeš také.",
         "ability_eng": "You start knowing a good player & their character. If the Demon kills them, you die too.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -657,7 +657,7 @@ var rolesData = [
         "keyword": "innkeeper",
         "type": "townsfolk",
         "edition": "2",
-        "ability_cz": "Každou noc* si vyber 2 hráče: tuto noc nemohou zemřít, ale jeden z nich je opilý až do zítřejšího soumraku.",
+        "ability_cz": "Každou noc* si vyber 2 hráče: tuto noc nemohou zemřít, ale jeden z nich je opilý až do soumraku.",
         "ability_eng": "Each night*, choose 2 players: they can't die tonight, but 1 is drunk until dusk.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -888,7 +888,7 @@ var rolesData = [
         "keyword": "goon",
         "type": "outsider",
         "edition": "2",
-        "ability_cz": "Každou noc je první hráč, který si tě vybere svou schopností, opilý až do zítřejšího soumraku. Ty se přidáš na jeho stranu.",
+        "ability_cz": "Každou noc je první hráč, který si tě vybere svou schopností, opilý až do soumraku. Ty se přidáš na jeho stranu.",
         "ability_eng": "Each night, the 1st player to choose you with their ability is drunk until dusk. You become their alignment.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -917,7 +917,7 @@ var rolesData = [
         "setlist_position": 5,
         "first_night_position": 18,
         "first_night_reminder_eng": "If there are 7 or more players, wake the Lunatic: Show the **THESE ARE YOUR MINIONS** token. Point to any players. Show the **THESE CHARACTERS ARE NOT IN PLAY** token. Show 3 good character tokens. Put the Lunatic to sleep. Wake the Demon. Show the **YOU ARE** info token and the Demon token. Show the **THIS PLAYER IS** info token and the Lunatic token, then point to the Lunatic.",
-        "first_night_reminder_cz": "Pokud je ve hře 7 a více hráčů, probuď Lunatika: Ukaž **TOTO JSOU TVOJI PŘISLUHOVAČI**. Ukaž na libovolné hráče. Ukaž **TYTO ROLE NEJSOU VE HŘE**. Ukaž 3 žetony hodných rolí. Uspi Lunatika. Probuď Démona. Ukaž **JSI** a žeton Démona. Ukaž **TENTO HRÁČ JE** a žeton Lunatika, poté ukaž na Lunatika.",
+        "first_night_reminder_cz": "Pokud je ve hře 7 a více hráčů, probuď Lunatika: Ukaž **TOTO JSOU TVOJI PŘISLUHOVAČI**. Ukaž na libovolné hráče. Ukaž **TYTO ROLE NEJSOU VE HŘE**. Ukaž 3 žetony hodných rolí. Uspi Lunatika. Probuď Démona. Ukaž **TY JSI** a žeton Démona. Ukaž **TENTO HRÁČ JE** a žeton Lunatika, poté ukaž na Lunatika.",
         "other_night_position": 29,
         "other_night_reminder_eng": "Do whatever needs to be done to simulate the Demon acting. Put the Lunatic to sleep. Wake the Demon. Show the Lunatic token & point to them, then their target(s).",
         "other_night_reminder_cz": "Udělej cokoliv, co je třeba k simulování akce Démona. Uspi Lunatika. Probuď Démona. Ukaž žeton Lunatika a ukaž na něj, poté na jeho cíl(e).",
@@ -1253,10 +1253,10 @@ var rolesData = [
         "setlist_position": 21,
         "first_night_position": 33,
         "first_night_reminder_eng": "The Snake Charmer chooses a player. If they chose the Demon: Show the **YOU ARE** & Demon tokens. Give a thumbs down. Swap the Snake Charmer & Demon tokens. Put the old Snake Charmer to sleep. Wake the old Demon. Show the **YOU ARE** and Snake Charmer tokens & give a thumbs up. {reminder_token}",
-        "first_night_reminder_cz": "Zaklínač Hadů vybere hráče. Pokud vybral Démona: Ukaž **JSI** a Démona, **PŘÍSLUŠNÍK STRANY** a palec dolů (pokud byl na straně zlých). Prohoď žetony Zaklínače Hadů a Démona. Uspi starého Zaklínače Hadů. Probuď starého Démona. Ukaž **JSI** a Zaklínače Hadů, **PŘÍSLUŠNÍK STRANY** a palec nahoru  (pokud byl na straně hodných). {reminder_token}",
+        "first_night_reminder_cz": "Zaklínač Hadů vybere hráče. Pokud vybral Démona: Ukaž **TY JSI** a Démona, **PŘÍSLUŠNÍK STRANY** a palec dolů (pokud byl na straně zlých). Prohoď žetony Zaklínače Hadů a Démona. Uspi starého Zaklínače Hadů. Probuď starého Démona. Ukaž **TY JSI** a Zaklínače Hadů, **PŘÍSLUŠNÍK STRANY** a palec nahoru  (pokud byl na straně hodných). {reminder_token}",
         "other_night_position": 17,
         "other_night_reminder_eng": "The Snake Charmer chooses a player. If they chose the Demon: Show the **YOU ARE** & Demon tokens. Give a thumbs down. Swap the Snake Charmer & Demon tokens. Put the old Snake Charmer to sleep. Wake the old Demon. Show the **YOU ARE** and Snake Charmer tokens & give a thumbs up. {reminder_token}",
-        "other_night_reminder_cz": "Zaklínač Hadů vybere hráče. Pokud vybral Démona: Ukaž **JSI** a Démona, **PŘÍSLUŠNÍK STRANY** a palec dolů (pokud byl na straně zlých). Prohoď žetony Zaklínače Hadů a Démona. Uspi starého Zaklínače Hadů. Probuď starého Démona. Ukaž **JSI** a Zaklínače Hadů, **PŘÍSLUŠNÍK STRANY** a palec nahoru  (pokud byl na straně hodných). {reminder_token}",
+        "other_night_reminder_cz": "Zaklínač Hadů vybere hráče. Pokud vybral Démona: Ukaž **TY JSI** a Démona, **PŘÍSLUŠNÍK STRANY** a palec dolů (pokud byl na straně zlých). Prohoď žetony Zaklínače Hadů a Démona. Uspi starého Zaklínače Hadů. Probuď starého Démona. Ukaž **TY JSI** a Zaklínače Hadů, **PŘÍSLUŠNÍK STRANY** a palec nahoru  (pokud byl na straně hodných). {reminder_token}",
         "jinx": false
     },
     {
@@ -1487,7 +1487,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 54,
         "other_night_reminder_eng": "If the Barber died today or tonight, show the Demon the **THIS CHARACTER SELECTED YOU** & Barber tokens. If the Demon chose 2 players, wake one at a time. Show the **YOU ARE** token & their new character token.",
-        "other_night_reminder_cz": "Pokud Holič zemřel dnes nebo dnes v noci, ukaž Démonovi **TATO ROLE SI TĚ VYBRALA** a Holiče. Pokud Démon vybral 2 hráče, probuď je jednoho po druhém. Ukaž **JSI** a žeton jejich nové role.",
+        "other_night_reminder_cz": "Pokud Holič zemřel dnes nebo dnes v noci, ukaž Démonovi **TATO ROLE SI TĚ VYBRALA** a Holiče. Pokud Démon vybral 2 hráče, probuď je jednoho po druhém. Ukaž **TY JSI** a žeton jejich nové role.",
         "jinx": false
     },
     {
@@ -1613,7 +1613,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 23,
         "other_night_reminder_eng": "The Pit-Hag chooses a player & a character. If they chose a character that is not in play: Put the Pit-Hag to sleep. Wake the target. Show the **YOU ARE** token & their new character token.",
-        "other_night_reminder_cz": "Ježibaba vybere hráče a roli. Pokud vybrala roli, která není ve hře: Uspi Ježibabu. Probuď cíl. Ukaž **JSI** a žeton jeho nové role.",
+        "other_night_reminder_cz": "Ježibaba vybere hráče a roli. Pokud vybrala roli, která není ve hře: Uspi Ježibabu. Probuď cíl. Ukaž **TY JSI** a žeton jeho nové role.",
         "jinx": true
     },
     {
@@ -1655,7 +1655,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 39,
         "other_night_reminder_eng": "The Fang Gu chooses a player. {reminder_token} If they chose an Outsider (once only): Replace the Outsider token with the spare Fang Gu token. Put the Fang Gu to sleep. Wake the target. Show the **YOU ARE** and Fang Gu tokens & give a thumbs-down. {reminder_token}",
-        "other_night_reminder_cz": "Fang Gu vybere hráče. {reminder_token} Pokud vybral Outsidera (jen jednou): Nahraď žeton Outsidera náhradním žetonem Fang Gu. Uspi Fang Gu. Probuď cíl. Ukaž **JSI** a Fang Gu, pak **PŘÍSLUŠNÍK STRANY** a ukaž palec dolů. {reminder_token}",
+        "other_night_reminder_cz": "Fang Gu vybere hráče. {reminder_token} Pokud vybral Outsidera (jen jednou): Nahraď žeton Outsidera náhradním žetonem Fang Gu. Uspi Fang Gu. Probuď cíl. Ukaž **TY JSI** a Fang Gu, pak **PŘÍSLUŠNÍK STRANY** a ukaž palec dolů. {reminder_token}",
         "jinx": false
     },
     {
@@ -1728,7 +1728,7 @@ var rolesData = [
         "keyword": "barista",
         "type": "traveller",
         "edition": "3",
-        "ability_cz": "Každou noc, až do soumraku, buď 1) se hráč stane střízlivým, zdravým a dostane pravdivé informace, nebo 2) jeho schopnost funguje dvakrát. Dozví se, co z toho.",
+        "ability_cz": "Každou noc, až do soumraku, se buď 1) hráč stane střízlivým, zdravým a dostane pravdivé informace, nebo 2) jeho schopnost funguje dvakrát. Dozví se, co z toho.",
         "ability_eng": "Each night, until dusk, 1) a player becomes sober, healthy & gets true info, or 2) their ability works twice. They learn which.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -1833,7 +1833,7 @@ var rolesData = [
         "keyword": "acrobat",
         "type": "townsfolk",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "Každou noc* si vyber hráče: pokud už je nebo se dnes v noci stane opilým nebo otráveným, zemřeš.",
         "ability_eng": "Each night*, choose a player: if they are or become drunk or poisoned tonight, you die.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -1844,7 +1844,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 16,
         "other_night_reminder_eng": "The Acrobat chooses a player. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Akrobat vybere hráče. {reminder_token}",
         "jinx": false
     },
     {
@@ -1854,7 +1854,7 @@ var rolesData = [
         "keyword": "alchemist",
         "type": "townsfolk",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Máš schopnost Přisluhovače. Při jejím použití tě může Vypravěč vyzvat k jiné volbě.",
         "ability_eng": "You have a Minion ability. When using this, the Storyteller may prompt you to choose differently.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -1862,7 +1862,7 @@ var rolesData = [
         "setlist_position": 53,
         "first_night_position": 11,
         "first_night_reminder_eng": "Show the **YOU ARE** info token and a Minion token.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž **TY JSI** a žeton Přisluhovače.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -1875,7 +1875,7 @@ var rolesData = [
         "keyword": "alhadikhia",
         "type": "demon",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Každou noc* si můžeš vybrat 3 hráče (všichni hráči se dozví koho): každý si potichu vybere, zda bude žít nebo zemře, ale pokud si všichni zvolí život, všichni zemřou.",
         "ability_eng": "Each night*, you may choose 3 players (all players learn who): each silently chooses to live or die, but if all live, all die.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -1886,7 +1886,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 45,
         "other_night_reminder_eng": "The Al-Hadikhia chooses 3 players. {reminder_token} {reminder_token} {reminder_token} In order, wake each target. They nod or shake their head. Put them to sleep before waking the next target.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Al-Hadikhia vybere 3 hráče. {reminder_token} {reminder_token} {reminder_token} Postupně probuď každý cíl. Kývnou nebo zavrtí hlavou. Uspi je předtím, než probudíš další cíl.",
         "jinx": true
     },
     {
@@ -1896,7 +1896,7 @@ var rolesData = [
         "keyword": "alsaahir",
         "type": "townsfolk",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Každý den můžeš veřejně hádat, kteří hráči jsou Přisluhovači a kteří Démoni. Pokud se trefíš, hodná strana vítězí.",
         "ability_eng": "Each day, if you publicly guess which players are Minion(s) and which are Demon(s), good wins.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -1916,8 +1916,8 @@ var rolesData = [
         "name_eng": "Amnesiac",
         "keyword": "amnesiac",
         "type": "townsfolk",
-        "edition": "8",
-        "ability_cz": "",
+        "edition": "10",
+        "ability_cz": "Nevíš, jaká je tvá schopnost. Každý den v soukromí hádej, co to je: dozvíš se, jak moc se pleteš.",
         "ability_eng": "You do not know what your ability is. Each day, privately guess what it is: you learn how accurate you are.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -1925,10 +1925,10 @@ var rolesData = [
         "setlist_position": 55,
         "first_night_position": 47,
         "first_night_reminder_eng": "Do whatever needs to be done to satisfy the Amnesiac's ability.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Udělej cokoliv je potřeba pro splnění schopnosti Amnéziaka.",
         "other_night_position": 63,
         "other_night_reminder_eng": "Do whatever needs to be done to satisfy the Amnesiac's ability.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Udělej cokoliv je potřeba pro splnění schopnosti Amnéziaka.",
         "jinx": false
     },
     {
@@ -1938,7 +1938,7 @@ var rolesData = [
         "keyword": "atheist",
         "type": "townsfolk",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Vypravěč může porušovat pravidla hry, a pokud je popraven, hodná strana vyhrává, i když jsi mrtvý.",
         "ability_eng": "The Storyteller can break the game rules, and if executed, good wins, even if you are dead.",
         "setup": true,
         "setup_reminder_eng": "[No evil characters]",
@@ -1959,7 +1959,7 @@ var rolesData = [
         "keyword": "balloonist",
         "type": "townsfolk",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "Každou noc se dozvíš hráče, který má roli jiného typu než hráč, který ti byl ukázán minulou noc.",
         "ability_eng": "Each night, you learn a player of a different character type than last night.",
         "setup": true,
         "setup_reminder_eng": "[+0 or +1 Outsider]",
@@ -1967,10 +1967,10 @@ var rolesData = [
         "setlist_position": 16,
         "first_night_position": 62,
         "first_night_reminder_eng": "Point to any player. {reminder_token}",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž na jakéhokoliv hráče. {reminder_token}",
         "other_night_position": 79,
         "other_night_reminder_eng": "Point to a player with a different character type to the previously shown player. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Ukaž na hráče s jiným typem role, než kterou měl předchozí hráč, na kterého jsi ukazoval. {reminder_token}",
         "jinx": false
     },
     {
@@ -1980,7 +1980,7 @@ var rolesData = [
         "keyword": "banshee",
         "type": "townsfolk",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Pokud tě Démon zabije, všichni hráči se to dozví. Od této chvíle můžeš nominovat dvakrát denně a hlasovat dvakrát při každé nominaci.",
         "ability_eng": "If the Demon kills you, all players learn this. From now on, you may nominate twice per day and vote twice per nomination.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -1991,7 +1991,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 58,
         "other_night_reminder_eng": "If the Banshee was killed by the Demon tonight, announce that the Banshee has died. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud byla Banshee dnes v noci zabita Démonem, oznam, že Banshee zemřela. {reminder_token}",
         "jinx": false
     },
     {
@@ -2001,7 +2001,7 @@ var rolesData = [
         "keyword": "boffin",
         "type": "minion",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "Démon (i když je opilý nebo otrávený) má schopnost hodné role, která není ve hře. Oba víte jakou.",
         "ability_eng": "The Demon (even if drunk or poisoned) has a not-in-play good character’s ability. You both know which.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2009,7 +2009,7 @@ var rolesData = [
         "setlist_position": 26,
         "first_night_position": 9,
         "first_night_reminder_eng": "Wake the Boffin and the Demon. Show the **THIS CHARACTER SELECTED YOU** & Boffin tokens, then the not-in-play good character token.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Probuď Vědátora a Démona. Ukaž **TATO ROLE SI TĚ VYBRALA** a žeton Vědátora, poté žeton hodné role, která není ve hře.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -2022,7 +2022,7 @@ var rolesData = [
         "keyword": "boomdandy",
         "type": "minion",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "Pokud jsi popraven, všichni kromě 3 hráčů zemřou. Po odpočítávání od 10 do 1 zemře hráč, na kterého ukazuje nejvíce hráčů.",
         "ability_eng": "If you are executed, all but 3 players die. After a 10 to 1 countdown, the player with the most players pointing at them, dies.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2043,7 +2043,7 @@ var rolesData = [
         "keyword": "bountyhunter",
         "type": "townsfolk",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "První noc se dozvíš svůj cíl, tedy 1 zlého hráče. Pokud tvůj cíl zemře, dozvíš se tuto noc dalšího zlého hráče.",
         "ability_eng": "You start knowing 1 evil player. If the player you know dies, you learn another evil player tonight.",
         "setup": true,
         "setup_reminder_eng": "[1 Townsfolk is evil]",
@@ -2051,10 +2051,10 @@ var rolesData = [
         "setlist_position": 12,
         "first_night_position": 65,
         "first_night_reminder_eng": "Point to the player marked **KNOW**.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž na hráče označeného **CÍL**.",
         "other_night_position": 82,
         "other_night_reminder_eng": "If the player marked **KNOW** died today or tonight, point to the new player marked **KNOW**.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud hráč označený **CÍL** dnes nebo dnes v noci zemřel, ukaž na nového hráče označeného **CÍL**.",
         "jinx": true
     },
     {
@@ -2064,7 +2064,7 @@ var rolesData = [
         "keyword": "cacklejack",
         "type": "traveller",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Každý den si vyber hráče: jiný hráč tuto noc změní roli.",
         "ability_eng": "Each day, choose a player: a different player changes character tonight.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2085,7 +2085,7 @@ var rolesData = [
         "keyword": "cannibal",
         "type": "townsfolk",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "Máš schopnost posledního zabitého popraveného hráče. Pokud je zlý, jsi otrávený, dokud nezemře popravou hodný hráč.",
         "ability_eng": "You have the ability of the recently killed executee. If they are evil, you are poisoned until a good player dies by execution.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2106,7 +2106,7 @@ var rolesData = [
         "keyword": "choirboy",
         "type": "townsfolk",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Pokud Démon zabije Krále, dozvíš se, který hráč je Démon.",
         "ability_eng": "If the Demon kills the King, you learn which player is the Demon.",
         "setup": true,
         "setup_reminder_eng": "[+the King]",
@@ -2117,7 +2117,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 60,
         "other_night_reminder_eng": "If the Demon killed the King, point to the Demon player.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud Démon zabil Krále, ukaž na hráče hrajícího Démona.",
         "jinx": false
     },
     {
@@ -2127,7 +2127,7 @@ var rolesData = [
         "keyword": "cultleader",
         "type": "townsfolk",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "Každou noc se přidáš na stranu svého žijícího souseda. Pokud se všichni hodní hráči rozhodnou přidat do tvého kultu, tvůj tým vyhrává.",
         "ability_eng": "Each night, you become the alignment of an alive neighbor. If all good players choose to join your cult, your team wins.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2135,10 +2135,10 @@ var rolesData = [
         "setlist_position": 26,
         "first_night_position": 67,
         "first_night_reminder_eng": "The Cult Leader might change alignment. If so, show the **YOU ARE** info token & give a thumb signal.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Vrchní Kultista může změnit stranu. Pokud změní, ukaž **TY JSI** a ukaž signál palcem.",
         "other_night_position": 84,
         "other_night_reminder_eng": "The Cult Leader might change alignment. If so, show the **YOU ARE** info token & give a thumb signal.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Vrchní Kultista může změnit stranu. Pokud ano, ukaž **TY JSI** a ukaž signál palcem.",
         "jinx": false
     },
     {
@@ -2148,7 +2148,7 @@ var rolesData = [
         "keyword": "damsel",
         "type": "outsider",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "Všichni Přisluhovači ví, že je Dívka v Nesnázích ve hře. Pokud Přisluhovač veřejně uhodne, že jsi to ty (jednou za hru), tvůj tým prohrává.",
         "ability_eng": "All Minions know a Damsel is in play. If a Minion publicly guesses you (once), your team loses.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2156,10 +2156,10 @@ var rolesData = [
         "setlist_position": 20,
         "first_night_position": 46,
         "first_night_reminder_eng": "During Minion Info, show the Minions the Damsel token. If you haven't done this yet, do so now. If the Damsel was chosen by the Huntsman, show the **YOU ARE** info token & their new character token.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Během Infa Přisluhovačů ukaž Přisluhovačům žeton Dívky v nesnázích. Pokud jsi to ještě neudělal, udělej to nyní. Pokud si Dívku v nesnázích vybral Lovec, ukaž **TY JSI** a žeton její nové role.",
         "other_night_position": 62,
         "other_night_reminder_eng": "If the Damsel was chosen by the Huntsman, show the **YOU ARE** info token & their new character token.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud si Dívku v nesnázích vybral Lovec, ukaž informační **TY JSI** a žeton její nové role.",
         "jinx": false
     },
     {
@@ -2169,7 +2169,7 @@ var rolesData = [
         "keyword": "engineer",
         "type": "townsfolk",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Jednou za hru si v noci vyber, jací Přisluhovači budou ve hře nebo jaký Démon bude ve hře.",
         "ability_eng": "Once per game, at night, choose which Minions or which Demon is in play.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2177,10 +2177,10 @@ var rolesData = [
         "setlist_position": 40,
         "first_night_position": 24,
         "first_night_reminder_eng": "The Engineer might choose Minions or Demons. Put the Engineer to sleep. Wake the target(s) one at a time. Show the **YOU ARE** info token & their new character token. {reminder_token}",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Inženýr může vybrat Přisluhovače nebo Démony. Uspi Inženýra. Probuď vybrané hráče jednoho po druhém. Ukaž **TY JSI **a žeton jejich nové role. {reminder_token}",
         "other_night_position": 8,
         "other_night_reminder_eng": "The Engineer might choose Minions or Demons. Put the Engineer to sleep. Wake the target(s) one at a time. Show the **YOU ARE** info token & their new character token. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Inženýr může vybrat Přisluhovače nebo Démony. Uspi Inženýra. Probuď vybrané hráče jednoho po druhém. Ukaž informační **TY JSI** a žeton jejich nové role. {reminder_token}",
         "jinx": false
     },
     {
@@ -2190,7 +2190,7 @@ var rolesData = [
         "keyword": "farmer",
         "type": "townsfolk",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "Když v noci zemřeš, živý hodný hráč se stane Farmářem.",
         "ability_eng": "When you die at night, an alive good player becomes a Farmer.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2201,7 +2201,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 64,
         "other_night_reminder_eng": "If the Farmer died tonight, wake a living good player. Show the **YOU ARE** info token and a Farmer token.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud Farmář dnes v noci zemřel, probuď živého hodného hráče. Ukaž informační **TY JSI** a žeton Farmáře.",
         "jinx": false
     },
     {
@@ -2211,7 +2211,7 @@ var rolesData = [
         "keyword": "fearmonger",
         "type": "minion",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Každou noc si vyber hráče: pokud ho nominuješ a je popraven, jeho tým prohrává. Všichni hráči se dozví, pokud si vybereš nového hráče.",
         "ability_eng": "Each night, choose a player: if you nominate & execute them, their team loses. All players know if you choose a new player.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2219,10 +2219,10 @@ var rolesData = [
         "setlist_position": 9,
         "first_night_position": 40,
         "first_night_reminder_eng": "The Fearmonger chooses a player. {reminder_token} Announce that the Fearmonger has chosen a player.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Strašák vybere hráče. {reminder_token} Oznam, že Strašák vybral hráče.",
         "other_night_position": 24,
         "other_night_reminder_eng": "The Fearmonger chooses a player. {reminder_token} If the target is different to last night, announce that the Fearmonger has chosen a player.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Strašák vybere hráče. {reminder_token} Pokud je cíl odlišný oproti minulé noci, oznam, že Strašák si vybral nového hráče.",
         "jinx": false
     },
     {
@@ -2232,7 +2232,7 @@ var rolesData = [
         "keyword": "fisherman",
         "type": "townsfolk",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Jednou za hru, během dne, navštiv Vypravěče pro radu, která pomůže tvému týmu vyhrát.",
         "ability_eng": "Once per game, during the day, visit the Storyteller for some advice to help your team win.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2253,7 +2253,7 @@ var rolesData = [
         "keyword": "gangster",
         "type": "traveller",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "Jednou denně si můžeš zvolit zabít tvého živého souseda, pokud s tím tvůj druhý živý soused souhlasí.",
         "ability_eng": "Once per day, you may choose to kill an alive neighbor, if your other alive neighbor agrees.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2274,7 +2274,7 @@ var rolesData = [
         "keyword": "general",
         "type": "townsfolk",
         "edition": "7",
-        "ability_cz": "",
+        "ability_cz": "Každou noc se dozvíš, která strana podle Vypravěče vyhrává: hodná, zlá, nebo žádná.",
         "ability_eng": "Each night, you learn which alignment the Storyteller believes is winning: good, evil, or neither.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2282,10 +2282,10 @@ var rolesData = [
         "setlist_position": 17,
         "first_night_position": 71,
         "first_night_reminder_eng": "Give a thumb signal.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž signál palcem.",
         "other_night_position": 88,
         "other_night_reminder_eng": "Give a thumb signal.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Ukaž signál palcem.",
         "jinx": false
     },
     {
@@ -2295,7 +2295,7 @@ var rolesData = [
         "keyword": "gnome",
         "type": "traveller",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Všichni hráči se na začátku dozví hráče stejné strany jako ty. Můžeš se rozhodnout zabít kohokoliv, kdo ho nominuje.",
         "ability_eng": "All players start knowing a player of your alignment. You may choose to kill anyone who nominates them.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2316,7 +2316,7 @@ var rolesData = [
         "keyword": "goblin",
         "type": "minion",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Pokud veřejně prohlásíš, že jsi Goblin, když jsi nominován, a jsi ten den popraven, tvůj tým vyhrává.",
         "ability_eng": "If you publicly claim to be the Goblin when nominated & are executed that day, your team wins.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2337,7 +2337,7 @@ var rolesData = [
         "keyword": "golem",
         "type": "outsider",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "Můžeš nominovat pouze jednou za hru. Když tak učiníš a nominovaný není Démon, zemře.",
         "ability_eng": "You may only nominate once per game. When you do, if the nominee is not the Demon, they die.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2358,7 +2358,7 @@ var rolesData = [
         "keyword": "harpy",
         "type": "minion",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "Každou noc si vyber 2 hráče: zítra je 1. hráč posedlý tím, že 2. je zlý, jinak jeden či oba mohou zemřít.",
         "ability_eng": "Each night, choose 2 players: tomorrow, the 1st player is mad that the 2nd is evil, or one or both might die.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2366,10 +2366,10 @@ var rolesData = [
         "setlist_position": 6,
         "first_night_position": 41,
         "first_night_reminder_eng": "The Harpy chooses 2 players. {reminder_token} {reminder_token} Put the Harpy to sleep. Wake the 1st target. Show the **THIS CHARACTER SELECTED YOU** token, the Harpy token, then point to the 2nd target.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Harpyje vybere 2 hráče. {reminder_token} {reminder_token} Uspi Harpyji. Probuď 1. cíl. Ukaž **TATO ROLE SI TĚ VYBRALA**, žeton Harpyje, a poté ukaž na 2. cíl.",
         "other_night_position": 25,
         "other_night_reminder_eng": "The Harpy chooses 2 players. {reminder_token} {reminder_token} Put the Harpy to sleep. Wake the 1st target. Show the **THIS CHARACTER SELECTED YOU** token, the Harpy token, then point to the 2nd target.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Harpyje vybere 2 hráče. {reminder_token} {reminder_token} Uspi Harpyji. Probuď 1. cíl. Ukaž **TATO ROLE SI TĚ VYBRALA**, žeton Harpyje, a poté ukaž na 2. cíl.",
         "jinx": false
     },
     {
@@ -2379,7 +2379,7 @@ var rolesData = [
         "keyword": "hatter",
         "type": "outsider",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Pokud jsi zemřel dnes nebo tuto noc, Přisluhovači a Démon si mohou vybrat nové role Přisluhovačů a Démona, kterými se stanou.",
         "ability_eng": "If you died today or tonight, the Minion & Demon players may choose new Minion & Demon characters to be.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2390,7 +2390,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 53,
         "other_night_reminder_eng": "If the Hatter died, wake the Minions & Demons. Each may choose a new character. If they do, show the **YOU ARE** token & their new character token.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud Kloboučník zemřel, probuď Přisluhovače a Démony. Každý si může vybrat novou roli. Pokud tak učiní, ukaž žeton **TY JSI** a žeton jejich nové role.",
         "jinx": false
     },
     {
@@ -2400,7 +2400,7 @@ var rolesData = [
         "keyword": "heretic",
         "type": "outsider",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Kdo vyhraje, prohraje a kdo prohraje, vyhraje, i když jsi mrtvý.",
         "ability_eng": "Whoever wins, loses & whoever loses, wins, even if you are dead.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2421,7 +2421,7 @@ var rolesData = [
         "keyword": "hermit",
         "type": "outsider",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "Máš všechny schopnosti Outsiderů.",
         "ability_eng": "You have all Outsider abilities.",
         "setup": true,
         "setup_reminder_eng": "[-0 or -1 Outsider]",
@@ -2442,7 +2442,7 @@ var rolesData = [
         "keyword": "highpriestess",
         "type": "townsfolk",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "Každou noc se dozvíš, se kterým hráčem by sis podle Vypravěče měla promluvit.",
         "ability_eng": "Each night, learn which player the Storyteller believes you should talk to most.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2450,10 +2450,10 @@ var rolesData = [
         "setlist_position": 14,
         "first_night_position": 70,
         "first_night_reminder_eng": "Point to a player.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž na hráče.",
         "other_night_position": 87,
         "other_night_reminder_eng": "Point to a player.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Ukaž na hráče.",
         "jinx": false
     },
     {
@@ -2463,7 +2463,7 @@ var rolesData = [
         "keyword": "huntsman",
         "type": "townsfolk",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "Jednou za hru si v noci vyber živého hráče: pokud trefíš Dívku v Nesnázích, stane se Měšťanem, který není ve hře.",
         "ability_eng": "Once per game, at night, choose a living player: the Damsel, if chosen, becomes a not-in-play Townsfolk.",
         "setup": true,
         "setup_reminder_eng": "[+the Damsel]",
@@ -2471,10 +2471,10 @@ var rolesData = [
         "setlist_position": 45,
         "first_night_position": 45,
         "first_night_reminder_eng": "The Huntsman might choose a player. {reminder_token} If they chose the Damsel: Put the Huntsman to sleep. Wake the target. Show the **YOU ARE** info token & their new character token.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Lovec může vybrat hráče. {reminder_token} Pokud vybral Dívku v Nesnázích: Uspi Lovce. Probuď cíl. Ukaž **TY JSI** a žeton jeho nové role.",
         "other_night_position": 61,
         "other_night_reminder_eng": "The Huntsman might choose a player. {reminder_token} If they chose the Damsel: Put the Huntsman to sleep. Wake the target. Show the **YOU ARE** info token & their new character token.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Lovec může vybrat hráče. {reminder_token} Pokud vybral Dívku v Nesnázích: Uspi Lovce. Probuď cíl. Ukaž **TY JSI** a žeton jeho nové role.",
         "jinx": false
     },
     {
@@ -2484,7 +2484,7 @@ var rolesData = [
         "keyword": "kazali",
         "type": "demon",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Každou noc* si vyber hráče, ten zemře.",
         "ability_eng": "Each night*, choose a player: they die.",
         "setup": true,
         "setup_reminder_eng": "[You choose which players are which Minions. -? to +? Outsiders]",
@@ -2492,10 +2492,10 @@ var rolesData = [
         "setlist_position": 8,
         "first_night_position": 8,
         "first_night_reminder_eng": "The Kazali chooses which players are which Minions. Wake each target. Show the **YOU ARE** and Minion tokens & give a thumbs-down.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Kazali vybere, kteří hráči jsou jací Přisluhovači. Probuď každý cíl. Ukaž informační **TY JSI** a žeton Přisluhovače a ukaž palcem dolů.",
         "other_night_position": 49,
         "other_night_reminder_eng": "The Kazali chooses a player. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Kazali vybere hráče. {reminder_token}",
         "jinx": false
     },
     {
@@ -2505,7 +2505,7 @@ var rolesData = [
         "keyword": "king",
         "type": "townsfolk",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "Každou noc, pokud se počet mrtvých hráčů rovná nebo je větší než počet živých, dozvíš se 1 živou roli. Démon ví, že jsi Král.",
         "ability_eng": "Each night, if the dead equal or outnumber the living, you learn 1 alive character. The Demon knows you are the King.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2513,10 +2513,10 @@ var rolesData = [
         "setlist_position": 23,
         "first_night_position": 21,
         "first_night_reminder_eng": "Wake the Demon: Show the **THIS PLAYER IS** & King tokens, then point to the King.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Probuď Démona: Ukaž **TENTO HRÁČ JE** a žeton Krále, poté ukaž na Krále.",
         "other_night_position": 81,
         "other_night_reminder_eng": "If the dead equal or outnumber the living, show the character token of a living player.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud je mrtvých stejně nebo více než živých, ukaž žeton role živého hráče.",
         "jinx": false
     },
     {
@@ -2526,7 +2526,7 @@ var rolesData = [
         "keyword": "knight",
         "type": "townsfolk",
         "edition": "10",
-        "ability_cz": "",
+        "ability_cz": "První noc se dozvíš 2 hráče, kteří nejsou Démon.",
         "ability_eng": "You start knowing 2 players that are not the Demon.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2534,7 +2534,7 @@ var rolesData = [
         "setlist_position": 2,
         "first_night_position": 60,
         "first_night_reminder_eng": "Point to the 2 players marked **KNOW**.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž na 2 hráče oznažené **VÍ**.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -2547,7 +2547,7 @@ var rolesData = [
         "keyword": "legion",
         "type": "demon",
         "edition": "7",
-        "ability_cz": "",
+        "ability_cz": "Každou noc* může zemřít hráč. Popravy selžou, pokud hlasovali pouze zlí. Jevíš se také jako Přisluhovač.",
         "ability_eng": "Each night*, a player might die. Executions fail if only evil voted. You register as a Minion too.",
         "setup": true,
         "setup_reminder_eng": "[Most players are Legion]",
@@ -2558,7 +2558,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 33,
         "other_night_reminder_eng": "A player might die. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Hráč může zemřít. {reminder_token}",
         "jinx": true
     },
     {
@@ -2568,7 +2568,7 @@ var rolesData = [
         "keyword": "leviathan",
         "type": "demon",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "Pokud je popraven více než 1 hodný hráč, zlá strana vyhrává. Všichni hráči ví, že jsi ve hře. Po 5. dni vyhrávají zlí.",
         "ability_eng": "If more than 1 good player is executed, evil wins. All players know you are in play. After day 5, evil wins.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2576,10 +2576,10 @@ var rolesData = [
         "setlist_position": 19,
         "first_night_position": 75,
         "first_night_reminder_eng": "Announce that the Leviathan is in play. {reminder_token}",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Oznam, že je ve hře Leviatan. {reminder_token}",
         "other_night_position": 93,
         "other_night_reminder_eng": "Change the Leviathan reminder token to the relevant day. {reminder_token} You may announce that the Leviathan is in play.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Změň připomínkový žeton Leviatana na příslušný den. {reminder_token} Můžeš oznámit, že je ve hře Leviatan.",
         "jinx": true
     },
     {
@@ -2589,7 +2589,7 @@ var rolesData = [
         "keyword": "lilmonsta",
         "type": "demon",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "Každou noc si Přisluhovači vyberou, kdo hlídá Příšerku a \"je Démon\". Každou noc* může zemřít hráč.",
         "ability_eng": "Each night, Minions choose who babysits Lil' Monsta & \"is the Demon\". Each night*, a player might die.",
         "setup": true,
         "setup_reminder_eng": "[+1 Minion]",
@@ -2597,10 +2597,10 @@ var rolesData = [
         "setlist_position": 3,
         "first_night_position": 26,
         "first_night_reminder_eng": "Wake the Minions. They choose a player. {reminder_token} Put the Minions to sleep. Wake the target. Show the **YOU ARE** & Lil' Monsta tokens.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Probuď Přisluhovače. Vyberou hráče. {reminder_token} Uspi Přisluhovače. Probuď cíl. Ukaž **TY JSI** a žeton Příšerky.",
         "other_night_position": 47,
         "other_night_reminder_eng": "Wake the Minions. They choose a player. {reminder_token} Put the Minions to sleep. Wake the target. Show the **YOU ARE** & Lil' Monsta tokens. A player might die. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Probuď Přisluhovače. Vyberou hráče. {reminder_token} Uspi Přisluhovače. Probuď cíl. Ukaž žetony **TY JSI** a Příšerka. Hráč může zemřít. {reminder_token}",
         "jinx": true
     },
     {
@@ -2610,7 +2610,7 @@ var rolesData = [
         "keyword": "lleech",
         "type": "demon",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "Každou noc* si vyber hráče, ten zemře. Hru začínáš tím, že si vybereš hráče a ten se stane tvým hostitelem. Je otrávený a zemřeš právě tehdy, když je mrtvý i on.",
         "ability_eng": "Each night*, choose a player: they die. You start by choosing a player: they are poisoned. You die if & only if they are dead.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2618,10 +2618,10 @@ var rolesData = [
         "setlist_position": 16,
         "first_night_position": 27,
         "first_night_reminder_eng": "The Lleech chooses a player. {reminder_token}",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Pijavice vybere hráče. {reminder_token}",
         "other_night_position": 46,
         "other_night_reminder_eng": "The Lleech chooses a player. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pijavice vybere hráče. {reminder_token}",
         "jinx": true
     },
     {
@@ -2631,7 +2631,7 @@ var rolesData = [
         "keyword": "lordoftyphon",
         "type": "demon",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "Každou noc* si vyber hráče, ten zemře.",
         "ability_eng": "Each night*, choose a player: they die.",
         "setup": true,
         "setup_reminder_eng": "[Evil characters are in a line. You are in the middle. +1 Minion. -? to +? Outsiders]",
@@ -2639,10 +2639,10 @@ var rolesData = [
         "setlist_position": 15,
         "first_night_position": 7,
         "first_night_reminder_eng": "Wake the Lord of Typhon's neighbors. Show the **YOU ARE** and Minion tokens & give a thumbs-down.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Probuď sousedy Syna Týfóna. Ukaž **TY JSI** a žeton Přisluhovače a ukaž palcem dolů.",
         "other_night_position": 42,
         "other_night_reminder_eng": "The Lord of Typhon chooses a player. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Syn Týfóna vybere hráče. {reminder_token}",
         "jinx": false
     },
     {
@@ -2652,7 +2652,7 @@ var rolesData = [
         "keyword": "lycanthrope",
         "type": "townsfolk",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "Každou noc* si vyber živého hráče. Pokud je hodný, zemře a Démon tuto noc nezabíjí. Jeden hodný hráč se jeví jako zlý.",
         "ability_eng": "Each night*, choose an alive player. If good, they die & the Demon doesn’t kill tonight. One good player registers as evil.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2663,7 +2663,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 31,
         "other_night_reminder_eng": "The Lycanthrope chooses a player. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Vlkodlak vybere hráče. {reminder_token}",
         "jinx": false
     },
     {
@@ -2673,7 +2673,7 @@ var rolesData = [
         "keyword": "magician",
         "type": "townsfolk",
         "edition": "10",
-        "ability_cz": "",
+        "ability_cz": "Démon si myslí, že jsi Přisluhovač. Přisluhovači si myslí, že jsi Démon.",
         "ability_eng": "The Demon thinks you are a Minion. Minions think you are a Demon.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2681,7 +2681,7 @@ var rolesData = [
         "setlist_position": 66,
         "first_night_position": 14,
         "first_night_reminder_eng": "During Minion Info, point to the Magician and the Demon. During Demon Info, point to the Magician and the Minions.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Během Infa Přisluhovačů ukaž na Kouzelníka a Démona. Během Infa Démona ukaž na Kouzelníka a Přisluhovače.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -2702,7 +2702,7 @@ var rolesData = [
         "setlist_position": 16,
         "first_night_position": 23,
         "first_night_reminder_eng": "Wake the Demon. Show the **THIS PLAYER IS** & Marionette tokens. Point to the Marionette.",
-        "first_night_reminder_cz": "Probuď Démona. Ukaž **TENTO HRÁČ JE** a Loutky. Ukaž tam, kde sedí Loutka.",
+        "first_night_reminder_cz": "Probuď Démona. Ukaž **TENTO HRÁČ JE** a žeton Loutky. Ukaž tam, kde sedí Loutka.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -2715,7 +2715,7 @@ var rolesData = [
         "keyword": "mezepheles",
         "type": "minion",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "První noc se dozvíš tajné slovo. První hodný hráč, který toto slovo řekne, se tuto noc stane zlým.",
         "ability_eng": "You start knowing a secret word. The 1st good player to say this word becomes evil that night.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2723,10 +2723,10 @@ var rolesData = [
         "setlist_position": 1,
         "first_night_position": 42,
         "first_night_reminder_eng": "Show the secret word.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž tajné slovo.",
         "other_night_position": 26,
         "other_night_reminder_eng": "If a good player said the secret word, wake the player. Show the **YOU ARE** info token & give a thumbs-down. {reminder_token} {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud hodný hráč řekl tajné slovo, probuď tohoto hráče. Ukaž **TY JSI** a ukaž palcem dolů. {reminder_token} {reminder_token}",
         "jinx": false
     },
     {
@@ -2736,7 +2736,7 @@ var rolesData = [
         "keyword": "nightwatchman",
         "type": "townsfolk",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Jednou za hru si v noci vyber hráče, ten se dozví, že jsi Ponocný.",
         "ability_eng": "Once per game, at night, choose a player: they learn you are the Nightwatchman.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2744,10 +2744,10 @@ var rolesData = [
         "setlist_position": 41,
         "first_night_position": 66,
         "first_night_reminder_eng": "The Nightwatchman might choose a player. Put the Nightwatchman to sleep. Wake the target. Show the **THIS PLAYER IS** & Nightwatchman tokens, then point to the Nightwatchman. {reminder_token}",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ponocný může vybrat hráče. Uspi Ponocného. Probuď cíl. Ukaž **TENTO HRÁČ JE** a žeton Ponocného, poté ukaž na Ponocného. {reminder_token}",
         "other_night_position": 83,
         "other_night_reminder_eng": "The Nightwatchman might choose a player. Put the Nightwatchman to sleep. Wake the target. Show the **THIS PLAYER IS** & Nightwatchman tokens, then point to the Nightwatchman. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Ponocný může vybrat hráče. Uspi Ponocného. Probuď cíl. Ukaž **TENTO HRÁČ JE** a žeton Ponocného, poté ukaž na Ponocného. {reminder_token}",
         "jinx": false
     },
     {
@@ -2757,7 +2757,7 @@ var rolesData = [
         "keyword": "noble",
         "type": "townsfolk",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "První noc se dozvíš 3 hráče, z nichž právě a pouze 1 je zlý.",
         "ability_eng": "You start knowing 3 players, 1 and only 1 of which is evil.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2765,7 +2765,7 @@ var rolesData = [
         "setlist_position": 4,
         "first_night_position": 61,
         "first_night_reminder_eng": "Point to the 3 players marked **KNOW**.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž na 3 hráče oznažené **VÍ**.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -2778,7 +2778,7 @@ var rolesData = [
         "keyword": "ogre",
         "type": "outsider",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "První noc si vyber hráče (ne sebe): přidáš se na jeho stranu (nevíš jakou). Stane se tak, i když jsi opilý nebo otrávený.",
         "ability_eng": "On your 1st night, choose a player (not yourself): you become their alignment (you don't know which) even if drunk or poisoned.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2786,7 +2786,7 @@ var rolesData = [
         "setlist_position": 4,
         "first_night_position": 69,
         "first_night_reminder_eng": "The Ogre chooses a player. {reminder_token}",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Zlobr vybere hráče. {reminder_token}",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -2799,7 +2799,7 @@ var rolesData = [
         "keyword": "ojo",
         "type": "demon",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "Každou noc* si vyber roli, ta zemře. Pokud není ve hře, vybere Vypravěč, kdo zemře.",
         "ability_eng": "Each night*, choose a character: they die. If they are not in play, the Storyteller chooses who dies.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2810,7 +2810,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 44,
         "other_night_reminder_eng": "The Ojo chooses a character. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Ojo vybere roli. {reminder_token}",
         "jinx": false
     },
     {
@@ -2820,7 +2820,7 @@ var rolesData = [
         "keyword": "organgrinder",
         "type": "minion",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Všichni hráči mají při hlasování zavřené oči a součet hlasů je tajný. Každou noc si vyber, jestli jsi opilý až do soumraku.",
         "ability_eng": "All players keep their eyes closed when voting and the vote tally is secret. Each night, choose if you are drunk until dusk.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2828,10 +2828,10 @@ var rolesData = [
         "setlist_position": 25,
         "first_night_position": 35,
         "first_night_reminder_eng": "The Organ Grinder either nods their head yes to be drunk, or shakes their head no to be sober. {reminder_token}",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Flašinetář buď kývne hlavou ano, že je opilý, nebo zavrtí hlavou ne, že je střízlivý. {reminder_token}",
         "other_night_position": 19,
         "other_night_reminder_eng": "The Organ Grinder either nods their head yes to be drunk, or shakes their head no to be sober. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Flašinetář buď kývne hlavou ano, že je opilý, nebo zavrtí hlavou ne, že je střízlivý. {reminder_token}",
         "jinx": false
     },
     {
@@ -2841,7 +2841,7 @@ var rolesData = [
         "keyword": "pixie",
         "type": "townsfolk",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "První noc se dozvíš jednu roli Měšťana, která je ve hře. Pokud jsi byl posedlý tím, že jsi tato role a hráč s touto rolí zemře, získáš jeho schopnost.",
         "ability_eng": "You start knowing 1 in-play Townsfolk. If you were mad that you were this character, you gain their ability when they die.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2849,7 +2849,7 @@ var rolesData = [
         "setlist_position": 11,
         "first_night_position": 44,
         "first_night_reminder_eng": "Show the Townsfolk character token marked **MAD**.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž žeton role Měšťana označeného **POSEDLÝ**.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -2862,7 +2862,7 @@ var rolesData = [
         "keyword": "plaguedoctor",
         "type": "outsider",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Když zemřeš, Vypravěč získá schopnost Přisluhovače.",
         "ability_eng": "When you die, the Storyteller gains a Minion ability.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2873,7 +2873,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 56,
         "other_night_reminder_eng": "If the Plague Doctor died, the Storyteller gained a Minion ability. If you haven’t done this yet, do so now. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud Morový doktor zemřel, Vypravěč získal schopnost Přisluhovače. Pokud jsi to ještě neudělal, udělej to nyní. {reminder_token}",
         "jinx": true
     },
     {
@@ -2883,7 +2883,7 @@ var rolesData = [
         "keyword": "politician",
         "type": "outsider",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Pokud jsi byl hráč nejvíce zodpovědný za prohru tvého týmu, změníš stranu a vyhraješ, i když jsi mrtvý.",
         "ability_eng": "If you were the player most responsible for your team losing, you change alignment & win, even if dead.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2904,7 +2904,7 @@ var rolesData = [
         "keyword": "poppygrower",
         "type": "townsfolk",
         "edition": "7",
-        "ability_cz": "",
+        "ability_cz": "Přisluhovači a Démoni se navzájem neznají. Pokud zemřeš, dozví se tuto noc, kdo jsou.",
         "ability_eng": "Minions & Demons do not know each other. If you die, they learn who each other are that night.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2912,10 +2912,10 @@ var rolesData = [
         "setlist_position": 67,
         "first_night_position": 12,
         "first_night_reminder_eng": "Skip Minion Info and Demon Info. Wake the Demon. Show the **THESE CHARACTERS ARE NOT IN PLAY** token. Show 3 not-in-play good character tokens.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Přeskoč Info Přisluhovačů a Info Démona. Probuď Démona. Ukaž **TYTO ROLE NEJSOU VE HŘE**. Ukaž 3 žetony hodných rolí, které nejsou ve hře.",
         "other_night_position": 6,
         "other_night_reminder_eng": "If the Poppy Grower died today or tonight, wake all Minions. Show the **THIS IS THE DEMON** token. Point to the Demon. Put the Minions to sleep. Wake the Demon. Show the **THESE ARE YOUR MINIONS** token. Point to the Minions.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud Maková Panenka zemřela dnes nebo dnes v noci, probuď všechny Přisluhovače. Ukaž **TOTO JE DÉMON**. Ukaž na Démona. Uspi Přisluhovače. Probuď Démona. Ukaž **TOTO JSOU TVOJI PŘISLUHOVAČI**. Ukaž na Přisluhovače.",
         "jinx": false
     },
     {
@@ -2925,7 +2925,7 @@ var rolesData = [
         "keyword": "preacher",
         "type": "townsfolk",
         "edition": "10",
-        "ability_cz": "",
+        "ability_cz": "Každou noc si vyber hráče, pokud si vybereš Přisluhovače, ten se to dozví. Všichni vybraní Přisluhovači ztrácí svou schopnost.",
         "ability_eng": "Each night, choose a player: a Minion, if chosen, learns this. All chosen Minions have no ability.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2933,10 +2933,10 @@ var rolesData = [
         "setlist_position": 18,
         "first_night_position": 25,
         "first_night_reminder_eng": "The Preacher chooses a player. {reminder_token} If they chose a Minion: Put the Preacher to sleep. Wake the target. Show the **THIS CHARACTER SELECTED YOU** & Preacher tokens.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Kazatel vybere hráče. {reminder_token} Pokud vybral Přisluhovače: Uspi Kazatele. Probuď cíl. Ukaž **TATO ROLE SI TĚ VYBRALA** a žeton Kazatele.",
         "other_night_position": 9,
         "other_night_reminder_eng": "The Preacher chooses a player. {reminder_token} If they chose a Minion: Put the Preacher to sleep. Wake the target. Show the **THIS CHARACTER SELECTED YOU** & Preacher tokens.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Kazatel vybere hráče. {reminder_token} Pokud vybral Přisluhovače: Uspi Kazatele. Probuď cíl. Ukaž **TATO ROLE SI TĚ VYBRALA** a žeton Kazatel.",
         "jinx": false
     },
     {
@@ -2946,7 +2946,7 @@ var rolesData = [
         "keyword": "princess",
         "type": "townsfolk",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "Pokud jsi svůj 1. den nominovala a úspěšně popravila hráče, Démon tuto noc nezabíjí.",
         "ability_eng": "On your 1st day, if you nominated & executed a player, the Demon doesn't kill tonight.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2957,7 +2957,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 32,
         "other_night_reminder_eng": "If the Princess nominated the player who was executed today, wake the Demon as normal, but no one dies to the Demon's ability. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud Princezna nominovala hráče, který byl dnes popraven, probuď Démona jako obvykle, ale nikdo nezemře na následky Démonovy schopnosti. {reminder_token}",
         "jinx": false
     },
     {
@@ -2967,7 +2967,7 @@ var rolesData = [
         "keyword": "psychopath",
         "type": "minion",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Každý den můžeš před nominacemi veřejně vybrat hráče, ten zemře. Když jsi popraven, zemřeš pouze pokud prohraješ kámen-nůžky-papír.",
         "ability_eng": "Each day, before nominations, you may publicly choose a player: they die. If executed, you only die if you lose roshambo.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -2988,7 +2988,7 @@ var rolesData = [
         "keyword": "puzzlemaster",
         "type": "outsider",
         "edition": "7",
-        "ability_cz": "",
+        "ability_cz": "Jeden hráč je opilý, i když zemřeš. Jednou za hru, můžeš hádat, kdo to je. Pokud se trefíš, zjistíš, kdo je Démon, ale při špatném tipu dostaneš falešnou informaci.",
         "ability_eng": "1 player is drunk, even if you die. If you guess (once) who it is, learn the Demon player, but guess wrong & get false info.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3009,7 +3009,7 @@ var rolesData = [
         "keyword": "riot",
         "type": "demon",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "Třetí den se Přisluhovači stanou Masakrem a nominovaní umírají, ale musí okamžitě nominovat živého hráče. Tohle se musí stát.",
         "ability_eng": "On day 3, Minions become Riot & nominees die but nominate an alive player immediately. This must happen.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3020,7 +3020,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 91,
         "other_night_reminder_eng": "Change the Riot reminder token to the relevant day. {reminder_token} If it is night 3, you may wake the Minions. Show the **YOU ARE** & Riot tokens.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Změň připomínkový žeton Masakru na příslušný den. {reminder_token} Pokud je 3. noc, můžeš probudit Přisluhovače. Ukaž **TY JSI** a žeton Masakr.",
         "jinx": true
     },
     {
@@ -3030,7 +3030,7 @@ var rolesData = [
         "keyword": "shugenja",
         "type": "townsfolk",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "První noc se dozvíš, který ze dvou nejbližších zlých sousedů sedí blíže, zda ten po směru nebo proti směru hodinových ručiček. Pokud jsou stejně daleko, informace je náhodná.",
         "ability_eng": "You start knowing if your closest evil player is clockwise or anti-clockwise. If equidistant, this info is arbitrary.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3038,7 +3038,7 @@ var rolesData = [
         "setlist_position": 10,
         "first_night_position": 63,
         "first_night_reminder_eng": "Point clockwise or anticlockwise.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž po směru nebo proti směru hodinových ručiček.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -3051,7 +3051,7 @@ var rolesData = [
         "keyword": "snitch",
         "type": "outsider",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "Každý přisluhovač získá tři blafy.",
         "ability_eng": "Each Minion gets 3 bluffs.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3059,7 +3059,7 @@ var rolesData = [
         "setlist_position": 21,
         "first_night_position": 17,
         "first_night_reminder_eng": "Wake each Minion. Show the **THESE CHARACTERS ARE NOT IN PLAY** token. Show 3 not-in-play character tokens.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Probuď každého Přisluhovače. Ukaž žeton **TYTO ROLE NEJSOU VE HŘE**. Ukaž 3 žetony rolí, které nejsou ve hře.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -3072,7 +3072,7 @@ var rolesData = [
         "keyword": "steward",
         "type": "townsfolk",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "První noc se dozvíš 1 hodného hráče.",
         "ability_eng": "You start knowing 1 good player.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3080,7 +3080,7 @@ var rolesData = [
         "setlist_position": 1,
         "first_night_position": 59,
         "first_night_reminder_eng": "Point to the player marked **KNOW**.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž na hráče označeného **ZNÁ**.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -3093,18 +3093,18 @@ var rolesData = [
         "keyword": "summoner",
         "type": "minion",
         "edition": "10",
-        "ability_cz": "",
+        "ability_cz": "Dostaneš 3 blafy. Třetí noc si vyber hráče, ten se stane zlým Démonem, dle tvého výběru.",
         "ability_eng": "You get 3 bluffs. On the 3rd night, choose a player: they become an evil Demon of your choice.",
         "setup": true,
         "setup_reminder_eng": "[No Demon]",
-        "setup_reminder_cz": "",
+        "setup_reminder_cz": "[Žádný Démon]",
         "setlist_position": 18,
         "first_night_position": 19,
         "first_night_reminder_eng": "Show the **THESE CHARACTERS ARE NOT IN PLAY** token. Show 3 not-in-play good character tokens.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž **TYTO ROLE NEJSOU VE HŘE**. Ukaž 3 žetony hodných rolí, které nejsou ve hře.",
         "other_night_position": 28,
         "other_night_reminder_eng": "Change the Summoner reminder token to the relevant night. {reminder_token} If it is night 3, the Summoner chooses a player & a Demon character. Put the Summoner to sleep. Wake the target. Show the **YOU ARE** and Demon tokens & give a thumbs-down.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Změň připomínkový žeton Vyvolávače na příslušnou noc. {reminder_token} Pokud je 3. noc, Vyvolávač vybere hráče a roli Démona. Uspi Vyvolávače. Probuď cíl. Ukaž **TY JSI** a žeton Démona a ukaž palcem dolů.",
         "jinx": true
     },
     {
@@ -3114,7 +3114,7 @@ var rolesData = [
         "keyword": "villageidiot",
         "type": "townsfolk",
         "edition": "10",
-        "ability_cz": "",
+        "ability_cz": "Každou noc si vyber hráče, dozvíš se jeho stranu.",
         "ability_eng": "Each night, choose a player: you learn their alignment.",
         "setup": true,
         "setup_reminder_eng": "[+0 to +2 Village Idiots. 1 of the extras is drunk]",
@@ -3122,10 +3122,10 @@ var rolesData = [
         "setlist_position": 20,
         "first_night_position": 64,
         "first_night_reminder_eng": "If there are multiple Village Idiots, mark one as **DRUNK**. {reminder_token} Wake the Village Idiots one at a time to choose a player. Give a thumb signal.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Pokud je ve hře více Vesnických pobudů, označ jednoho jako **OPILÝ**. {reminder_token} Probuď Vesnické pobudy jednoho po druhém, aby vybrali hráče. Ukaž signál palcem.",
         "other_night_position": 80,
         "other_night_reminder_eng": "Wake the Village Idiots one at a time to choose a player. Give a thumb signal.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Probuď Vesnické pobudy jednoho po druhém, aby vybrali hráče. Ukaž signál palcem.",
         "jinx": false
     },
     {
@@ -3135,7 +3135,7 @@ var rolesData = [
         "keyword": "vizier",
         "type": "minion",
         "edition": "7",
-        "ability_cz": "",
+        "ability_cz": "Všichni hráči ví, že jsi Vezír. Nemůžeš zemřít během dne. Pokud po nominaci hlasoval alespoň jeden hodný hráč, můžeš nominovaného okamžitě nechat popravit.",
         "ability_eng": "All players know you are the Vizier. You cannot die during the day. If good voted, you may choose to execute immediately.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3143,7 +3143,7 @@ var rolesData = [
         "setlist_position": 24,
         "first_night_position": 76,
         "first_night_reminder_eng": "Announce which player is the Vizier.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Oznam, který hráč je Vezír.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -3156,7 +3156,7 @@ var rolesData = [
         "keyword": "widow",
         "type": "minion",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "První noc se podívej do Grimoáru a vyber si hráče, kterého otrávíš. Jeden hodný hráč ví, že je Vdova ve hře.",
         "ability_eng": "On your 1st night, look at the Grimoire & choose a player: they are poisoned. 1 good player knows a Widow is in play.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3164,7 +3164,7 @@ var rolesData = [
         "setlist_position": 14,
         "first_night_position": 30,
         "first_night_reminder_eng": "Show the Grimoire for as long as the Widow needs. The Widow chooses a player. {reminder_token} Put the Widow to sleep. Wake the player marked **KNOW** & show the Widow token. {reminder_token}",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž Grimoár na tak dlouho, jak Vdova potřebuje. Vdova vybere hráče. {reminder_token} Uspi Vdovu. Probuď hráče označeného **VÍ** a ukaž mu žeton Vdovy. {reminder_token}",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -3177,7 +3177,7 @@ var rolesData = [
         "keyword": "wizard",
         "type": "minion",
         "edition": "10",
-        "ability_cz": "",
+        "ability_cz": "Jednou za hru se můžeš rozhodnout něco si přát. Pokud je to splněno, může to mít svou cenu a zanechat nějakou stopu.",
         "ability_eng": "Once per game, choose to make a wish. If granted, it might have a price & leave a clue as to its nature.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3185,10 +3185,10 @@ var rolesData = [
         "setlist_position": 13,
         "first_night_position": 32,
         "first_night_reminder_eng": "Do whatever needs to be done to satisfy the Wizard's ability.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Udělej cokoliv je potřeba pro splnění schopnosti Čaroděje.",
         "other_night_position": 14,
         "other_night_reminder_eng": "Do whatever needs to be done to satisfy the Wizard's ability.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Udělej cokoliv je potřeba pro splnění schopnosti Čaroděje.",
         "jinx": false
     },
     {
@@ -3198,7 +3198,7 @@ var rolesData = [
         "keyword": "wraith",
         "type": "minion",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Můžeš v noci kdykoliv otevřít oči. Probouzíš se, když se probouzí ostatní zlí hráči.",
         "ability_eng": "You may choose to open your eyes at night. You wake when other evil players do.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3206,10 +3206,10 @@ var rolesData = [
         "setlist_position": 17,
         "first_night_position": 6,
         "first_night_reminder_eng": "Wake the Wraith whenever other evil players wake.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Probuď Přízrak kdykoliv se probudí jiní zlí hráči.",
         "other_night_position": 4,
         "other_night_reminder_eng": "Wake the Wraith whenever other evil players wake.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Probuď Přízrak kdykoliv se probudí jiní zlí hráči.",
         "jinx": false
     },
     {
@@ -3219,7 +3219,7 @@ var rolesData = [
         "keyword": "xaan",
         "type": "minion",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "V noci číslo X jsou všichni Měšťané otrávení až do soumraku.",
         "ability_eng": "On night X, all Townsfolk are poisoned until dusk.",
         "setup": true,
         "setup_reminder_eng": "[X Outsiders]",
@@ -3227,10 +3227,10 @@ var rolesData = [
         "setlist_position": 15,
         "first_night_position": 28,
         "first_night_reminder_eng": "If X is 1, mark the Xaan with the **X** reminder token. {reminder_token} {reminder_token}",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Pokud je X rovno 1, označ Xaana připomínkovým žetonem **X**. {reminder_token} {reminder_token}",
         "other_night_position": 10,
         "other_night_reminder_eng": "Change the Xaan reminder token to the relevant night. If it is night X, mark the Xaan with the **X** reminder token. {reminder_token} {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Změň připomínkový žeton Xaana na příslušnou noc. Pokud je X. noc, označ Xaana připomínkovým žetonem **X**. {reminder_token} {reminder_token}",
         "jinx": false
     },
     {
@@ -3240,7 +3240,7 @@ var rolesData = [
         "keyword": "yaggababble",
         "type": "demon",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "První noc se dozvíš tajnou frázi. Za každé její veřejné vyslovení, dnes může zemřít hráč.",
         "ability_eng": "You start knowing a secret phrase. For each time you said it publicly today, a player might die.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3248,10 +3248,10 @@ var rolesData = [
         "setlist_position": 1,
         "first_night_position": 13,
         "first_night_reminder_eng": "Show the Yaggababble their secret phrase.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Ukaž Avada Blablabla jeho tajnou frázi.",
         "other_night_position": 48,
         "other_night_reminder_eng": "For each time the Yaggababble said their phrase today, a player might die. {reminder_token}",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Za každý případ, kdy Avada Blablabla dnes řekl svou frázi, může zemřít hráč. {reminder_token}",
         "jinx": true
     },
     {
@@ -3261,7 +3261,7 @@ var rolesData = [
         "keyword": "zealot",
         "type": "outsider",
         "edition": "10",
-        "ability_cz": "",
+        "ability_cz": "Pokud je naživu 5 nebo více hráčů, musíš hlasovat pro každou nominaci.",
         "ability_eng": "If there are 5 or more players alive, you must vote for every nomination.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3366,7 +3366,7 @@ var rolesData = [
         "keyword": "djinn",
         "type": "fabled",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "Použij speciální pravidlo Džina. Všichni hráči vědí, jaké to je.",
         "ability_eng": "Use the Djinn's special rule. All players know what it is.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3387,7 +3387,7 @@ var rolesData = [
         "keyword": "duchess",
         "type": "fabled",
         "edition": "7",
-        "ability_cz": "",
+        "ability_cz": "Každý den se mohou 3 hráči rozhodnout tě navštívit. V noci* se každý návštěvník dozví, kolik návštěvníků je zlých, ale 1 dostane falešnou informaci.",
         "ability_eng": "Each day, 3 players may choose to visit you. At night*, each visitor learns how many visitors are evil, but 1 gets false info.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3398,7 +3398,7 @@ var rolesData = [
         "first_night_reminder_cz": "",
         "other_night_position": 2,
         "other_night_reminder_eng": "One at a time: Wake each player marked **VISITOR** or **FALSE INFO**. Show the **THIS CHARACTER SELECTED YOU** & Duchess tokens, then give a finger signal.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Postupně: Probuď každého hráče označeného jako **PRAVDA** nebo **LEŽ**. Ukaž **TATO ROLE SI TĚ VYBRALA** a žeton Vévodkyně, a poté ukaž signál prsty.",
         "jinx": false
     },
     {
@@ -3408,7 +3408,7 @@ var rolesData = [
         "keyword": "fibbin",
         "type": "fabled",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "Jednou za hru může 1 hodný hráč dostat nesprávnou informaci.",
         "ability_eng": "Once per game, 1 good player might get incorrect information.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3429,7 +3429,7 @@ var rolesData = [
         "keyword": "fiddler",
         "type": "fabled",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Jednou za hru Démon tajně vybere protihráče: všichni hráči vyberou, který z těchto 2 hráčů vyhraje.",
         "ability_eng": "Once per game, the Demon secretly chooses an opposing player: all players choose which of these 2 players win.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3449,8 +3449,8 @@ var rolesData = [
         "name_eng": "Ferryman",
         "keyword": "ferryman",
         "type": "fabled",
-        "edition": "8",
-        "ability_cz": "",
+        "edition": "10",
+        "ability_cz": "Poslední den získají všichni mrtví hráči zpět svůj hlasovací žeton.",
         "ability_eng": "On the final day, all dead players regain their vote token.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3471,7 +3471,7 @@ var rolesData = [
         "keyword": "doomsayer",
         "type": "fabled",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "Pokud žijí 4 nebo více hráčů, každý živý hráč si může veřejně jednou za hru zvolit, že hráč stejné strany zemře.",
         "ability_eng": "If 4 or more players live, each living player may publicly choose (once per game) that a player of their own alignment dies.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3492,7 +3492,7 @@ var rolesData = [
         "keyword": "spiritofivory",
         "type": "fabled",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Nemůže být více než 1 extra zlý hráč.",
         "ability_eng": "There can't be more than 1 extra evil player.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3513,7 +3513,7 @@ var rolesData = [
         "keyword": "sentinel",
         "type": "fabled",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Ve hře může být o 1 Outsidera méně, či více.",
         "ability_eng": "There might be 1 extra or 1 fewer Outsider in play.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3534,7 +3534,7 @@ var rolesData = [
         "keyword": "toymaker",
         "type": "fabled",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Démon se může rozhodnout neútočit a musí to udělat alespoň jednou za hru. Zlí hráči dostávají normální počáteční informace.",
         "ability_eng": "The Demon may choose not to attack & must do this at least once per game. Evil players get normal starting info.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3542,10 +3542,10 @@ var rolesData = [
         "setlist_position": 9,
         "first_night_position": 4,
         "first_night_reminder_eng": "Resolve Minion Info and Demon Info, even though there are fewer than 7 players.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Proveď Info Přisluhovačů a Info Démona, i když je ve hře méně než 7 hráčů.",
         "other_night_position": 3,
         "other_night_reminder_eng": "If a Demon attack could end the game, and the Demon is marked **FINAL NIGHT: NO ATTACK**, do not wake the Demon.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud by útok Démona mohl ukončit hru a Démon je označen **1x NE**, neprobouzej Démona.",
         "jinx": false
     },
     {
@@ -3555,7 +3555,7 @@ var rolesData = [
         "keyword": "buddhist",
         "type": "fabled",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "První 2 minuty každého dne nesmí zkušení hráči mluvit.",
         "ability_eng": "For the first 2 minutes of each day, veteran players may not talk.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3563,7 +3563,7 @@ var rolesData = [
         "setlist_position": 10,
         "first_night_position": 3,
         "first_night_reminder_eng": "Announce which players are affected by the Buddhist.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Oznam, kterých hráčů se týká Buddhista.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -3576,7 +3576,7 @@ var rolesData = [
         "keyword": "hellslibrarian",
         "type": "fabled",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "Tomu, kdo promluví, když Vypravěč požádal o ticho, se může stát něco špatného.",
         "ability_eng": "Something bad might happen to whoever talks when the Storyteller has asked for silence.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3597,7 +3597,7 @@ var rolesData = [
         "keyword": "angel",
         "type": "fabled",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "Tomu, kdo je nejvíce zodpovědný za smrt nového hráče, se může stát něco špatného.",
         "ability_eng": "Something bad might happen to whoever is most responsible for the death of a new player.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3605,7 +3605,7 @@ var rolesData = [
         "setlist_position": 12,
         "first_night_position": 2,
         "first_night_reminder_eng": "Announce which players are protected by the Angel. {reminder_token}",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Oznam, kteří hráči jsou chráněni Andělem. {reminder_token}",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -3618,7 +3618,7 @@ var rolesData = [
         "keyword": "deusexfiasco",
         "type": "fabled",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Alespoň jednou za hru Vypravěč udělá chybu, opraví ji a veřejně se k ní přizná.",
         "ability_eng": "At least once per game, the Storyteller will make a mistake, correct it, and publicly admit to it.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3639,7 +3639,7 @@ var rolesData = [
         "keyword": "revolutionary",
         "type": "fabled",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "O jedné dvojici hráčů, sedící vedle sebe, je známo, že jsou na stejné straně. Jednou za hru se 1 z nich jeví falešně.",
         "ability_eng": "2 neighboring players are known to be the same alignment. Once per game, 1 of them registers falsely.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3660,7 +3660,7 @@ var rolesData = [
         "keyword": "zenomancer",
         "type": "loric",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "Jeden nebo více hráčů mají každý svůj úkol. Po jeho splnění se daný hráč dozví pravdivou informaci.",
         "ability_eng": "One or more players each have a goal. When achieved, that player learns a piece of true info.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3681,7 +3681,7 @@ var rolesData = [
         "keyword": "gardener",
         "type": "loric",
         "edition": "5",
-        "ability_cz": "",
+        "ability_cz": "Vypravěč přiřazuje role hráčům sám.",
         "ability_eng": "The Storyteller assigns all players' characters.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3702,7 +3702,7 @@ var rolesData = [
         "keyword": "pope",
         "type": "loric",
         "edition": "7",
-        "ability_cz": "",
+        "ability_cz": "Ve hře jsou duplicitní hodné role. Mohou to být také blufy.",
         "ability_eng": "There are duplicate good characters in play. They might also be bluffs.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3723,7 +3723,7 @@ var rolesData = [
         "keyword": "hindu",
         "type": "loric",
         "edition": "4",
-        "ability_cz": "",
+        "ability_cz": "První 4 hráči, kteří zemřou, jsou okamžitě reinkarnováni jako Poutníci (Travellers) stejné strany.",
         "ability_eng": "The first 4 players to die are immediately reincarnated as Travellers of the same alignment.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3744,7 +3744,7 @@ var rolesData = [
         "keyword": "tor",
         "type": "loric",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "Hráči neznají svou roli ani stranu. Dozví se je, až když zemřou.",
         "ability_eng": "Players don't know their character or alignment. They learn them when they die.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3752,10 +3752,10 @@ var rolesData = [
         "setlist_position": 22,
         "first_night_position": 15,
         "first_night_reminder_eng": "Skip Minion Info and Demon Info.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Přeskoč Info Přisluhovačů a Info Démona.",
         "other_night_position": 68,
         "other_night_reminder_eng": "If a player died tonight, show the **YOU ARE** info token, their character token, & give a thumb signal.",
-        "other_night_reminder_cz": "",
+        "other_night_reminder_cz": "Pokud dnes v noci zemřel hráč, ukaž **TY JSI**, jeho žeton role a signál palcem dle jeho příslušné strany.",
         "jinx": false
     },
     {
@@ -3765,7 +3765,7 @@ var rolesData = [
         "keyword": "stormcatcher",
         "type": "loric",
         "edition": "8",
-        "ability_cz": "",
+        "ability_cz": "Vypravěč jmenuje hodnou roli. Pokud je ve hře, může zemřít pouze popravou, ale zlí hráči se dozví, který hráč to je.",
         "ability_eng": "Name a good character. If in play, they can only die by execution, but evil players learn which player it is.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3773,7 +3773,7 @@ var rolesData = [
         "setlist_position": 23,
         "first_night_position": 5,
         "first_night_reminder_eng": "Announce which character is stormcaught. If that character is in play, mark that player as **STORMCAUGHT**. Wake each evil player and show them the character token, then the marked player.  If not in play, wake each evil player, show them the **THESE CHARACTERS ARE NOT IN PLAY** token & the relevant character token.",
-        "first_night_reminder_cz": "",
+        "first_night_reminder_cz": "Oznam, která role je tzv. Oko Bouře. Pokud je tato role ve hře, označ tohoto hráče jako **CHRÁNĚN**. Probuď každého zlého hráče a ukaž mu žeton role, a poté označeného hráče. Pokud role není ve hře, probuď každého zlého hráče, ukaž jim **TYTO ROLE NEJSOU VE HŘE** a příslušný žeton role.",
         "other_night_position": 0,
         "other_night_reminder_eng": "",
         "other_night_reminder_cz": "",
@@ -3786,7 +3786,7 @@ var rolesData = [
         "keyword": "bigwig",
         "type": "loric",
         "edition": "6",
-        "ability_cz": "",
+        "ability_cz": "Každý nominovaný vybere hráče: až do hlasování může mluvit pouze on a je posedlý tím, že nominovaný je hodný, nebo může zemřít.",
         "ability_eng": "Each nominee chooses a player: until voting, only they may speak & they are mad the nominee is good or they might die.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3807,7 +3807,7 @@ var rolesData = [
         "keyword": "bootlegger",
         "type": "loric",
         "edition": "9",
-        "ability_cz": "",
+        "ability_cz": "Tento skript má po domácku vytvořená pravidla nebo role.",
         "ability_eng": "This script has homebrew characters or rules.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3823,12 +3823,12 @@ var rolesData = [
     },
     {
         "id": 183,
-        "name_cz": "",
+        "name_cz": "Bůh Ug",
         "name_eng": "God of Ug",
         "keyword": "godofug",
         "type": "loric",
         "edition": "10",
-        "ability_cz": "",
+        "ability_cz": "Když máš Ug věc, pak smíš říct slov jen míň jak dva zvuk. Však dva hlas máš. Když dva zvuk zní, dej Ug věc dál.",
         "ability_eng": "One Ug hat. When wear Ug hat, must speak one sound at a time but vote twice. If fail, pass Ug hat.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3844,12 +3844,12 @@ var rolesData = [
     },
     {
         "id": 184,
-        "name_cz": "",
+        "name_cz": "Poctivec a Padouch",
         "name_eng": "Knaves",
         "keyword": "knaves",
         "type": "loric",
         "edition": "10",
-        "ability_cz": "",
+        "ability_cz": "Jsou zde 2 Vypravěči: jeden lže a jeden říká pravdu. Jednou za hru, za soumraku, se mohou prohodit.",
         "ability_eng": "There are 2 Storytellers: one lies & one tells the truth. Once per game, at dusk, they might switch.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3865,12 +3865,12 @@ var rolesData = [
     },
     {
         "id": 185,
-        "name_cz": "",
+        "name_cz": "Břichomluvec",
         "name_eng": "Ventriloquist",
         "keyword": "ventriloquist",
         "type": "loric",
         "edition": "10",
-        "ability_cz": "",
+        "ability_cz": "Pokud je hráč během své nominace posedlý tím, že je \"čerstvou\" rolí, možná dnes po popravě nezemře.",
         "ability_eng": "If a player is mad as a fresh character during their nomination, they might not die if executed today.",
         "setup": false,
         "setup_reminder_eng": "",
@@ -3893,7 +3893,7 @@ var jinxData = [
         "target": "philosopher",
         "position": 1,
         "description_eng": "If the Philosopher gains the Bounty Hunter ability, a Townsfolk might turn evil.",
-        "description_cz": "Pokud je"
+        "description_cz": "Pokud Filozof získá schopnost Lovce Odměn, může se někdo z Měšťanů stát zlým."
     },
     {
         "id": 2,
@@ -3901,7 +3901,7 @@ var jinxData = [
         "target": "kazali",
         "position": 2,
         "description_eng": "If the Kazali turns the Bounty Hunter into a Minion, an evil Townsfolk is not created.",
-        "description_cz": ""
+        "description_cz": "Pokud Kazali promění Lovce odměn na Přisluhovače, zlý Měšťan není vytvořen."
     },
     {
         "id": 3,
@@ -3909,7 +3909,7 @@ var jinxData = [
         "target": "chambermaid",
         "position": 3,
         "description_eng": "The Chambermaid can detect if the Mathematician will wake tonight.",
-        "description_cz": ""
+        "description_cz": "Pokojská může detekovat, zda se Matematik dnes v noci probudí."
     },
     {
         "id": 4,
@@ -3917,7 +3917,7 @@ var jinxData = [
         "target": "lunatic",
         "position": 4,
         "description_eng": "The Mathematician learns if the Lunatic attacks a different player than the real Demon attacked.",
-        "description_cz": ""
+        "description_cz": "Matematik se dozví, pokud Lunatik zaútočí na jiného hráče, než na kterého zaútočil skutečný Démon."
     },
     {
         "id": 5,
@@ -3925,7 +3925,7 @@ var jinxData = [
         "target": "drunk",
         "position": 5,
         "description_eng": "The Mathematician learns if the Drunk’s ability yielded false info or failed to work properly.",
-        "description_cz": ""
+        "description_cz": "Matematik se dozví, zda schopnost Opilce přinesla falešné informace nebo nefungovala správně."
     },
     {
         "id": 6,
@@ -3933,7 +3933,7 @@ var jinxData = [
         "target": "marionette",
         "position": 6,
         "description_eng": "The Mathematician learns if the Marionette’s ability yielded false info or failed to work properly.",
-        "description_cz": ""
+        "description_cz": "Matematik se dozví, zda schopnost Loutky přinesla falešné informace nebo nefungovala správně."
     },
     {
         "id": 7,
@@ -3941,7 +3941,7 @@ var jinxData = [
         "target": "spy",
         "position": 7,
         "description_eng": "An Alchemist-Spy has no Spy ability & a Spy is in play. After each execution, a living Alchemist-Spy may publicly guess a living player as the Spy. If correct, the Demon must choose the Spy tonight.",
-        "description_cz": ""
+        "description_cz": "Alchymista-Špeh nemá schopnost Špeha a Špeh je ve hře. Po každé popravě může žijící Alchymista-Špeh veřejně hádat, který žijící hráč je Špeh. Pokud uhodne správně, Démon si dnes v noci musí vybrat Špeha."
     },
     {
         "id": 8,
@@ -3949,7 +3949,7 @@ var jinxData = [
         "target": "widow",
         "position": 8,
         "description_eng": "An Alchemist-Widow has no Widow ability & a Widow is in play. After each execution, a living Alchemist-Widow may publicly guess a living player as the Widow. If correct, the Demon must choose the Widow tonight.",
-        "description_cz": ""
+        "description_cz": "Alchymista-Vdova nemá schopnost Vdovy a Vdova je ve hře. Po každé popravě může žijící Alchymista-Vdova veřejně hádat, který žijící hráč je Vdova. Pokud uhodne správně, Démon si dnes v noci musí vybrat Vdovu."
     },
     {
         "id": 9,
@@ -3957,7 +3957,7 @@ var jinxData = [
         "target": "marionette",
         "position": 9,
         "description_eng": "An Alchemist-Marionette has no Marionette ability & the Marionette is in play.",
-        "description_cz": ""
+        "description_cz": "Alchymista-Loutka nemá schopnost Loutky a Loutka je ve hře."
     },
     {
         "id": 10,
@@ -3965,7 +3965,7 @@ var jinxData = [
         "target": "wraith",
         "position": 10,
         "description_eng": "An Alchemist-Wraith has no Wraith ability & a Wraith is in play. After each execution, a living Alchemist-Wraith may publicly guess a living player as the Wraith. If correct, the Demon must choose the Wraith tonight.",
-        "description_cz": ""
+        "description_cz": "Alchymista-Přízrak nemá schopnost Přízraku a Přízrak je ve hře. Po každé popravě může žijící Alchymista-Přízrak veřejně hádat, který žijící hráč je Přízrak. Pokud uhodne správně, Démon si dnes v noci musí vybrat Přízraka."
     },
     {
         "id": 11,
@@ -3973,7 +3973,7 @@ var jinxData = [
         "target": "summoner",
         "position": 11,
         "description_eng": "The Alchemist-Summoner does not get bluffs, and chooses which Demon but not which player. If they die before this happens, evil wins. [No Demon]",
-        "description_cz": ""
+        "description_cz": "Alchymista-Vyvolávač nedostává klamné role a vybírá jakého Démona, ale ne jakého hráče. Pokud zemře dříve, než se to stane, zlo vyhrává. [Žádný Démon]"
     },
     {
         "id": 12,
@@ -3981,7 +3981,7 @@ var jinxData = [
         "target": "mastermind",
         "position": 12,
         "description_eng": "An Alchemist-Mastermind has no Mastermind ability & the Mastermind is not-in-play.",
-        "description_cz": ""
+        "description_cz": "Alchymista-Strůjce nemá schopnost Strůjce a Strůjce není ve hře."
     },
     {
         "id": 13,
@@ -3989,7 +3989,7 @@ var jinxData = [
         "target": "organgrinder",
         "position": 13,
         "description_eng": "If the Alchemist has the Organ Grinder ability, the Organ Grinder is in play. If both are sober, both are drunk.",
-        "description_cz": ""
+        "description_cz": "Pokud má Alchymista schopnost Flašinetáře, Flašinetář je ve hře. Pokud jsou oba střízliví, oba se stanou opilými."
     },
     {
         "id": 14,
@@ -3997,7 +3997,7 @@ var jinxData = [
         "target": "boffin",
         "position": 14,
         "description_eng": "If the Alchemist has the Boffin ability, the Alchemist does not learn what ability the Demon has.",
-        "description_cz": ""
+        "description_cz": "Pokud má Alchymista schopnost Vědátora, Alchymista se nedozví, jakou schopnost má Démon."
     },
     {
         "id": 15,
@@ -4005,7 +4005,7 @@ var jinxData = [
         "target": "princess",
         "position": 15,
         "description_eng": "If the Cannibal nominated, executed, & killed the Princess today, the Demon doesn’t kill tonight.",
-        "description_cz": ""
+        "description_cz": "Pokud Kanibal dnes nominoval, popravil a zabil Princeznu, Démon dnes v noci nezabíjí."
     },
     {
         "id": 16,
@@ -4013,7 +4013,7 @@ var jinxData = [
         "target": "juggler",
         "position": 16,
         "description_eng": "If the Juggler guesses on their first day and dies by execution, tonight the living Cannibal learns how many guesses the Juggler got correct.",
-        "description_cz": ""
+        "description_cz": "Pokud Kejklíř hádá svůj první den a zemře popravou, žijící Kanibal se dnes v noci dozví, kolikrát Kejklíř uhodl správně."
     },
     {
         "id": 17,
@@ -4021,7 +4021,7 @@ var jinxData = [
         "target": "butler",
         "position": 17,
         "description_eng": "If the Cannibal gains the Butler ability, the Cannibal learns this.",
-        "description_cz": ""
+        "description_cz": "Pokud Kanibal získá schopnost Komorníka, Kanibal se to dozví."
     },
     {
         "id": 18,
@@ -4029,7 +4029,7 @@ var jinxData = [
         "target": "zealot",
         "position": 18,
         "description_eng": "If the Cannibal gains the Zealot ability, the Cannibal learns this.",
-        "description_cz": ""
+        "description_cz": "Pokud Kanibal získá schopnost Fanatika, Kanibal se to dozví."
     },
     {
         "id": 19,
@@ -4037,7 +4037,7 @@ var jinxData = [
         "target": "spy",
         "position": 19,
         "description_eng": "When the Spy sees the Grimoire, the Demon and Magician's character tokens are removed.",
-        "description_cz": ""
+        "description_cz": "Když Špeh vidí Grimoár, žetony rolí Démona a Kouzelníka jsou odstraněny."
     },
     {
         "id": 20,
@@ -4045,7 +4045,7 @@ var jinxData = [
         "target": "widow",
         "position": 20,
         "description_eng": "When the Widow sees the Grimoire, the Demon and Magician's character tokens are removed.",
-        "description_cz": ""
+        "description_cz": "Když Vdova vidí Grimoár, žetony rolí Démona a Kouzelníka jsou odstraněny."
     },
     {
         "id": 21,
@@ -4053,7 +4053,7 @@ var jinxData = [
         "target": "marionette",
         "position": 21,
         "description_eng": "If the Magician is alive, the Demon doesn't know which neighbor is the Marionette.",
-        "description_cz": ""
+        "description_cz": "Pokud je Kouzelník naživu, Démon neví, který soused je Loutka."
     },
     {
         "id": 22,
@@ -4061,7 +4061,7 @@ var jinxData = [
         "target": "wraith",
         "position": 22,
         "description_eng": "After each execution, the living Magician may publicly guess a living player as the Wraith. If correct, the Demon must choose the Wraith tonight.",
-        "description_cz": ""
+        "description_cz": "Po každé popravě může žijící Kouzelník veřejně hádat, který žijící hráč je Přízrak. Pokud uhodne správně, Démon si dnes v noci musí vybrat Přízraka."
     },
     {
         "id": 23,
@@ -4069,7 +4069,7 @@ var jinxData = [
         "target": "vizier",
         "position": 23,
         "description_eng": "If the Vizier is in play, the Magician has no ability but is immune to the Vizier's ability.",
-        "description_cz": ""
+        "description_cz": "Pokud je Vezír ve hře, Kouzelník nemá žádnou schopnost, ale je imunní vůči schopnosti Vezíra."
     },
     {
         "id": 24,
@@ -4077,7 +4077,7 @@ var jinxData = [
         "target": "legion",
         "position": 24,
         "description_eng": "If the Magician is in play, during the Demon info step, Legion wake in separate groups. Each group learns which players are good, but does not learn the Magician.",
-        "description_cz": ""
+        "description_cz": "Pokud je Kouzelník ve hře, během kroku informací Démona se Legie probouzejí v oddělených skupinách. Každá skupina se dozví, kteří hráči jsou hodní, ale nedozví se, kdo je Kouzelník."
     },
     {
         "id": 25,
@@ -4085,7 +4085,7 @@ var jinxData = [
         "target": "organgrinder",
         "position": 25,
         "description_eng": "If the Organ Grinder is causing eyes closed voting, the Butler may raise their hand to vote but their vote is only counted if their master voted too.",
-        "description_cz": ""
+        "description_cz": "Pokud Flašinetář způsobuje hlasování se zavřenýma očima, Komorník může zvednout ruku k hlasování, ale jeho hlas se počítá pouze tehdy, pokud hlasoval i jeho pán."
     },
     {
         "id": 26,
@@ -4093,7 +4093,7 @@ var jinxData = [
         "target": "sage",
         "position": 26,
         "description_eng": "The Recluse might register as the Demon to the Sage.",
-        "description_cz": ""
+        "description_cz": "Samotář se může Mudrcovi jevit jako Démon."
     },
     {
         "id": 27,
@@ -4101,7 +4101,7 @@ var jinxData = [
         "target": "ogre",
         "position": 27,
         "description_eng": "If the Recluse registers as evil to the Ogre, the Ogre learns that they are evil.",
-        "description_cz": ""
+        "description_cz": "Pokud se Samotář Zlobrovi jeví jako zlý, Zlobr se dozví, že je zlý."
     },
     {
         "id": 28,
@@ -4109,7 +4109,7 @@ var jinxData = [
         "target": "spy",
         "position": 28,
         "description_eng": "If the Storyteller would gain the Spy ability, a Minion gains it, and learns this.",
-        "description_cz": ""
+        "description_cz": "Pokud by Vypravěč získal schopnost Špeha, získá ji Přisluhovač a dozví se to."
     },
     {
         "id": 29,
@@ -4117,7 +4117,7 @@ var jinxData = [
         "target": "fearmonger",
         "position": 29,
         "description_eng": "If the Storyteller would gain the Fearmonger ability, a Minion gains it, and learns this.",
-        "description_cz": ""
+        "description_cz": "Pokud by Vypravěč získal schopnost Strašáka, získá ji Přisluhovač a dozví se to."
     },
     {
         "id": 30,
@@ -4125,7 +4125,7 @@ var jinxData = [
         "target": "marionette",
         "position": 30,
         "description_eng": "If the Storyteller would gain the Marionette ability, one of the Demon's good neighbors becomes the Marionette.",
-        "description_cz": ""
+        "description_cz": "Pokud by Vypravěč získal schopnost Loutky, jeden z hodných sousedů Démona se stane Loutkou."
     },
     {
         "id": 31,
@@ -4133,7 +4133,7 @@ var jinxData = [
         "target": "wraith",
         "position": 31,
         "description_eng": "If the Storyteller would gain the Wraith ability, a Minion gains it, and learns this.",
-        "description_cz": ""
+        "description_cz": "Pokud by Vypravěč získal schopnost Přízraku, získá ji Přisluhovač a dozví se to."
     },
     {
         "id": 32,
@@ -4141,7 +4141,7 @@ var jinxData = [
         "target": "eviltwin",
         "position": 32,
         "description_eng": "If the Storyteller would gain the Evil Twin ability, a player becomes the Evil Twin.",
-        "description_cz": ""
+        "description_cz": "Pokud by Vypravěč získal schopnost Zlého dvojčete, hráč se stane Zlým dvojčetem."
     },
     {
         "id": 33,
@@ -4149,7 +4149,7 @@ var jinxData = [
         "target": "goblin",
         "position": 33,
         "description_eng": "If the Storyteller would gain the Goblin ability, a Minion gains it, and learns this.",
-        "description_cz": ""
+        "description_cz": "Pokud by Vypravěč získal schopnost Goblina, získá ji Přisluhovač a dozví se to."
     },
     {
         "id": 34,
@@ -4157,7 +4157,7 @@ var jinxData = [
         "target": "boomdandy",
         "position": 34,
         "description_eng": "If the Storyteller would gain the Boomdandy ability, a player becomes the Boomdandy.",
-        "description_cz": ""
+        "description_cz": "Pokud by Vypravěč získal schopnost Bombiče, hráč se stane Bombičem."
     },
     {
         "id": 35,
@@ -4165,7 +4165,7 @@ var jinxData = [
         "target": "scarletwoman",
         "position": 35,
         "description_eng": "If the Storyteller would gain the Scarlet Woman ability, a Minion gains it, and learns this.",
-        "description_cz": ""
+        "description_cz": "Pokud by Vypravěč získal schopnost Šarlatové ženy, získá ji Přisluhovač a dozví se to."
     },
     {
         "id": 36,
@@ -4173,7 +4173,7 @@ var jinxData = [
         "target": "baron",
         "position": 36,
         "description_eng": "If the Storyteller would gain the Baron ability, up to two players become Outsiders.",
-        "description_cz": ""
+        "description_cz": "Pokud by Vypravěč získal schopnost Barona, až dva hráči se stanou Ousidery."
     },
     {
         "id": 37,
@@ -4181,7 +4181,7 @@ var jinxData = [
         "target": "godfather",
         "position": 37,
         "description_eng": "Only 1 jinxed character can be in play.",
-        "description_cz": ""
+        "description_cz": "Ve hře může být pouze 1 ze zakletých rolí."
     },
     {
         "id": 38,
@@ -4189,7 +4189,7 @@ var jinxData = [
         "target": "spy",
         "position": 38,
         "description_eng": "Only 1 jinxed character can be in play.",
-        "description_cz": ""
+        "description_cz": "Ve hře může být pouze 1 ze zakletých rolí."
     },
     {
         "id": 39,
@@ -4197,7 +4197,7 @@ var jinxData = [
         "target": "pithag",
         "position": 39,
         "description_eng": "Only 1 jinxed character can be in play.",
-        "description_cz": ""
+        "description_cz": "Ve hře může být pouze 1 ze zakletých rolí."
     },
     {
         "id": 40,
@@ -4205,7 +4205,7 @@ var jinxData = [
         "target": "widow",
         "position": 40,
         "description_eng": "Only 1 jinxed character can be in play.",
-        "description_cz": ""
+        "description_cz": "Ve hře může být pouze 1 ze zakletých rolí."
     },
     {
         "id": 41,
@@ -4213,7 +4213,7 @@ var jinxData = [
         "target": "baron",
         "position": 41,
         "description_eng": "Only 1 jinxed character can be in play.",
-        "description_cz": ""
+        "description_cz": "Ve hře může být pouze 1 ze zakletých rolí."
     },
     {
         "id": 42,
@@ -4221,7 +4221,7 @@ var jinxData = [
         "target": "lleech",
         "position": 42,
         "description_eng": "Only 1 jinxed character can be in play.",
-        "description_cz": ""
+        "description_cz": "Ve hře může být pouze 1 ze zakletých rolí."
     },
     {
         "id": 43,
@@ -4229,7 +4229,7 @@ var jinxData = [
         "target": "poppygrower",
         "position": 43,
         "description_eng": "If the Poppy Grower has their ability, the Spy does not see the Grimoire.",
-        "description_cz": ""
+        "description_cz": "Pokud má Maková panenka svou schopnost, Špeh nevidí Grimoár."
     },
     {
         "id": 44,
@@ -4237,7 +4237,7 @@ var jinxData = [
         "target": "ogre",
         "position": 44,
         "description_eng": "The Spy registers as evil to the Ogre.",
-        "description_cz": ""
+        "description_cz": "Špeh se Zlobrovi jeví jako zlý."
     },
     {
         "id": 45,
@@ -4245,7 +4245,7 @@ var jinxData = [
         "target": "damsel",
         "position": 45,
         "description_eng": "If the Spy is (or has been) in play, the Damsel is poisoned.",
-        "description_cz": ""
+        "description_cz": "Pokud je (nebo byl) Špeh ve hře, Dívka v nesnázích je otrávená."
     },
     {
         "id": 46,
@@ -4253,7 +4253,7 @@ var jinxData = [
         "target": "goblin",
         "position": 46,
         "description_eng": "The Cerenovus may choose to make a player mad that they are the Goblin.",
-        "description_cz": ""
+        "description_cz": "Cerenovus se může rozhodnout udělat hráče šíleným v tom, že je Goblin."
     },
     {
         "id": 47,
@@ -4261,7 +4261,7 @@ var jinxData = [
         "target": "villageidiot",
         "position": 47,
         "description_eng": "If there is a spare token, the Pit-Hag can create an extra Village Idiot. If so, the drunk Village Idiot might change.",
-        "description_cz": ""
+        "description_cz": "Pokud je k dispozici náhradní žeton, Ježibaba může vytvořit dalšího Vesnického pobudu. Pokud se tak stane, opilý Vesnický pobuda se může změnit."
     },
     {
         "id": 48,
@@ -4269,7 +4269,7 @@ var jinxData = [
         "target": "cultleader",
         "position": 48,
         "description_eng": "If the Pit-Hag turns an evil player into the Cult Leader, they can't turn good due to their own ability.",
-        "description_cz": ""
+        "description_cz": "Pokud Ježibaba promění zlého hráče na Vrchního kultistu, nemůže se stát hodným kvůli své vlastní schopnosti."
     },
     {
         "id": 49,
@@ -4277,7 +4277,7 @@ var jinxData = [
         "target": "goon",
         "position": 49,
         "description_eng": "If the Pit-Hag turns an evil player into the Goon, they can't turn good due to their own ability.",
-        "description_cz": ""
+        "description_cz": "Pokud Ježibaba promění zlého hráče na Rváče, nemůže se stát hodným kvůli své vlastní schopnosti."
     },
     {
         "id": 50,
@@ -4285,7 +4285,7 @@ var jinxData = [
         "target": "ogre",
         "position": 50,
         "description_eng": "If the Pit-Hag turns an evil player into the Ogre, they can't turn good due to their own ability.",
-        "description_cz": ""
+        "description_cz": "Pokud Ježibaba promění zlého hráče na Zlobra, nemůže se stát hodným kvůli své vlastní schopnosti."
     },
     {
         "id": 51,
@@ -4293,7 +4293,7 @@ var jinxData = [
         "target": "politician",
         "position": 51,
         "description_eng": "If the Pit-Hag turns an evil player into the Politician, they can't turn good due to their own ability.",
-        "description_cz": ""
+        "description_cz": "Pokud Ježibaba promění zlého hráče na Politika, nemůže se stát hodným kvůli své vlastní schopnosti."
     },
     {
         "id": 52,
@@ -4301,7 +4301,7 @@ var jinxData = [
         "target": "damsel",
         "position": 52,
         "description_eng": "If a Pit-Hag creates a Damsel, the Storyteller chooses which player it is.",
-        "description_cz": ""
+        "description_cz": "Pokud Ježibaba vytvoří Dívku v nesnázích, Vypravěč vybere, který hráč to bude."
     },
     {
         "id": 53,
@@ -4309,7 +4309,7 @@ var jinxData = [
         "target": "poppygrower",
         "position": 53,
         "description_eng": "If the Poppy Grower has their ability, the Widow does not see the Grimoire.",
-        "description_cz": ""
+        "description_cz": "Pokud má Maková panenka svou schopnost, Vdova nevidí Grimoár."
     },
     {
         "id": 54,
@@ -4317,7 +4317,7 @@ var jinxData = [
         "target": "damsel",
         "position": 54,
         "description_eng": "If the Widow is (or has been) in play, the Damsel is poisoned.",
-        "description_cz": ""
+        "description_cz": "Pokud je (nebo byla) Vdova ve hře, Dívka v nesnázích je otrávená."
     },
     {
         "id": 55,
@@ -4325,7 +4325,7 @@ var jinxData = [
         "target": "balloonist",
         "position": 55,
         "description_eng": "If the Marionette thinks that they are the Balloonist, an Outsider might have been added during setup.",
-        "description_cz": ""
+        "description_cz": "Pokud si Loutka myslí, že je Balonista, mohl být během přípravy hry přidán Outsider."
     },
     {
         "id": 56,
@@ -4333,7 +4333,7 @@ var jinxData = [
         "target": "huntsman",
         "position": 56,
         "description_eng": "If the Marionette thinks that they are the Huntsman, the Damsel was added during setup.",
-        "description_cz": ""
+        "description_cz": "Pokud si Loutka myslí, že je Lovec, byla během přípravy hry přidána Dívka v nesnázích."
     },
     {
         "id": 57,
@@ -4341,7 +4341,7 @@ var jinxData = [
         "target": "summoner",
         "position": 57,
         "description_eng": "If there would be a Marionette in play, they enter play after the Demon & must start as their neighbor.",
-        "description_cz": ""
+        "description_cz": "Pokud by měla být ve hře Loutka, vstoupí do hry po Démonovi a musí začínat jako jeho soused."
     },
     {
         "id": 58,
@@ -4349,7 +4349,7 @@ var jinxData = [
         "target": "lilmonsta",
         "position": 58,
         "description_eng": "If there would be a Marionette in play, they enter play after the Demon & must start as their neighbor.",
-        "description_cz": ""
+        "description_cz": "Pokud by měla být ve hře Loutka, vstoupí do hry po Démonovi a musí začínat jako jeho soused."
     },
     {
         "id": 59,
@@ -4357,7 +4357,7 @@ var jinxData = [
         "target": "kazali",
         "position": 59,
         "description_eng": "If there would be a Marionette in play, they enter play after the Demon & must start as their neighbor.",
-        "description_cz": ""
+        "description_cz": "Pokud by měla být ve hře Loutka, vstoupí do hry po Démonovi a musí začínat jako jeho soused."
     },
     {
         "id": 60,
@@ -4365,7 +4365,7 @@ var jinxData = [
         "target": "clockmaker",
         "position": 60,
         "description_eng": "The Summoner registers as the Demon to the Clockmaker.",
-        "description_cz": ""
+        "description_cz": "Vyvolávač se Hodináři jeví jako Démon."
     },
     {
         "id": 61,
@@ -4373,7 +4373,7 @@ var jinxData = [
         "target": "preacher",
         "position": 61,
         "description_eng": "If the living Summoner has no ability, the Storyteller has the Summoner ability.",
-        "description_cz": ""
+        "description_cz": "Pokud žijící Vyvolávač nemá schopnost, Vypravěč má schopnost Vyvolávače."
     },
     {
         "id": 62,
@@ -4381,7 +4381,7 @@ var jinxData = [
         "target": "engineer",
         "position": 62,
         "description_eng": "If the living Summoner is removed from play, the Storyteller has the Summoner ability.",
-        "description_cz": ""
+        "description_cz": "Pokud je žijící Vyvolávač odstraněn ze hry, Vypravěč má schopnost Vyvolávače."
     },
     {
         "id": 63,
@@ -4389,7 +4389,7 @@ var jinxData = [
         "target": "courtier",
         "position": 63,
         "description_eng": "If the living Summoner has no ability, the Storyteller has the Summoner ability.",
-        "description_cz": ""
+        "description_cz": "Pokud žijící Vyvolávač nemá schopnost, Vypravěč má schopnost Vyvolávače."
     },
     {
         "id": 64,
@@ -4397,7 +4397,7 @@ var jinxData = [
         "target": "poppygrower",
         "position": 64,
         "description_eng": "If the Poppy Grower is alive on the 3rd night, the Summoner chooses which Demon but not which player.",
-        "description_cz": ""
+        "description_cz": "Pokud je Maková panenka naživu třetí noc, Vyvolávač vybírá jakého Démona, ale ne kterého hráče."
     },
     {
         "id": 65,
@@ -4405,7 +4405,7 @@ var jinxData = [
         "target": "hatter",
         "position": 65,
         "description_eng": "If the Summoner creates a second living Demon, deaths tonight are arbitrary.",
-        "description_cz": ""
+        "description_cz": "Pokud Vyvolávač vytvoří druhého žijícího Démona, úmrtí tuto noc jsou libovolná."
     },
     {
         "id": 66,
@@ -4413,7 +4413,7 @@ var jinxData = [
         "target": "pithag",
         "position": 66,
         "description_eng": "If the Summoner creates a second living Demon, deaths tonight are arbitrary.",
-        "description_cz": ""
+        "description_cz": "Pokud Vyvolávač vytvoří druhého žijícího Démona, úmrtí tuto noc jsou libovolná."
     },
     {
         "id": 67,
@@ -4421,7 +4421,7 @@ var jinxData = [
         "target": "pukka",
         "position": 67,
         "description_eng": "The Summoner may summon a Pukka on the 2nd night instead of the 3rd.",
-        "description_cz": ""
+        "description_cz": "Vyvolávač může vyvolat Pukku druhou noc místo třetí."
     },
     {
         "id": 68,
@@ -4429,7 +4429,7 @@ var jinxData = [
         "target": "kazali",
         "position": 68,
         "description_eng": "If the Summoner creates a second living Demon, deaths tonight are arbitrary.",
-        "description_cz": ""
+        "description_cz": "Pokud Vyvolávač vytvoří druhého žijícího Démona, úmrtí tuto noc jsou libovolná."
     },
     {
         "id": 69,
@@ -4437,7 +4437,7 @@ var jinxData = [
         "target": "zombuul",
         "position": 69,
         "description_eng": "If the Summoner summons a dead player into the Zombuul, the Zombuul has already \"died once\".",
-        "description_cz": ""
+        "description_cz": "Pokud Vyvolávač vyvolá mrtvého hráče do role Zombúla, Zombúl už 'jednou zemřel'."
     },
     {
         "id": 70,
@@ -4445,7 +4445,7 @@ var jinxData = [
         "target": "lordoftyphon",
         "position": 70,
         "description_eng": "If a Lord of Typhon is summoned, they must neighbor a Minion & their other neighbor becomes an evil Minion.",
-        "description_cz": ""
+        "description_cz": "Pokud je vyvolán Syn Týfóna, musí sousedit s Přisluhovačem a jeho druhý soused se stane zlým Přisluhovačem."
     },
     {
         "id": 71,
@@ -4453,7 +4453,7 @@ var jinxData = [
         "target": "vigormortis",
         "position": 71,
         "description_eng": "A Mastermind that has their ability keeps it if the Vigormortis dies.",
-        "description_cz": ""
+        "description_cz": "Strůjce, který má svou schopnost, si ji ponechá, i když Vigormortis zemře."
     },
     {
         "id": 72,
@@ -4461,7 +4461,7 @@ var jinxData = [
         "target": "fanggu",
         "position": 72,
         "description_eng": "If there would be two Demons, one of which was the Scarlet Woman, the Scarlet Woman remains the Scarlet Woman.",
-        "description_cz": ""
+        "description_cz": "Pokud by ve hře byli dva Démoni a jedním z nich by byla Šarlatová žena, Šarlatová žena zůstává Šarlatovou ženou."
     },
     {
         "id": 73,
@@ -4469,7 +4469,7 @@ var jinxData = [
         "target": "alhadikhia",
         "position": 73,
         "description_eng": "If there would be two Demons, one of which was the Scarlet Woman, the Scarlet Woman becomes the Scarlet Woman again.",
-        "description_cz": ""
+        "description_cz": "Pokud by ve hře byli dva Démoni a jedním z nich by byla Šarlatová žena, Šarlatová žena se znovu stane Šarlatovou ženou."
     },
     {
         "id": 74,
@@ -4477,7 +4477,7 @@ var jinxData = [
         "target": "investigator",
         "position": 74,
         "description_eng": "The Storyteller doesn't declare the Vizier is in play.",
-        "description_cz": ""
+        "description_cz": "Vypravěč neoznámí, že je Vezír ve hře."
     },
     {
         "id": 75,
@@ -4485,7 +4485,7 @@ var jinxData = [
         "target": "preacher",
         "position": 75,
         "description_eng": "If the Vizier loses their ability, they learn this, and cannot die during the day.",
-        "description_cz": ""
+        "description_cz": "Pokud Vezír přijde o svou schopnost, dozví se to a nemůže zemřít během dne."
     },
     {
         "id": 76,
@@ -4493,7 +4493,7 @@ var jinxData = [
         "target": "alsaahir",
         "position": 76,
         "description_eng": "The Storyteller doesn't declare the Vizier is in play.",
-        "description_cz": ""
+        "description_cz": "Vypravěč neoznámí, že je Vezír ve hře."
     },
     {
         "id": 77,
@@ -4501,7 +4501,7 @@ var jinxData = [
         "target": "courtier",
         "position": 77,
         "description_eng": "If the Vizier loses their ability, they learn this, and cannot die during the day.",
-        "description_cz": ""
+        "description_cz": "Pokud Vezír přijde o svou schopnost, dozví se to a nemůže zemřít během dne."
     },
     {
         "id": 78,
@@ -4509,7 +4509,7 @@ var jinxData = [
         "target": "politician",
         "position": 78,
         "description_eng": "The Politician might register as evil to the Vizier.",
-        "description_cz": ""
+        "description_cz": "Politik se může Vezírovi jevit jako zlý."
     },
     {
         "id": 79,
@@ -4517,7 +4517,7 @@ var jinxData = [
         "target": "zealot",
         "position": 79,
         "description_eng": "The Zealot might register as evil to the Vizier.",
-        "description_cz": ""
+        "description_cz": "Fanatik se může Vezírovi jevit jako zlý."
     },
     {
         "id": 80,
@@ -4525,7 +4525,7 @@ var jinxData = [
         "target": "fearmonger",
         "position": 80,
         "description_eng": "The Vizier wakes with the Fearmonger, learns who they choose and cannot choose to immediately execute that player.",
-        "description_cz": ""
+        "description_cz": "Vezír se probouzí se Strašákem, dozví se koho vybral, a nemůže se rozhodnout tohoto hráče okamžitě popravit."
     },
     {
         "id": 81,
@@ -4533,7 +4533,7 @@ var jinxData = [
         "target": "villageidiot",
         "position": 81,
         "description_eng": "If there is a spare token, the Boffin can give the Demon the Village Idiot ability.",
-        "description_cz": ""
+        "description_cz": "Pokud je k dispozici náhradní žeton, Vědátor může dát Démonovi schopnost Vesnického pobudy."
     },
     {
         "id": 82,
@@ -4541,7 +4541,7 @@ var jinxData = [
         "target": "cultleader",
         "position": 82,
         "description_eng": "If the Demon has the Cult Leader ability, they can’t turn good due to this ability.",
-        "description_cz": ""
+        "description_cz": "Pokud má Démon schopnost Vrchního kultisty, nemůže se stát hodným kvůli této schopnosti."
     },
     {
         "id": 83,
@@ -4549,7 +4549,7 @@ var jinxData = [
         "target": "goon",
         "position": 83,
         "description_eng": "If the Demon has the Goon ability, they can’t turn good due to this ability.",
-        "description_cz": ""
+        "description_cz": "Pokud má Démon schopnost Rváče, nemůže se stát hodným kvůli této schopnosti."
     },
     {
         "id": 84,
@@ -4557,7 +4557,7 @@ var jinxData = [
         "target": "ogre",
         "position": 84,
         "description_eng": "The Demon cannot have the Ogre ability.",
-        "description_cz": ""
+        "description_cz": "Démon nemůže mít schopnost Zlobra."
     },
     {
         "id": 85,
@@ -4565,7 +4565,7 @@ var jinxData = [
         "target": "drunk",
         "position": 85,
         "description_eng": "The Demon cannot have the Drunk ability.",
-        "description_cz": ""
+        "description_cz": "Démon nemůže mít schopnost Opilce."
     },
     {
         "id": 86,
@@ -4573,7 +4573,7 @@ var jinxData = [
         "target": "politician",
         "position": 86,
         "description_eng": "The Demon cannot have the Politician ability.",
-        "description_cz": ""
+        "description_cz": "Démon nemůže mít schopnost Politika."
     },
     {
         "id": 87,
@@ -4581,7 +4581,7 @@ var jinxData = [
         "target": "heretic",
         "position": 87,
         "description_eng": "The Demon cannot have the Heretic ability.",
-        "description_cz": ""
+        "description_cz": "Démon nemůže mít schopnost Kacíře."
     },
     {
         "id": 88,
@@ -4589,7 +4589,7 @@ var jinxData = [
         "target": "exorcist",
         "position": 88,
         "description_eng": "If the Exorcist chooses the Yaggababble, the Yaggababble does not kill tonight.",
-        "description_cz": ""
+        "description_cz": "Pokud si Exorcista vybere Avada Blablabla, Avada Blablabla dnes v noci nezabíjí."
     },
     {
         "id": 89,
@@ -4597,7 +4597,7 @@ var jinxData = [
         "target": "magician",
         "position": 89,
         "description_eng": "If the Magician is alive, the Storyteller chooses which Minion babysits Lil' Monsta.",
-        "description_cz": ""
+        "description_cz": "Pokud je Kouzelník naživu, Vypravěč vybere, který Přisluhovač hlídá Příšerku."
     },
     {
         "id": 90,
@@ -4605,7 +4605,7 @@ var jinxData = [
         "target": "poppygrower",
         "position": 90,
         "description_eng": "If Lil' Monsta & the Poppy Grower are alive, Minions wake one by one, until one of them chooses to take the Lil' Monsta token.",
-        "description_cz": ""
+        "description_cz": "Pokud jsou Příšerka a Maková panenka naživu, Přisluhovači se budí jeden po druhém, dokud si jeden z nich nevybere žeton Příšerky."
     },
     {
         "id": 91,
@@ -4613,7 +4613,7 @@ var jinxData = [
         "target": "hatter",
         "position": 91,
         "description_eng": "If the Hatter dies & the Demon chooses Lil' Monsta, they also choose a Minion to become.",
-        "description_cz": ""
+        "description_cz": "Pokud zemře Kloboučník a Démon si vybere Příšerku, vybere si také, jakým Přisluhovačem se stane."
     },
     {
         "id": 92,
@@ -4621,7 +4621,7 @@ var jinxData = [
         "target": "psychopath",
         "position": 92,
         "description_eng": "If the Psychopath is babysitting Lil' Monsta, they die when executed.",
-        "description_cz": ""
+        "description_cz": "Pokud Psychopat hlídá Příšerku, při popravě zemře."
     },
     {
         "id": 93,
@@ -4629,7 +4629,7 @@ var jinxData = [
         "target": "scarletwoman",
         "position": 93,
         "description_eng": "If Lil' Monsta dies with 5 or more players alive, the Scarlet Woman babysits Lil' Monsta for the rest of the game.",
-        "description_cz": ""
+        "description_cz": "Pokud Příšerka zemře a je naživu 5 nebo více hráčů, Šarlatová žena bude hlídat Příšerku do konce hry."
     },
     {
         "id": 94,
@@ -4637,7 +4637,7 @@ var jinxData = [
         "target": "vizier",
         "position": 94,
         "description_eng": "If the Vizier is babysitting Lil' Monsta, they die when executed.",
-        "description_cz": ""
+        "description_cz": "Pokud Vezír hlídá Příšerku, při popravě zemře."
     },
     {
         "id": 95,
@@ -4645,7 +4645,7 @@ var jinxData = [
         "target": "banshee",
         "position": 95,
         "description_eng": "If the Vortox kills the Banshee, all players learn that the Banshee has died.",
-        "description_cz": ""
+        "description_cz": "Pokud Vortox zabije Benší, všichni hráči se dozví, že Benší zemřela."
     },
     {
         "id": 96,
@@ -4653,7 +4653,7 @@ var jinxData = [
         "target": "preacher",
         "position": 96,
         "description_eng": "If the Preacher chooses Legion, Legion keeps their ability, but the Preacher might learn they are Legion.",
-        "description_cz": ""
+        "description_cz": "Pokud si Kazatel vybere Legii, Legie si ponechává svou schopnost, ale Kazatel se může dozvědět, že jsou Legie."
     },
     {
         "id": 97,
@@ -4661,7 +4661,7 @@ var jinxData = [
         "target": "engineer",
         "position": 97,
         "description_eng": "If Legion is created, all evil players become Legion. If Legion is in play, the Engineer starts knowing this but has no ability.",
-        "description_cz": ""
+        "description_cz": "Pokud je Legie vytvořena, všichni zlí hráči se stanou Legií. Pokud je Legie ve hře, Inženýr se to dozví na začátku hry, ale nemá žádnou schopnost."
     },
     {
         "id": 98,
@@ -4669,7 +4669,7 @@ var jinxData = [
         "target": "minstrel",
         "position": 98,
         "description_eng": "If Legion died by execution today, Legion keeps their ability, but the Minstrel might learn they are Legion.",
-        "description_cz": ""
+        "description_cz": "Pokud Legie dnes zemřela při popravě, Legie si ponechává svou schopnost, ale Pěvec se může dozvědět, že jsou Legie."
     },
     {
         "id": 99,
@@ -4677,7 +4677,7 @@ var jinxData = [
         "target": "hatter",
         "position": 99,
         "description_eng": "If Legion is created, all evil players become Legion. If Legion is in play, the Hatter has no ability.",
-        "description_cz": ""
+        "description_cz": "Pokud je Legie vytvořena, všichni zlí hráči se stanou Legií. Pokud je Legie ve hře, Kloboučník nemá žádnou schopnost."
     },
     {
         "id": 100,
@@ -4685,7 +4685,7 @@ var jinxData = [
         "target": "politician",
         "position": 100,
         "description_eng": "The Politician might register as evil to Legion.",
-        "description_cz": ""
+        "description_cz": "Politik se může Legii jevit jako zlý."
     },
     {
         "id": 101,
@@ -4693,7 +4693,7 @@ var jinxData = [
         "target": "zealot",
         "position": 101,
         "description_eng": "The Zealot might register as evil to Legion.",
-        "description_cz": ""
+        "description_cz": "Fanatik se může Legii jevit jako zlý."
     },
     {
         "id": 102,
@@ -4701,7 +4701,7 @@ var jinxData = [
         "target": "summoner",
         "position": 102,
         "description_eng": "If Legion is summoned, all evil players become Legion.",
-        "description_cz": ""
+        "description_cz": "Pokud je vyvolána Legie, všichni zlí hráči se stanou Legií."
     },
     {
         "id": 103,
@@ -4709,7 +4709,7 @@ var jinxData = [
         "target": "slayer",
         "position": 103,
         "description_eng": "If the Slayer slays the Lleech host, the host dies.",
-        "description_cz": ""
+        "description_cz": "Pokud Zabiják zabije hostitele Pijavice, hostitel zemře."
     },
     {
         "id": 104,
@@ -4717,7 +4717,7 @@ var jinxData = [
         "target": "mastermind",
         "position": 104,
         "description_eng": "If the Mastermind is alive and the Lleech host dies by execution, the Lleech lives but loses their ability.",
-        "description_cz": ""
+        "description_cz": "Pokud je Strůjce naživu a hostitel Pijavice zemře při popravě, Pijavice žije dál, ale ztratí svou schopnost."
     },
     {
         "id": 105,
@@ -4725,7 +4725,7 @@ var jinxData = [
         "target": "princess",
         "position": 105,
         "description_eng": "If the Princess nominated & executed a player on their 1st day, no one dies to the Al-Hadikhia tonight.",
-        "description_cz": ""
+        "description_cz": "Pokud Princezna nominovala a popravila hráče svůj první den, dnes v noci nikdo na schopnost Al-Hadikhia nezemře."
     },
     {
         "id": 106,
@@ -4733,7 +4733,7 @@ var jinxData = [
         "target": "mastermind",
         "position": 106,
         "description_eng": "If the Al-Hadikhia dies by execution, and the Mastermind is alive, the Al-Hadikhia chooses 3 good players tonight: if all 3 choose to live, evil wins. Otherwise, good wins.",
-        "description_cz": ""
+        "description_cz": "Pokud Al-Hadikhia zemře při popravě a Strůjce je naživu, Al-Hadikhia si dnes v noci vybere 3 hodné hráče: pokud si všichni 3 vyberou, že chtějí žít, zlo vyhrává. V opačném případě vyhrává dobro."
     },
     {
         "id": 107,
@@ -4741,7 +4741,7 @@ var jinxData = [
         "target": "grandmother",
         "position": 107,
         "description_eng": "If Riot is in play and the Grandchild dies by execution, evil wins.",
-        "description_cz": ""
+        "description_cz": "Pokud je Masakr ve hře a Vnuk zemře při popravě, zlo vyhrává."
     },
     {
         "id": 108,
@@ -4749,7 +4749,7 @@ var jinxData = [
         "target": "king",
         "position": 108,
         "description_eng": "If Riot is in play, and at least 1 player is dead, the King learns an alive character each night.",
-        "description_cz": ""
+        "description_cz": "Pokud je Masakr ve hře a je mrtvý alespoň 1 hráč, Král se každou noc dozví roli živého hráče."
     },
     {
         "id": 109,
@@ -4757,7 +4757,7 @@ var jinxData = [
         "target": "innkeeper",
         "position": 109,
         "description_eng": "If Riot nominates and executes an Innkeeper-protected player, good wins.",
-        "description_cz": ""
+        "description_cz": "Pokud Masakr nominuje a popraví hráče chráněného Hostinským, dobro vyhrává."
     },
     {
         "id": 110,
@@ -4765,7 +4765,7 @@ var jinxData = [
         "target": "monk",
         "position": 110,
         "description_eng": "If Riot nominates and executes the Monk-protected player, good wins.",
-        "description_cz": ""
+        "description_cz": "Pokud Masakr nominuje a popraví hráče chráněného Mnichem, dobro vyhrává."
     },
     {
         "id": 111,
@@ -4773,7 +4773,7 @@ var jinxData = [
         "target": "exorcist",
         "position": 111,
         "description_eng": "If Riot nominates and executes the Exorcist-chosen player, good wins.",
-        "description_cz": ""
+        "description_cz": "Pokud Masakr nominuje a popraví hráče vybraného Exorcistou, dobro vyhrává."
     },
     {
         "id": 112,
@@ -4781,7 +4781,7 @@ var jinxData = [
         "target": "soldier",
         "position": 112,
         "description_eng": "If Riot nominates and executes the Soldier, good wins.",
-        "description_cz": ""
+        "description_cz": "Pokud Masakr nominuje a popraví Vojáka, dobro vyhrává."
     },
     {
         "id": 113,
@@ -4789,7 +4789,7 @@ var jinxData = [
         "target": "farmer",
         "position": 113,
         "description_eng": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Farmer uses their ability but does not die.",
-        "description_cz": ""
+        "description_cz": "Každou noc* si Masakr vybere živého hodného hráče (jiného než v předchozích nocích): vybraný Farmář použije svou schopnost, ale nezemře."
     },
     {
         "id": 114,
@@ -4797,7 +4797,7 @@ var jinxData = [
         "target": "ravenkeeper",
         "position": 114,
         "description_eng": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Ravenkeeper uses their ability but does not die.",
-        "description_cz": ""
+        "description_cz": "Každou noc* si Masakr vybere živého hodného hráče (jiného než v předchozích nocích): vybraný Krkavec použije svou schopnost, ale nezemře."
     },
     {
         "id": 115,
@@ -4805,7 +4805,7 @@ var jinxData = [
         "target": "sage",
         "position": 115,
         "description_eng": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Sage uses their ability but does not die.",
-        "description_cz": ""
+        "description_cz": "Každou noc* si Masakr vybere živého hodného hráče (jiného než v předchozích nocích): vybraný Mudrc použije svou schopnost, ale nezemře."
     },
     {
         "id": 116,
@@ -4813,7 +4813,7 @@ var jinxData = [
         "target": "banshee",
         "position": 116,
         "description_eng": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Banshee dies & gains their ability.",
-        "description_cz": ""
+        "description_cz": "Každou noc* si Masakr vybere živého hodného hráče (jiného než v předchozích nocích): vybraná Benší zemře a získá svou schopnost."
     },
     {
         "id": 117,
@@ -4821,7 +4821,7 @@ var jinxData = [
         "target": "mayor",
         "position": 117,
         "description_eng": "The Mayor may choose to stop the riot. If they do so when only 1 Riot is alive, good wins. Otherwise, evil wins.",
-        "description_cz": ""
+        "description_cz": "Starosta se může rozhodnout zastavit masakr. Pokud tak učiní a naživu je pouze 1 Masakr, dobro vyhrává. V opačném případě vyhrává zlo."
     },
     {
         "id": 118,
@@ -4829,7 +4829,7 @@ var jinxData = [
         "target": "atheist",
         "position": 118,
         "description_eng": "During a riot, if the Storyteller is nominated, players vote. If they are \"about to die\", the game ends. If not, they nominate again.",
-        "description_cz": ""
+        "description_cz": "Pokud je během masakru nominován Vypravěč, hráči hlasují. Pokud 'má zemřít', hra končí. Pokud ne, nominují znovu."
     },
     {
         "id": 119,
@@ -4837,7 +4837,7 @@ var jinxData = [
         "target": "grandmother",
         "position": 119,
         "description_eng": "If the Leviathan is in play and the Grandchild dies by execution, evil wins.",
-        "description_cz": ""
+        "description_cz": "Pokud je Leviatan ve hře a Vnuk zemře při popravě, zlo vyhrává."
     },
     {
         "id": 120,
@@ -4845,7 +4845,7 @@ var jinxData = [
         "target": "king",
         "position": 120,
         "description_eng": "If the Leviathan is in play, and at least 1 player is dead, the King learns an alive character each night.",
-        "description_cz": ""
+        "description_cz": "Pokud je Leviatan ve hře a je mrtvý alespoň 1 hráč, Král se každou noc dozví roli živého hráče."
     },
     {
         "id": 121,
@@ -4853,7 +4853,7 @@ var jinxData = [
         "target": "innkeeper",
         "position": 121,
         "description_eng": "If the Leviathan nominates and executes an Innkeeper-protected player, good wins.",
-        "description_cz": ""
+        "description_cz": "Pokud Leviatan nominuje a popraví hráče chráněného Hostinským, dobro vyhrává."
     },
     {
         "id": 122,
@@ -4861,7 +4861,7 @@ var jinxData = [
         "target": "monk",
         "position": 122,
         "description_eng": "If the Leviathan nominates and executes the Monk-protected player, good wins.",
-        "description_cz": ""
+        "description_cz": "Pokud Leviatan nominuje a popraví hráče chráněného Mnichem, dobro vyhrává."
     },
     {
         "id": 123,
@@ -4869,7 +4869,7 @@ var jinxData = [
         "target": "exorcist",
         "position": 123,
         "description_eng": "If the Leviathan nominates and executes the Exorcist-chosen player, good wins.",
-        "description_cz": ""
+        "description_cz": "Pokud Leviatan nominuje a popraví hráče vybraného Exorcistou, dobro vyhrává."
     },
     {
         "id": 124,
@@ -4877,7 +4877,7 @@ var jinxData = [
         "target": "soldier",
         "position": 124,
         "description_eng": "If the Leviathan nominates and executes the Soldier, good wins.",
-        "description_cz": ""
+        "description_cz": "Pokud Leviatan nominuje a popraví Vojáka, dobro vyhrává."
     },
     {
         "id": 125,
@@ -4885,7 +4885,7 @@ var jinxData = [
         "target": "farmer",
         "position": 125,
         "description_eng": "Each night*, the Leviathan chooses an alive good player (different to previous nights): a chosen Farmer uses their ability but does not die.",
-        "description_cz": ""
+        "description_cz": "Každou noc* si Leviatan vybere živého hodného hráče (jiného než v předchozích nocích): vybraný Farmář použije svou schopnost, ale nezemře."
     },
     {
         "id": 126,
@@ -4893,7 +4893,7 @@ var jinxData = [
         "target": "ravenkeeper",
         "position": 126,
         "description_eng": "Each night*, the Leviathan chooses an alive player (different to previous nights): a chosen Ravenkeeper uses their ability but does not die.",
-        "description_cz": ""
+        "description_cz": "Každou noc* si Leviatan vybere živého hráče (jiného než v předchozích nocích): vybraný Krkavec použije svou schopnost, ale nezemře."
     },
     {
         "id": 127,
@@ -4901,7 +4901,7 @@ var jinxData = [
         "target": "sage",
         "position": 127,
         "description_eng": "Each night*, the Leviathan chooses an alive good player (different to previous nights): a chosen Sage uses their ability but does not die.",
-        "description_cz": ""
+        "description_cz": "Každou noc* si Leviatan vybere živého hodného hráče (jiného než v předchozích nocích): vybraný Mudrc použije svou schopnost, ale nezemře."
     },
     {
         "id": 128,
@@ -4909,7 +4909,7 @@ var jinxData = [
         "target": "banshee",
         "position": 128,
         "description_eng": "Each night*, the Leviathan chooses an alive good player (different to previous nights): a chosen Banshee dies & gains their ability.",
-        "description_cz": ""
+        "description_cz": "Každou noc* si Leviatan vybere živého hodného hráče (jiného než v předchozích nocích): vybraná Benší zemře a získá svou schopnost."
     },
     {
         "id": 129,
@@ -4917,7 +4917,7 @@ var jinxData = [
         "target": "mayor",
         "position": 129,
         "description_eng": "If the Leviathan and the Mayor are alive on day 5 & no execution occurs, good wins.",
-        "description_cz": ""
+        "description_cz": "Pokud jsou Leviatan a Starosta naživu 5. den a nedojde k žádné popravě, dobro vyhrává."
     },
     {
         "id": 130,
@@ -4925,7 +4925,7 @@ var jinxData = [
         "target": "hatter",
         "position": 130,
         "description_eng": "The Leviathan cannot enter play after day 5.",
-        "description_cz": ""
+        "description_cz": "Leviatan nemůže vstoupit do hry po 5. dnu."
     },
     {
         "id": 131,
@@ -4933,6 +4933,6 @@ var jinxData = [
         "target": "pithag",
         "position": 131,
         "description_eng": "The Leviathan cannot enter play after day 5.",
-        "description_cz": ""
+        "description_cz": "Leviatan nemůže vstoupit do hry po 5. dnu."
     }
 ];
