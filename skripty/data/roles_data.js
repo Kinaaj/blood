@@ -3828,7 +3828,7 @@ var rolesData = [
         "keyword": "godofug",
         "type": "loric",
         "edition": "10",
-        "ability_cz": "Když máš Ug věc, pak smíš říct slov jen míň jak dva zvuk. Však dva hlas máš. Když dva zvuk zní, dej Ug věc dál.",
+        "ability_cz": "Když Ug věc máš. Z úst pusť vždy jen zvuk a dost. Máš však dva hlas! Zní víc zvuk? Dej Ug věc dál.",
         "ability_eng": "One Ug hat. When wear Ug hat, must speak one sound at a time but vote twice. If fail, pass Ug hat.",
         "setup": false,
         "setup_reminder_eng": "",
