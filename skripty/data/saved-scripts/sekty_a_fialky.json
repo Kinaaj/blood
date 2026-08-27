@@ -6,6 +6,7 @@
     "description": "Třetí ze tří základních skriptů, plný šílenství, měnění rolí a zjišťování, zda ve hře není Vortox.",
     "difficulty_storyteller": 4,
     "difficulty_player": 4,
+    "score": "?",
     "preview_characters": [
       "vortox",
       "mathematician",

@@ -6,6 +6,7 @@
     "description": "Druhý ze tří základních skriptů. Informace se získávají ze smrtí, kterých je ale většinou více než jen jedna za jednu noc.",
     "difficulty_storyteller": 3,
     "difficulty_player": 3,
+    "score": "?",
     "preview_characters": [
       "zombuul",
       "tinker",

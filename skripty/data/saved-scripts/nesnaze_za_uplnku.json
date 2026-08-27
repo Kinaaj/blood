@@ -2,7 +2,17 @@
     {
         "id": "_meta",
         "author": "Jan Veverka",
-        "name": "Nesnáze za Úplňku"
+        "name": "Nesnáze za Úplňku",
+        "description": "Výrazná postava je Vlkodlak, který je sice měšťan, ale v noci zabíjí.",
+        "difficulty_storyteller": "?",
+        "difficulty_player": "?",
+        "score": "?",
+        "preview_characters": [
+            "lycanthrope",
+            "damsel",
+            "summoner",
+            "lordoftyphon"
+        ]
     },
     "damsel",
     "lunatic",

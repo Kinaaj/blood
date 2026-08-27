@@ -275,6 +275,41 @@
   letter-spacing: 0.4px;
 }
 
+/* Hodnocení hvězdičkami */
+.script-score {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 6px;
+  font-size: 0.88rem;
+  color: #f5c518;
+  line-height: 1;
+}
+
+.script-score i {
+  filter: drop-shadow(0 0 4px rgba(245, 197, 24, 0.6));
+}
+
+.score-value {
+  margin-left: 5px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #f5c518;
+  opacity: 0.9;
+  background: rgba(245, 197, 24, 0.1);
+  border: 1px solid rgba(245, 197, 24, 0.3);
+  border-radius: 4px;
+  padding: 1px 5px;
+  line-height: 1.4;
+}
+
+/* Neznámé hodnocení – zlatá varianta "?" */
+.diff-unknown.score-unknown {
+  background: rgba(245, 197, 24, 0.1);
+  border-color: rgba(245, 197, 24, 0.5);
+  color: #f5c518;
+}
+
 /* Obtížnosti - svislé tenké fialové obdélníčky */
 .script-difficulties {
   display: flex;
@@ -329,6 +364,23 @@
   background: linear-gradient(180deg, #c084fc, #9b59b6);
   border-color: #e9d5ff;
   box-shadow: 0 0 8px rgba(192, 132, 252, 0.85);
+}
+
+/* Neznámá obtížnost */
+.diff-unknown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(155, 89, 182, 0.15);
+  border: 1.5px dashed rgba(192, 132, 252, 0.6);
+  color: #c084fc;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: default;
 }
 
 /* Tlačítka karty */

@@ -6,6 +6,7 @@
         "description": "Skript kombinující pouze první tři skripty a představující postavu Loutka, či Lunatik",
         "difficulty_storyteller": 3,
         "difficulty_player": 2,
+        "score": "4",
         "preview_characters": [
             "marionette",
             "lunatic",

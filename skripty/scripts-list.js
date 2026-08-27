@@ -520,15 +520,23 @@ function applyFiltersAndRender() {
     }
 
     // 3. Obtížnost pro Vypravěče (Min - Max interval)
-    const stDiff = parseInt(meta.difficulty_storyteller || 1, 10);
-    if (stDiff < storytellerMinDiff || stDiff > storytellerMaxDiff) {
-      return false;
+    // Hodnota "?" = neznámá obtížnost, vždy projde filtrem
+    const stDiffRaw = meta.difficulty_storyteller;
+    if (stDiffRaw !== '?' && stDiffRaw !== null) {
+      const stDiff = parseInt(stDiffRaw || 1, 10);
+      if (stDiff < storytellerMinDiff || stDiff > storytellerMaxDiff) {
+        return false;
+      }
     }
 
     // 4. Obtížnost pro Hráče (Min - Max interval)
-    const plDiff = parseInt(meta.difficulty_player || 1, 10);
-    if (plDiff < playerMinDiff || plDiff > playerMaxDiff) {
-      return false;
+    // Hodnota "?" = neznámá obtížnost, vždy projde filtrem
+    const plDiffRaw = meta.difficulty_player;
+    if (plDiffRaw !== '?' && plDiffRaw !== null) {
+      const plDiff = parseInt(plDiffRaw || 1, 10);
+      if (plDiff < playerMinDiff || plDiff > playerMaxDiff) {
+        return false;
+      }
     }
 
     return true;
@@ -608,8 +616,9 @@ function createScriptCard(filename, scriptData) {
   const cardElement = document.createElement('div');
   cardElement.className = 'script-card';
 
-  const storytellerDiffHtml = renderPurpleVerticalBars(meta.difficulty_storyteller || 1, 5);
-  const playerDiffHtml = renderPurpleVerticalBars(meta.difficulty_player || 1, 5);
+  const storytellerDiffHtml = renderPurpleVerticalBars(meta.difficulty_storyteller, 5);
+  const playerDiffHtml = renderPurpleVerticalBars(meta.difficulty_player, 5);
+  const scoreHtml = renderStarRating(meta.score);
 
   const rawJsonUrl = `./data/saved-scripts/${filename}`;
   const editorUrl = `./tvoric/?file=${encodeURIComponent(filename)}`;
@@ -625,6 +634,7 @@ function createScriptCard(filename, scriptData) {
         <div class="script-author">
           <i class="fa-solid fa-feather-pointed"></i> Autor: ${escapeHtml(meta.author)}
         </div>
+        ${scoreHtml}
       </div>
       ${meta.description ? `<p class="script-description">${escapeHtml(meta.description)}</p>` : '<div class="script-description" style="margin-bottom: 14px;"></div>'}
     </div>
@@ -805,11 +815,42 @@ function openScriptModal(filename, meta, characterKeywords) {
   document.addEventListener('keydown', escHandler);
 }
 
+function renderStarRating(score) {
+  if (score === null || score === undefined || score === '') return '';
+
+  // Neznámé hodnocení – zobrazí se ?
+  if (score === '?') {
+    return `<div class="script-score" title="Hodnocení není známo"><span class="diff-unknown score-unknown">?</span></div>`;
+  }
+
+  const val = parseFloat(score);
+  if (isNaN(val)) return '';
+
+  const clamped = Math.max(0, Math.min(5, val));
+  let starsHtml = '';
+  for (let i = 1; i <= 5; i++) {
+    if (clamped >= i) {
+      starsHtml += '<i class="fa-solid fa-star"></i>';
+    } else if (clamped >= i - 0.5) {
+      starsHtml += '<i class="fa-solid fa-star-half-stroke"></i>';
+    } else {
+      starsHtml += '<i class="fa-regular fa-star"></i>';
+    }
+  }
+
+  return `<div class="script-score" title="Hodnocení: ${clamped} z 5">${starsHtml}<span class="score-value">${clamped}</span></div>`;
+}
+
 function renderPurpleVerticalBars(level, maxLevel = 5) {
+  // Neznámá obtížnost – zobrazí se ?
+  if (level === '?' || level === null || level === undefined) {
+    return '<div class="difficulty-bars"><span class="diff-unknown" title="Obtížnost není známa">?</span></div>';
+  }
+  const numLevel = parseInt(level, 10) || 1;
   let barsHtml = '<div class="difficulty-bars">';
   for (let i = 1; i <= maxLevel; i++) {
-    const isFilled = i <= level ? 'filled' : '';
-    barsHtml += `<span class="diff-bar ${isFilled}" title="Úroveň ${level} z ${maxLevel}"></span>`;
+    const isFilled = i <= numLevel ? 'filled' : '';
+    barsHtml += `<span class="diff-bar ${isFilled}" title="Úroveň ${numLevel} z ${maxLevel}"></span>`;
   }
   barsHtml += '</div>';
   return barsHtml;
